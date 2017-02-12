@@ -1,0 +1,842 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FormMngFiReceive</class>
+ <widget class="QDialog" name="FormMngFiReceive">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1010</width>
+    <height>710</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1010</width>
+    <height>710</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1010</width>
+    <height>710</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Cadastro de Títulos a Receber</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../images.qrc">
+    <normaloff>:/images/PNG/128x128/gnome-system-config-128x128.png</normaloff>:/images/PNG/128x128/gnome-system-config-128x128.png</iconset>
+  </property>
+  <widget class="QGroupBox" name="GBoxTitulo">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>991</width>
+     <height>331</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Dados Título</string>
+   </property>
+   <widget class="QGroupBox" name="GBoxNumberTit">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>200</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Número</string>
+    </property>
+    <widget class="QLineEdit" name="LEditSerachIncTit">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>150</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Campo para Inclusão e Pesquisa...</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QToolButton" name="TButtonSearchTit">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>20</y>
+       <width>30</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Permite fazer alteração nos itens dos Fabricantes...</string>
+     </property>
+     <property name="text">
+      <string>...</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../images.qrc">
+       <normaloff>:/images/PNG/120x120/120px-Searchtool.png</normaloff>:/images/PNG/120x120/120px-Searchtool.png</iconset>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="GBoxMovType">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>20</y>
+      <width>200</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Tipo de Movimento</string>
+    </property>
+    <widget class="QComboBox" name="CBoxMovType">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>150</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Tipos de Movimentos Disponivéis...</string>
+     </property>
+    </widget>
+    <widget class="QToolButton" name="TButtonToolAddMovType">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>20</y>
+       <width>30</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Permite Adicionar Novos Tipos de Movimentos...</string>
+     </property>
+     <property name="text">
+      <string>...</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../images.qrc">
+       <normaloff>:/images/PNG/128x128/advancedsettings.png</normaloff>:/images/PNG/128x128/advancedsettings.png</iconset>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="GBoxDateMov">
+    <property name="geometry">
+     <rect>
+      <x>560</x>
+      <y>20</y>
+      <width>131</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Data de Lançamento</string>
+    </property>
+    <widget class="QDateEdit" name="DateEditDateMov">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>110</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="GBoxCustomerShortName">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>90</y>
+      <width>321</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Nome Fantasia</string>
+    </property>
+    <widget class="QLineEdit" name="LEditSearchIncCustShortName">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>241</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QToolButton" name="TButtonSearchCustomerShortName">
+     <property name="geometry">
+      <rect>
+       <x>251</x>
+       <y>20</y>
+       <width>30</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Pesquisar Cliente por Nome Fantasia...</string>
+     </property>
+     <property name="text">
+      <string>...</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../images.qrc">
+       <normaloff>:/images/PNG/120x120/120px-Searchtool.png</normaloff>:/images/PNG/120x120/120px-Searchtool.png</iconset>
+     </property>
+    </widget>
+    <widget class="QToolButton" name="TButtonToolAddCustomer">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>20</y>
+       <width>30</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Abre Janela para Alteração e Cadastro de Clientes...</string>
+     </property>
+     <property name="text">
+      <string>...</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../images.qrc">
+       <normaloff>:/images/PNG/128x128/advancedsettings.png</normaloff>:/images/PNG/128x128/advancedsettings.png</iconset>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="GBoxCustomerCode">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>90</y>
+      <width>200</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Código do Cliente</string>
+    </property>
+    <widget class="QToolButton" name="TButtonSearchCustomerCode">
+     <property name="geometry">
+      <rect>
+       <x>161</x>
+       <y>20</y>
+       <width>30</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Permite fazer alteração nos itens dos Fabricantes...</string>
+     </property>
+     <property name="text">
+      <string>...</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../images.qrc">
+       <normaloff>:/images/PNG/120x120/120px-Searchtool.png</normaloff>:/images/PNG/120x120/120px-Searchtool.png</iconset>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="LEditSearchCustomerCode">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>150</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Campo para Inclusão e Pesquisa...</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="GBoxCustomerFullName">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>90</y>
+      <width>431</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Razão Social</string>
+    </property>
+    <widget class="QLineEdit" name="LEditSearchIncCustFullName">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>351</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QToolButton" name="TButtonSearchCustomerFullName">
+     <property name="geometry">
+      <rect>
+       <x>361</x>
+       <y>20</y>
+       <width>30</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Pesquisar Cliente por Nome Fantasia...</string>
+     </property>
+     <property name="text">
+      <string>...</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../images.qrc">
+       <normaloff>:/images/PNG/120x120/120px-Searchtool.png</normaloff>:/images/PNG/120x120/120px-Searchtool.png</iconset>
+     </property>
+    </widget>
+    <widget class="QToolButton" name="TButtonToolAddCustomerFullName">
+     <property name="geometry">
+      <rect>
+       <x>390</x>
+       <y>20</y>
+       <width>30</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Abre Janela para Alteração e Cadastro de Clientes...</string>
+     </property>
+     <property name="text">
+      <string>...</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../images.qrc">
+       <normaloff>:/images/PNG/128x128/advancedsettings.png</normaloff>:/images/PNG/128x128/advancedsettings.png</iconset>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="GBoxTitNf">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>160</y>
+      <width>141</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Nota Fiscal</string>
+    </property>
+    <widget class="QLineEdit" name="LEditTitNf">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>121</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Informar o Número da Nf.</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="GBoxNfSerie">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>160</y>
+      <width>141</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Série Nf</string>
+    </property>
+    <widget class="QLineEdit" name="LEditNfSerie">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>121</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Informar o Número de Série da Nf.</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="GBoxDateNfTit">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>160</y>
+      <width>141</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Data da Nf.</string>
+    </property>
+    <widget class="QDateEdit" name="DateEditDateNfTit">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>121</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Informar a data da Nf.</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="GBoxValueNfTit">
+    <property name="geometry">
+     <rect>
+      <x>460</x>
+      <y>160</y>
+      <width>131</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Valor da Nf</string>
+    </property>
+    <widget class="QLineEdit" name="LEditValueNfTit">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>111</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Informar o Número de Série da Nf.</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="GBoxTitStatus">
+    <property name="geometry">
+     <rect>
+      <x>780</x>
+      <y>20</y>
+      <width>171</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Situação do Título</string>
+    </property>
+    <widget class="QLineEdit" name="LEditTitStatus">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>150</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Informar o Número de Série da Nf.</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="GBoxPartial">
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>160</y>
+      <width>91</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Parcelado?</string>
+    </property>
+    <widget class="QComboBox" name="CBoxPartialSN">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>69</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Informar se o Título é Parcelado...</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="GBoxQuantParts">
+    <property name="geometry">
+     <rect>
+      <x>700</x>
+      <y>160</y>
+      <width>111</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Quant. de Parcelas</string>
+    </property>
+    <widget class="QLineEdit" name="LEditQuantParts">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>91</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Informar a Quant. de Parcelas...</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="GBoxNoteTit">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>220</y>
+      <width>971</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>OBS</string>
+    </property>
+    <widget class="QLineEdit" name="LEditNoteTit">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>931</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="GBoxProfitCenter">
+    <property name="geometry">
+     <rect>
+      <x>820</x>
+      <y>160</y>
+      <width>141</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Centro de Custo</string>
+    </property>
+    <widget class="QLineEdit" name="LEditProfitCenter">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>121</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Informar o Número da Nf.</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="GBoxTitParts">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>340</y>
+     <width>991</width>
+     <height>101</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Parcelas do Título</string>
+   </property>
+   <widget class="QGroupBox" name="GBoxTitParcel">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>61</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Parcela</string>
+    </property>
+    <widget class="QLineEdit" name="LEditTitParcel">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>41</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Número da Parcela.</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="GBoxValueParcelTit">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>20</y>
+      <width>111</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Valor da Parcela</string>
+    </property>
+    <widget class="QLineEdit" name="LEditValueParcelTit">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>91</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Valor da Parcela...</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="GBoxParcelType">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>20</y>
+      <width>171</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Tipo</string>
+    </property>
+    <widget class="QComboBox" name="CBoxParcelType">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>121</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Tipos de Parcela...</string>
+     </property>
+    </widget>
+    <widget class="QToolButton" name="TButtonToolAddParcelType">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>20</y>
+       <width>30</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Permite Adicionar Novos Tipos de Parcelas...</string>
+     </property>
+     <property name="text">
+      <string>...</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../images.qrc">
+       <normaloff>:/images/PNG/128x128/advancedsettings.png</normaloff>:/images/PNG/128x128/advancedsettings.png</iconset>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="GBoxDiscountValueParcelTit">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>20</y>
+      <width>111</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Valor de Desconto</string>
+    </property>
+    <widget class="QLineEdit" name="LEditDiscountValueParcelTit">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>91</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Valor de Desconto...</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QToolButton" name="ToolButtonAdd">
+    <property name="geometry">
+     <rect>
+      <x>750</x>
+      <y>30</y>
+      <width>91</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Adicionar</string>
+    </property>
+    <property name="icon">
+     <iconset resource="../images.qrc">
+      <normaloff>:/images/PNG/128x128/agt_action_success-128.png</normaloff>:/images/PNG/128x128/agt_action_success-128.png</iconset>
+    </property>
+    <property name="toolButtonStyle">
+     <enum>Qt::ToolButtonTextBesideIcon</enum>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="GBoxDateParcelVenc">
+    <property name="geometry">
+     <rect>
+      <x>580</x>
+      <y>20</y>
+      <width>141</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Data de Vencimento</string>
+    </property>
+    <widget class="QDateEdit" name="DateEditDateParcelVenc">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>121</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Informar a data da Nf.</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QToolButton" name="ToolButtonRemove">
+    <property name="geometry">
+     <rect>
+      <x>860</x>
+      <y>30</y>
+      <width>91</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Remover</string>
+    </property>
+    <property name="icon">
+     <iconset resource="../images.qrc">
+      <normaloff>:/images/PNG/48x48/Nuvola_actions_cancel-48x48.png</normaloff>:/images/PNG/48x48/Nuvola_actions_cancel-48x48.png</iconset>
+    </property>
+    <property name="toolButtonStyle">
+     <enum>Qt::ToolButtonTextBesideIcon</enum>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>450</y>
+     <width>801</width>
+     <height>231</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Itens</string>
+   </property>
+   <widget class="QTableWidget" name="tableWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>781</width>
+      <height>192</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../images.qrc"/>
+ </resources>
+ <connections/>
+</ui>

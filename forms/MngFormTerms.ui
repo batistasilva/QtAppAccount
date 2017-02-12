@@ -1,0 +1,638 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FormTerms</class>
+ <widget class="QDialog" name="FormTerms">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>750</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>750</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>750</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Manutenção em Condições de Pagamentos</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../images.qrc">
+    <normaloff>:/images/PNG/128x128/gnome-system-config-128x128.png</normaloff>:/images/PNG/128x128/gnome-system-config-128x128.png</iconset>
+  </property>
+  <property name="toolTip">
+   <string>Permite Adicionar, Alterar ou Excluir uma Condição de  Pagamento...</string>
+  </property>
+  <widget class="QGroupBox" name="GBoxView">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>190</y>
+     <width>731</width>
+     <height>311</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Condições:</string>
+   </property>
+   <widget class="QTableView" name="TableViewTerms">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>30</y>
+      <width>601</width>
+      <height>261</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>Condições de Pagamentos Atuais...</string>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="TButtonRemoveTerm">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>210</y>
+      <width>90</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>Fazer Remoção da Condição de Pagamento Selecionada...</string>
+    </property>
+    <property name="text">
+     <string>Remover</string>
+    </property>
+    <property name="icon">
+     <iconset resource="../images.qrc">
+      <normaloff>:/images/PNG/48x48/delete-48x48.png</normaloff>:/images/PNG/48x48/delete-48x48.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>48</width>
+      <height>48</height>
+     </size>
+    </property>
+    <property name="toolButtonStyle">
+     <enum>Qt::ToolButtonTextUnderIcon</enum>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="TButtonCleanForm">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>30</y>
+      <width>90</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>Permite Limpar os Campos do Formulário das Condições de Pagamentos...</string>
+    </property>
+    <property name="text">
+     <string>Limpar</string>
+    </property>
+    <property name="icon">
+     <iconset resource="../images.qrc">
+      <normaloff>:/images/PNG/48x48/Rebuild-48x48.png</normaloff>:/images/PNG/48x48/Rebuild-48x48.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>48</width>
+      <height>48</height>
+     </size>
+    </property>
+    <property name="toolButtonStyle">
+     <enum>Qt::ToolButtonTextUnderIcon</enum>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="TButtonSaveTerm">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>120</y>
+      <width>90</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>Salvar os Dados para a Condição de Pagamento...</string>
+    </property>
+    <property name="text">
+     <string>Salvar</string>
+    </property>
+    <property name="icon">
+     <iconset resource="../images.qrc">
+      <normaloff>:/images/PNG/48x48/Filesave-48x48.png</normaloff>:/images/PNG/48x48/Filesave-48x48.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>48</width>
+      <height>48</height>
+     </size>
+    </property>
+    <property name="toolButtonStyle">
+     <enum>Qt::ToolButtonTextUnderIcon</enum>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QToolButton" name="TButtonExitTerm">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>510</y>
+     <width>90</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>Permite Sair da Janela de Manutenção de Condições de Pagamentos...</string>
+   </property>
+   <property name="text">
+    <string>Sair</string>
+   </property>
+   <property name="icon">
+    <iconset resource="../images.qrc">
+     <normaloff>:/images/PNG/48x48/Exithome-48x48.png</normaloff>:/images/PNG/48x48/Exithome-48x48.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>48</width>
+     <height>48</height>
+    </size>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextUnderIcon</enum>
+   </property>
+  </widget>
+  <widget class="QTabWidget" name="TabWidgetMain">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>0</y>
+     <width>730</width>
+     <height>190</height>
+    </rect>
+   </property>
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
+   <widget class="QWidget" name="TabMain">
+    <attribute name="title">
+     <string>Principal</string>
+    </attribute>
+    <widget class="QLineEdit" name="LEditTermsID">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>20</y>
+       <width>50</width>
+       <height>30</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="LabelTermsCode">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>20</y>
+       <width>100</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Código:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="CBoxTermsCode">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>20</y>
+       <width>130</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Informar um Código para a Condição de Pagamento Desejada...</string>
+     </property>
+     <property name="editable">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QGroupBox" name="GBoxTermsStatusActive">
+     <property name="geometry">
+      <rect>
+       <x>490</x>
+       <y>0</y>
+       <width>230</width>
+       <height>70</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Status</string>
+     </property>
+     <widget class="QCheckBox" name="CheckBoxTermsStatusActive">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>30</y>
+        <width>100</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Ativar para a Condição poder ser Usada...</string>
+      </property>
+      <property name="text">
+       <string>Ativo</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QLineEdit" name="LEditTermsDescrip">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>60</y>
+       <width>300</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Informar uma Descrição para a Condição de Vendas/Compras...</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="LabelTermsDescrip">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>60</y>
+       <width>100</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Descrição:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="CheckBoxPayable">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>120</y>
+       <width>120</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Marcar para uma Condição de Pagamentos...</string>
+     </property>
+     <property name="text">
+      <string>Pagamento</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="CheckBoxReceivables">
+     <property name="geometry">
+      <rect>
+       <x>250</x>
+       <y>120</y>
+       <width>120</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Marcar para uma Condição de Recebimentos...</string>
+     </property>
+     <property name="text">
+      <string>Recebimento</string>
+     </property>
+    </widget>
+    <widget class="QGroupBox" name="GBoxTermsType">
+     <property name="geometry">
+      <rect>
+       <x>490</x>
+       <y>80</y>
+       <width>230</width>
+       <height>70</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Tipo de Condição:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+     </property>
+     <widget class="QRadioButton" name="RButtonTermsInCash">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>30</y>
+        <width>100</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Ativar para uma Condição A Vista...</string>
+      </property>
+      <property name="text">
+       <string>A Vista</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="RButtonTermsSubDivision">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>30</y>
+        <width>100</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Ativar para uma Condição Parcelada...</string>
+      </property>
+      <property name="text">
+       <string>Parcelada</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="TabOthers">
+    <attribute name="title">
+     <string>Outros</string>
+    </attribute>
+    <widget class="QGroupBox" name="GBoxTypeDue">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>151</width>
+       <height>130</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Tipo Vencimento</string>
+     </property>
+     <widget class="QRadioButton" name="RButtonForTypeCutOffDay">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>80</y>
+        <width>130</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Marcar para o Faturamento para Uma Data  de Corte...</string>
+      </property>
+      <property name="text">
+       <string>Dia(s) de Corte</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="RButtonForTypeDueDays">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>40</y>
+        <width>130</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Marcar para o Faturamento para a Quant. Dias Infomados...</string>
+      </property>
+      <property name="text">
+       <string>Dias para Pagar</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="GBoxOthers">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>10</y>
+       <width>551</width>
+       <height>130</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Outros</string>
+     </property>
+     <widget class="QSpinBox" name="SBoxTermsDueDaysLimite">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>30</y>
+        <width>60</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Informar a Quantidade de Dias para o Faturamento...</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="LabelTermsDiscountDaysLimite">
+      <property name="geometry">
+       <rect>
+        <x>340</x>
+        <y>30</y>
+        <width>140</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Dias de Antecipação: </string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="SBoxTermsCutOffDay">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>80</y>
+        <width>60</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Informar a Quantidade de Dias para o Corte da Fatura...</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="LabelTermsDiscountPercentLimite">
+      <property name="geometry">
+       <rect>
+        <x>350</x>
+        <y>80</y>
+        <width>130</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Percentual (%): </string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="SBoxTermsQuantOfDaysByInstall">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>80</y>
+        <width>60</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Informar a Quantidade de Dias para Cada Parcela...</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="LabelTermsCutOffDay">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>80</y>
+        <width>100</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Dia de Corte: </string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="LabelTermsQuantOfInstallments">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>30</y>
+        <width>110</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Núm. Parcelas: </string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="SBoxTermsQuantitiesOfInstallments">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>30</y>
+        <width>60</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Informar as Quantidades de Parcelas para Vendas/Compras...</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="LabelTermsQuantOfDaysByInstall">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>80</y>
+        <width>100</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Dias  Parcela: </string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="LabelTermsDueDaysLimite">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>30</y>
+        <width>100</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Dias devido: </string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="SBoxTermsDiscountDaysLimite">
+      <property name="geometry">
+       <rect>
+        <x>480</x>
+        <y>30</y>
+        <width>60</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Informar a Quantidade de Dias para Recebimento/Pagamentos com Descontos...</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="LEditTermsDiscountPercentLimite">
+      <property name="geometry">
+       <rect>
+        <x>480</x>
+        <y>80</y>
+        <width>60</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Informar um Percentual de Desconto para Recebimento/Pagamento  Antecipado...</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../images.qrc"/>
+ </resources>
+ <connections/>
+</ui>

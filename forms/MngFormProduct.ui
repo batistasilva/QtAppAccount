@@ -1,0 +1,1959 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <author>Batista </author>
+ <class>MngFormProduct</class>
+ <widget class="QDialog" name="MngFormProduct">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1010</width>
+    <height>710</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Cadastro de Produtos</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../images.qrc">
+    <normaloff>:/images/PNG/48x48/Project_open-48x48.png</normaloff>:/images/PNG/48x48/Project_open-48x48.png</iconset>
+  </property>
+  <widget class="QTabWidget" name="TabProduct">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>10</y>
+     <width>1001</width>
+     <height>591</height>
+    </rect>
+   </property>
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
+   <widget class="QWidget" name="DataOfProduct">
+    <attribute name="title">
+     <string>Dados do Produto</string>
+    </attribute>
+    <widget class="QGroupBox" name="GBSearchProduct">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>10</y>
+       <width>991</width>
+       <height>141</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string/>
+     </property>
+     <widget class="QGroupBox" name="GBoxProduct">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>30</y>
+        <width>621</width>
+        <height>80</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Produto</string>
+      </property>
+      <widget class="QLineEdit" name="LEditProduct">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>451</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>Informar o Código do Produto para Pesquisar/Cadastrar...</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QToolButton" name="ToolButtonProductSearch">
+       <property name="geometry">
+        <rect>
+         <x>470</x>
+         <y>30</y>
+         <width>101</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Pesquisar</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="GBStatusProduct">
+      <property name="geometry">
+       <rect>
+        <x>670</x>
+        <y>30</y>
+        <width>121</width>
+        <height>80</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Status</string>
+      </property>
+      <widget class="QCheckBox" name="CKBoxStatusProduct">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>30</y>
+         <width>71</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>Marcar ou Desmarcar para Ativar/Inativar o Produto...</string>
+       </property>
+       <property name="text">
+        <string>Ativo</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="GBoxProductPic">
+      <property name="geometry">
+       <rect>
+        <x>830</x>
+        <y>0</y>
+        <width>141</width>
+        <height>131</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Foto</string>
+      </property>
+      <widget class="QToolButton" name="TButtonProductImg">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>121</width>
+         <height>101</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>Exibir imagem para atualização...</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="../images.qrc">
+         <normaloff>:/images/PNG/128x128/system-software-update.png</normaloff>:/images/PNG/128x128/system-software-update.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>128</width>
+         <height>128</height>
+        </size>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QToolButton" name="TButtonValidate">
+     <property name="geometry">
+      <rect>
+       <x>890</x>
+       <y>460</y>
+       <width>90</width>
+       <height>80</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Valida os Campos Obrigatórios...</string>
+     </property>
+     <property name="text">
+      <string>Validar</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../images.qrc">
+       <normaloff>:/images/PNG/120x120/120px-Gtk-refresh.png</normaloff>:/images/PNG/120x120/120px-Gtk-refresh.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>48</width>
+       <height>48</height>
+      </size>
+     </property>
+     <property name="toolButtonStyle">
+      <enum>Qt::ToolButtonTextUnderIcon</enum>
+     </property>
+    </widget>
+    <widget class="QLabel" name="LBProductWeight">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>390</y>
+       <width>135</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="text">
+      <string>Peso atual</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="LEditProductWeight">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>390</y>
+       <width>170</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Informar o Peso do Produto...</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="LBProductPrice">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>430</y>
+       <width>135</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="text">
+      <string>Preço de Venda R$</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="LEditProductPrice">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>430</y>
+       <width>170</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Exibe o Preço Proposto do Produto...</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="LBProductStock">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>470</y>
+       <width>135</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="text">
+      <string>Qtd. em Estoque</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="LEditProductStock">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>470</y>
+       <width>170</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Exibe o Estoque atual do Produto...</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="LBProductWidthAndHeight">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>510</y>
+       <width>135</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="text">
+      <string>Largura/Altura</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="LEditProductHeight">
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>510</y>
+       <width>70</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Informar a Altura do Produto...</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="LEditProductWidth">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>510</y>
+       <width>70</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Informar a Largura do Produto...</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="LBDelimitProduct1">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>510</y>
+       <width>10</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>/</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="LBProductBarCode">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>270</y>
+       <width>135</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="text">
+      <string>Código de Barras</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="LEditProductBarCode">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>270</y>
+       <width>201</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Informar o Código de Barras do Produto...</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="LBFullProductName">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>310</y>
+       <width>135</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="text">
+      <string>Descrição Completa</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="LEditFullProductName">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>310</y>
+       <width>400</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Informar a Descrição completa do Produto...</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="LBShortProductName">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>350</y>
+       <width>135</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="text">
+      <string>Descrição Curta</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="LEditShortProductName">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>350</y>
+       <width>300</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Informar a Descrição curta do Produto...</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="LBProductFactory">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>170</y>
+       <width>135</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="text">
+      <string>Fabricante</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="LBProductSupplier">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>220</y>
+       <width>135</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="text">
+      <string>Fonecedor</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="LBProductCategory">
+     <property name="geometry">
+      <rect>
+       <x>560</x>
+       <y>170</y>
+       <width>135</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="text">
+      <string>Categoria</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="LBProductSubCategory">
+     <property name="geometry">
+      <rect>
+       <x>560</x>
+       <y>220</y>
+       <width>135</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="text">
+      <string>Sub-Categoria</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="LBProductLine">
+     <property name="geometry">
+      <rect>
+       <x>560</x>
+       <y>370</y>
+       <width>135</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="text">
+      <string>Linha do Produto</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="LBProductUnitOfMeasure">
+     <property name="geometry">
+      <rect>
+       <x>560</x>
+       <y>420</y>
+       <width>135</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="text">
+      <string>Unidade de Medidas</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QGroupBox" name="GBoxFactory">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>160</y>
+       <width>290</width>
+       <height>46</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string/>
+     </property>
+     <widget class="QComboBox" name="CBoxProductFactory">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>8</y>
+        <width>240</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Selecionar o Fabricante do Produto...</string>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="TButtonToolFactory">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>8</y>
+        <width>30</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Permite fazer alteração nos itens dos Fabricantes...</string>
+      </property>
+      <property name="text">
+       <string>...</string>
+      </property>
+      <property name="icon">
+       <iconset resource="../images.qrc">
+        <normaloff>:/images/PNG/128x128/advancedsettings.png</normaloff>:/images/PNG/128x128/advancedsettings.png</iconset>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="GBoxSupplier">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>210</y>
+       <width>290</width>
+       <height>46</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string/>
+     </property>
+     <widget class="QComboBox" name="CBoxProductSupplier">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>8</y>
+        <width>240</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Selecionar o Fornecedor do Produto...</string>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="TButtonToolSupplier">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>8</y>
+        <width>30</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Permite fazer alteração nos itens dos Fornecedores...</string>
+      </property>
+      <property name="text">
+       <string>...</string>
+      </property>
+      <property name="icon">
+       <iconset resource="../images.qrc">
+        <normaloff>:/images/PNG/128x128/advancedsettings.png</normaloff>:/images/PNG/128x128/advancedsettings.png</iconset>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="GBoxCategory">
+     <property name="geometry">
+      <rect>
+       <x>700</x>
+       <y>160</y>
+       <width>290</width>
+       <height>46</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string/>
+     </property>
+     <widget class="QComboBox" name="CBoxProductCategory">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>8</y>
+        <width>240</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Selecionar a Categoria do Produto...</string>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="TButtonToolCategory">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>8</y>
+        <width>30</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Permite fazer alteração nos itens das Categorias...</string>
+      </property>
+      <property name="text">
+       <string>...</string>
+      </property>
+      <property name="icon">
+       <iconset resource="../images.qrc">
+        <normaloff>:/images/PNG/128x128/advancedsettings.png</normaloff>:/images/PNG/128x128/advancedsettings.png</iconset>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="GBoxSubCategory">
+     <property name="geometry">
+      <rect>
+       <x>700</x>
+       <y>210</y>
+       <width>290</width>
+       <height>46</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string/>
+     </property>
+     <widget class="QComboBox" name="CBoxProductSubCategory">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>8</y>
+        <width>240</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Selecionar a Sub-Categoria do Produto...</string>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="TButtonToolSubCategory">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>8</y>
+        <width>30</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Permite fazer alteração nos itens das Sub-Categorias...</string>
+      </property>
+      <property name="text">
+       <string>...</string>
+      </property>
+      <property name="icon">
+       <iconset resource="../images.qrc">
+        <normaloff>:/images/PNG/128x128/advancedsettings.png</normaloff>:/images/PNG/128x128/advancedsettings.png</iconset>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="GBoxProductLine">
+     <property name="geometry">
+      <rect>
+       <x>700</x>
+       <y>360</y>
+       <width>220</width>
+       <height>46</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string/>
+     </property>
+     <widget class="QComboBox" name="CBoxProductLine">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>8</y>
+        <width>170</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Selecionar a Linha do Produto...</string>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="TButtonToolProductLine">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>8</y>
+        <width>30</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Permite fazer alteração nos itens das Linhas de Produtos...</string>
+      </property>
+      <property name="text">
+       <string>...</string>
+      </property>
+      <property name="icon">
+       <iconset resource="../images.qrc">
+        <normaloff>:/images/PNG/128x128/advancedsettings.png</normaloff>:/images/PNG/128x128/advancedsettings.png</iconset>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="GBoxProductUnitOfMeasure">
+     <property name="geometry">
+      <rect>
+       <x>700</x>
+       <y>410</y>
+       <width>220</width>
+       <height>46</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string/>
+     </property>
+     <widget class="QComboBox" name="CBoxProductUnitOfMeasure">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>8</y>
+        <width>170</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Selecionar o Tipo de Unidade de Medidas do Produto...</string>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="TButtonToolProductUnitOfMeasure">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>8</y>
+        <width>30</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Permite fazer alteração nos itens das Unidades de Medidas...</string>
+      </property>
+      <property name="text">
+       <string>...</string>
+      </property>
+      <property name="icon">
+       <iconset resource="../images.qrc">
+        <normaloff>:/images/PNG/128x128/advancedsettings.png</normaloff>:/images/PNG/128x128/advancedsettings.png</iconset>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="TabCodMercosul">
+    <attribute name="title">
+     <string>Mercosul</string>
+    </attribute>
+    <widget class="QGroupBox" name="GBoxDataDocuments">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>981</width>
+       <height>251</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Código Mercosul</string>
+     </property>
+     <widget class="QGroupBox" name="GBoxProductNCMCode">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>200</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>NCM</string>
+      </property>
+      <widget class="QLineEdit" name="LEditProductNCMCode">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>181</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>Informar o NCM Mercosul do Produto...</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="GBoxNoteDocs">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>20</y>
+        <width>691</width>
+        <height>201</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Nota:</string>
+      </property>
+      <widget class="QTextEdit" name="TEditNoteDocs">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>671</width>
+         <height>161</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>Informar uma Observação...</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="GBoxProductEXTIPICode">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>90</y>
+        <width>200</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>EX TIPI</string>
+      </property>
+      <widget class="QLineEdit" name="LEditProductEXTIPICode">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>181</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>Informar o TIPI do Produto...</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="GBoxProductNCMGender">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>160</y>
+        <width>200</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Genero</string>
+      </property>
+      <widget class="QLineEdit" name="LEditProductNCMGender">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>181</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>Informar o Genero do Produto...</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="TabLocalSite">
+    <attribute name="title">
+     <string>Centro de Distribuição</string>
+    </attribute>
+    <widget class="QGroupBox" name="GBoxSite">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>291</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Local/Armazem</string>
+     </property>
+     <widget class="QComboBox" name="CBoxSite">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>240</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Selecionar o Local/Filial/Armazem de Armazenamento do Produto...</string>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="TButtonToolSite">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>20</y>
+        <width>30</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Permite fazer alteração nos itens dos Locais...</string>
+      </property>
+      <property name="text">
+       <string>...</string>
+      </property>
+      <property name="icon">
+       <iconset resource="../images.qrc">
+        <normaloff>:/images/PNG/128x128/advancedsettings.png</normaloff>:/images/PNG/128x128/advancedsettings.png</iconset>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QLabel" name="LBDelimitProduct1_2">
+     <property name="geometry">
+      <rect>
+       <x>530</x>
+       <y>40</y>
+       <width>10</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>/</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="LBDelimitProduct1_3">
+     <property name="geometry">
+      <rect>
+       <x>790</x>
+       <y>40</y>
+       <width>10</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>/</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="LBAddressAisle">
+     <property name="geometry">
+      <rect>
+       <x>310</x>
+       <y>40</y>
+       <width>141</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="text">
+      <string>Corredor/Prateleira</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="LEditAddressRack">
+     <property name="geometry">
+      <rect>
+       <x>550</x>
+       <y>40</y>
+       <width>60</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Informar a Prateleira do local de Armazenamento do Produto...</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="LBAddressLocation">
+     <property name="geometry">
+      <rect>
+       <x>620</x>
+       <y>40</y>
+       <width>91</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="text">
+      <string>Local/Caixa</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="LEditAddressBin">
+     <property name="geometry">
+      <rect>
+       <x>810</x>
+       <y>40</y>
+       <width>60</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Informar a Caixa de Armazenamento do Produto...</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="LEditAddressAisle">
+     <property name="geometry">
+      <rect>
+       <x>460</x>
+       <y>40</y>
+       <width>60</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Informar o Corredor  de Armazenamento do Produto...</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="LEditAddressLocation">
+     <property name="geometry">
+      <rect>
+       <x>720</x>
+       <y>40</y>
+       <width>60</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Informar o Local da Prateleira de Armazenamento do Produto...</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QToolButton" name="TButtonRemoveAllSites">
+     <property name="geometry">
+      <rect>
+       <x>450</x>
+       <y>420</y>
+       <width>90</width>
+       <height>80</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Remover Todos os Locais para o Produto...</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="../images.qrc">
+       <normaloff>:/images/PNG/48x48/2leftarrow-48x48.png</normaloff>:/images/PNG/48x48/2leftarrow-48x48.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>48</width>
+       <height>48</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QToolButton" name="TButtonAddSite">
+     <property name="geometry">
+      <rect>
+       <x>450</x>
+       <y>150</y>
+       <width>90</width>
+       <height>80</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Adicionar um local para o Produto...</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="../images.qrc">
+       <normaloff>:/images/PNG/48x48/1rightarrow-48x48.png</normaloff>:/images/PNG/48x48/1rightarrow-48x48.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>48</width>
+       <height>48</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QToolButton" name="TButtonAddAllSites">
+     <property name="geometry">
+      <rect>
+       <x>450</x>
+       <y>240</y>
+       <width>90</width>
+       <height>80</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Adicionar Todos os  locais para o Produto...</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="../images.qrc">
+       <normaloff>:/images/PNG/48x48/2rightarrow-48x48.png</normaloff>:/images/PNG/48x48/2rightarrow-48x48.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>48</width>
+       <height>48</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QToolButton" name="TButtonRemoveSite">
+     <property name="geometry">
+      <rect>
+       <x>450</x>
+       <y>330</y>
+       <width>90</width>
+       <height>80</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Remover um local para o Produto...</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="../images.qrc">
+       <normaloff>:/images/PNG/48x48/1leftarrow-48x48.png</normaloff>:/images/PNG/48x48/1leftarrow-48x48.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>48</width>
+       <height>48</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QTreeWidget" name="QXtreeWidgetNewAtualSites">
+     <property name="geometry">
+      <rect>
+       <x>590</x>
+       <y>110</y>
+       <width>400</width>
+       <height>400</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Locais/Filiais/Armazens atuais do Produto...</string>
+     </property>
+     <column>
+      <property name="text">
+       <string notr="true">1</string>
+      </property>
+     </column>
+    </widget>
+    <widget class="QTreeWidget" name="QXtreeWidgetAtualSites">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>110</y>
+       <width>400</width>
+       <height>400</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Locais/Filiais/Armazens disponíveis para Produtos...</string>
+     </property>
+     <property name="statusTip">
+      <string/>
+     </property>
+     <column>
+      <property name="text">
+       <string notr="true">1</string>
+      </property>
+     </column>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="TabPlanner">
+    <attribute name="title">
+     <string>Planejamento</string>
+    </attribute>
+    <widget class="QGroupBox" name="GBoxProductStockMax">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>80</y>
+       <width>190</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Estoque Max</string>
+     </property>
+     <widget class="QLineEdit" name="LEditProductStockMax">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>170</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Informar o  Estoque Maximo Permitido do Produto...</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="GBoxProductTimOfDelivery">
+     <property name="geometry">
+      <rect>
+       <x>290</x>
+       <y>80</y>
+       <width>190</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Prazo Entrega/Fabricação</string>
+     </property>
+     <widget class="QLineEdit" name="LEditProductTimeOfDelivery">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>170</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Informar o Prazo de Entrega ou de Fabricação do Produto...</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="GBoxProductStockMin">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>190</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Estoque Minimo</string>
+     </property>
+     <widget class="QLineEdit" name="LEditProductStockMin">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>170</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Informar o estoque minimo permitido do Produto...</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="GBoxProductAverageDaily">
+     <property name="geometry">
+      <rect>
+       <x>290</x>
+       <y>20</y>
+       <width>190</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Média Venda</string>
+     </property>
+     <widget class="QLineEdit" name="LEditProductAverageDaily">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>170</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Exibe a Media de Venda do Produto Semanal...</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="TabSetup">
+    <attribute name="title">
+     <string>Configuração</string>
+    </attribute>
+    <widget class="QToolButton" name="TButtonValidateSetup">
+     <property name="geometry">
+      <rect>
+       <x>890</x>
+       <y>460</y>
+       <width>90</width>
+       <height>80</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Valida os Campos Obrigatórios...</string>
+     </property>
+     <property name="text">
+      <string>Validar</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../images.qrc">
+       <normaloff>:/images/PNG/120x120/120px-Gtk-refresh.png</normaloff>:/images/PNG/120x120/120px-Gtk-refresh.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>48</width>
+       <height>48</height>
+      </size>
+     </property>
+     <property name="toolButtonStyle">
+      <enum>Qt::ToolButtonTextUnderIcon</enum>
+     </property>
+    </widget>
+    <widget class="QGroupBox" name="GBoxProductICMSGroup">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>221</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Grupo de ICMS</string>
+     </property>
+     <widget class="QComboBox" name="CBoxProductICMSGroup">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>171</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Selecionar o Tipo de ICMS para o Produto...</string>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="TButtonToolProductICMSGroup">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>20</y>
+        <width>30</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Permite fazer alteração nos itens dos Grupos de ICMS...</string>
+      </property>
+      <property name="text">
+       <string>...</string>
+      </property>
+      <property name="icon">
+       <iconset resource="../images.qrc">
+        <normaloff>:/images/PNG/128x128/advancedsettings.png</normaloff>:/images/PNG/128x128/advancedsettings.png</iconset>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="GBoxProductIPIGroup">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>100</y>
+       <width>221</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Grupo de IPI</string>
+     </property>
+     <widget class="QComboBox" name="CBoxProductIPIGroup">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>171</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Selecionar o Tipo de IPI para o Produto...</string>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="TButtonToolProductIPIGroup">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>20</y>
+        <width>30</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Permite fazer alteração nos itens dos Grupos de IPI...</string>
+      </property>
+      <property name="text">
+       <string>...</string>
+      </property>
+      <property name="icon">
+       <iconset resource="../images.qrc">
+        <normaloff>:/images/PNG/128x128/advancedsettings.png</normaloff>:/images/PNG/128x128/advancedsettings.png</iconset>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="GBoxProductPurchaserPrice">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>30</y>
+       <width>180</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Preço de Compra R$</string>
+     </property>
+     <widget class="QLineEdit" name="LEditProductPurchaserPrice">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>160</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Exibe o Preço de Compra do Produto...</string>
+      </property>
+      <property name="inputMethodHints">
+       <set>Qt::ImhFormattedNumbersOnly</set>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="GBoxProductPriceFloor">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>100</y>
+       <width>181</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Preço Proposto R$</string>
+     </property>
+     <widget class="QLineEdit" name="LEditProductPriceFloor">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>161</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Exibe o Preço Proposto do Produto...</string>
+      </property>
+      <property name="inputMethodHints">
+       <set>Qt::ImhFormattedNumbersOnly</set>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="GBoxProductPriceSale">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>170</y>
+       <width>181</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Preço de Venda R$</string>
+     </property>
+     <widget class="QLineEdit" name="LEditProductPriceSale">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>161</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Exibe o Preço de Vendas do Produto...</string>
+      </property>
+      <property name="inputMethodHints">
+       <set>Qt::ImhFormattedNumbersOnly</set>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="GBoxProductMarkupSingle">
+     <property name="geometry">
+      <rect>
+       <x>540</x>
+       <y>30</y>
+       <width>180</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Margem Liquida R$</string>
+     </property>
+     <widget class="QLineEdit" name="LEditProductMarkupSingle">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>160</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Exibe a Margem Líquida do Produto...</string>
+      </property>
+      <property name="inputMethodHints">
+       <set>Qt::ImhFormattedNumbersOnly</set>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="GBoxProductMarkupRough">
+     <property name="geometry">
+      <rect>
+       <x>540</x>
+       <y>100</y>
+       <width>181</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Margem Bruta R$</string>
+     </property>
+     <widget class="QLineEdit" name="LEditProductMarkupRough">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>161</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Exibe a Magem Bruta do Produto...</string>
+      </property>
+      <property name="inputMethodHints">
+       <set>Qt::ImhFormattedNumbersOnly</set>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="GBoxProductPremiumCat">
+     <property name="geometry">
+      <rect>
+       <x>540</x>
+       <y>170</y>
+       <width>211</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Comissão por Categoria</string>
+     </property>
+     <widget class="QComboBox" name="CBoxProductIPremiumCat">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>160</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Selecionar Comissão por Categoria do Produto...</string>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="TButtonToolProductPremiumCat">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>20</y>
+        <width>30</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Permite fazer alteração nos itens das Comissões...</string>
+      </property>
+      <property name="text">
+       <string>...</string>
+      </property>
+      <property name="icon">
+       <iconset resource="../images.qrc">
+        <normaloff>:/images/PNG/128x128/advancedsettings.png</normaloff>:/images/PNG/128x128/advancedsettings.png</iconset>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="GBoxProductPriceList">
+     <property name="geometry">
+      <rect>
+       <x>780</x>
+       <y>30</y>
+       <width>211</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Lista de Preço</string>
+     </property>
+     <widget class="QComboBox" name="CBoxProductPriceList">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>160</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Exibe Lista de Preços, Atual em uso...</string>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="TButtonToolProductPriceList">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>20</y>
+        <width>30</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Permite fazer alteração nos itens das Listas de Preços...</string>
+      </property>
+      <property name="text">
+       <string>...</string>
+      </property>
+      <property name="icon">
+       <iconset resource="../images.qrc">
+        <normaloff>:/images/PNG/128x128/advancedsettings.png</normaloff>:/images/PNG/128x128/advancedsettings.png</iconset>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QCheckBox" name="CKBoxProductEnableDecimal">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>250</y>
+       <width>211</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Marcar para habilitar casas decimais para operações com o Produto...</string>
+     </property>
+     <property name="text">
+      <string>Permite Casas Decimais</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="CKBoxProductEnableLabel">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>290</y>
+       <width>231</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Marcar para permitir que seja gerada etiquetas para o  Produto...</string>
+     </property>
+     <property name="text">
+      <string>Permite Geração de Etiqueta</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="CKBoxProductGenerateInvoice">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>330</y>
+       <width>221</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Marcar para permitir que seja gerado notas fiscais para o Produto...</string>
+     </property>
+     <property name="text">
+      <string>Permite Geração de Faturas</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QToolButton" name="TButtonCleanForm">
+   <property name="geometry">
+    <rect>
+     <x>560</x>
+     <y>620</y>
+     <width>90</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>Limpa o Formulário para Preencher Novamente...</string>
+   </property>
+   <property name="text">
+    <string>Limpar</string>
+   </property>
+   <property name="icon">
+    <iconset resource="../images.qrc">
+     <normaloff>:/images/PNG/48x48/Rebuild-48x48.png</normaloff>:/images/PNG/48x48/Rebuild-48x48.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>48</width>
+     <height>48</height>
+    </size>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextUnderIcon</enum>
+   </property>
+  </widget>
+  <widget class="QToolButton" name="TButtonSave">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>620</y>
+     <width>90</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>Salva os dados do Formulário...</string>
+   </property>
+   <property name="text">
+    <string>Salvar</string>
+   </property>
+   <property name="icon">
+    <iconset resource="../images.qrc">
+     <normaloff>:/images/PNG/120x120/120px-System-floppy.png</normaloff>:/images/PNG/120x120/120px-System-floppy.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>48</width>
+     <height>48</height>
+    </size>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextUnderIcon</enum>
+   </property>
+  </widget>
+  <widget class="QToolButton" name="TButtonExit">
+   <property name="geometry">
+    <rect>
+     <x>460</x>
+     <y>620</y>
+     <width>90</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>Fecha a Janela Descartando Mudanças...</string>
+   </property>
+   <property name="text">
+    <string>Saída</string>
+   </property>
+   <property name="icon">
+    <iconset resource="../images.qrc">
+     <normaloff>:/images/PNG/48x48/Exithome-48x48.png</normaloff>:/images/PNG/48x48/Exithome-48x48.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>48</width>
+     <height>48</height>
+    </size>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextUnderIcon</enum>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../images.qrc"/>
+ </resources>
+ <connections/>
+</ui>

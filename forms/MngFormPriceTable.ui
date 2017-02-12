@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MngFormPriceTable</class>
+ <widget class="QDialog" name="MngFormPriceTable">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1010</width>
+    <height>710</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MngFormPriceTable</string>
+  </property>
+  <widget class="QGroupBox" name="GBoxPriceTable">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>210</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Tabelas</string>
+   </property>
+   <widget class="QComboBox" name="CBoxPriceTable">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>190</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>Deixe em Selecione para Gerar uma Nova Tabela...</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="GBoxDateSchedule">
+   <property name="geometry">
+    <rect>
+     <x>540</x>
+     <y>10</y>
+     <width>461</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Validade</string>
+   </property>
+   <widget class="QLabel" name="LBStartDate">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>81</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Data Início:</string>
+    </property>
+   </widget>
+   <widget class="QDateEdit" name="DEditStartDate">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>20</y>
+      <width>110</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>Informe a Data de Início de Validação da Tabela...</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="date">
+     <date>
+      <year>2000</year>
+      <month>1</month>
+      <day>1</day>
+     </date>
+    </property>
+    <property name="displayFormat">
+     <string>dd/MM/yyyy</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="LBEndDate">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>20</y>
+      <width>81</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Data Fim:</string>
+    </property>
+   </widget>
+   <widget class="QDateEdit" name="DEditEndDate">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>20</y>
+      <width>110</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>Informe a Data de Termino da Validação da Tabela...</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="displayFormat">
+     <string>dd/MM/yyyy</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="GBoxCategory">
+   <property name="geometry">
+    <rect>
+     <x>540</x>
+     <y>80</y>
+     <width>231</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Categoria</string>
+   </property>
+   <widget class="QComboBox" name="CBoxCategory">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>211</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>Seleciona a Categoria do Produto...</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="GBoxSubCategory">
+   <property name="geometry">
+    <rect>
+     <x>780</x>
+     <y>80</y>
+     <width>221</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Sub-Categoria</string>
+   </property>
+   <widget class="QComboBox" name="CBoxSubCategory">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>200</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>Selecionar a Sub-Categoria do Produto...</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="GBoxLocalSite">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>80</y>
+     <width>210</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Local</string>
+   </property>
+   <widget class="QComboBox" name="CBoxLocalSite">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>190</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>Selecionar o Local Deposito/Filial do Produto...</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="GBoxSupplier">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>80</y>
+     <width>301</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Fornecedor</string>
+   </property>
+   <widget class="QComboBox" name="CBoxSupplier">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>281</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>Selecionar o Fornecedor do Produto...</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="GBoxAdjustmentOption">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>140</y>
+     <width>451</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Opções de Ajustes</string>
+   </property>
+   <widget class="QGroupBox" name="GBoxAdjustment">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>181</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Acrescimo/Decrescimo</string>
+    </property>
+    <widget class="QComboBox" name="CBoxAdjustment">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>161</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Selecione o Tipo de Operação a ser Aplicada ao Preço de Vendas do Produto...</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="GBoxPercent">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>20</y>
+      <width>131</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Percentual (%)</string>
+    </property>
+    <widget class="QLineEdit" name="LEditPercent">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>113</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Informe o Percentual (%), a ser Aplicado ao Preço do Produto...</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QToolButton" name="toolButton">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>20</y>
+      <width>70</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>Pressione para Aplicar o Percentual(%), ao Tipo de Ajuste Selecionado para os Produtos...</string>
+    </property>
+    <property name="text">
+     <string>+</string>
+    </property>
+    <property name="icon">
+     <iconset resource="../../../../../batista/Aplications/App-Camadas/AppAccount/images.qrc">
+      <normaloff>:/images/PNG/128x128/old-go-down-128x128.png</normaloff>:/images/PNG/128x128/old-go-down-128x128.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>40</width>
+      <height>40</height>
+     </size>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QTableWidget" name="TBWidgetPriceTable">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>240</y>
+     <width>991</width>
+     <height>361</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>Produtos da Tabela com Ajustes...</string>
+   </property>
+  </widget>
+  <widget class="QToolButton" name="TButtonExit">
+   <property name="geometry">
+    <rect>
+     <x>810</x>
+     <y>620</y>
+     <width>90</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>Fechar a Janela...</string>
+   </property>
+   <property name="text">
+    <string>Saída</string>
+   </property>
+   <property name="icon">
+    <iconset resource="../../../../../batista/Aplications/App-Camadas/AppAccount/images.qrc">
+     <normaloff>:/images/PNG/48x48/Exithome-48x48.png</normaloff>:/images/PNG/48x48/Exithome-48x48.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>48</width>
+     <height>48</height>
+    </size>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextUnderIcon</enum>
+   </property>
+  </widget>
+  <widget class="QToolButton" name="TButtonCleanTable">
+   <property name="geometry">
+    <rect>
+     <x>910</x>
+     <y>620</y>
+     <width>90</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>Limpar a Tabela...</string>
+   </property>
+   <property name="text">
+    <string>Limpar</string>
+   </property>
+   <property name="icon">
+    <iconset resource="../../../../../batista/Aplications/App-Camadas/AppAccount/images.qrc">
+     <normaloff>:/images/PNG/48x48/Rebuild-48x48.png</normaloff>:/images/PNG/48x48/Rebuild-48x48.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>48</width>
+     <height>48</height>
+    </size>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextUnderIcon</enum>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../../../../../batista/Aplications/App-Camadas/AppAccount/images.qrc"/>
+ </resources>
+ <connections/>
+</ui>

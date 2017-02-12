@@ -1,0 +1,890 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MngFormStockByNf</class>
+ <widget class="QDialog" name="MngFormStockByNf">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1010</width>
+    <height>710</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MngFormStockByNf</string>
+  </property>
+  <widget class="QTabWidget" name="TabWidgetNf">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1009</width>
+     <height>610</height>
+    </rect>
+   </property>
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
+   <widget class="QWidget" name="TabNfData">
+    <attribute name="title">
+     <string>Dados Nota Fiscal</string>
+    </attribute>
+    <widget class="QGroupBox" name="GBoxDateOfBill">
+     <property name="geometry">
+      <rect>
+       <x>500</x>
+       <y>70</y>
+       <width>160</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Data da Nf.</string>
+     </property>
+     <widget class="QDateEdit" name="DEditDateOfBill">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>140</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Informe a data da Emissão da Nota Fiscal de Entradas...</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="GBoxProductsTotal">
+     <property name="geometry">
+      <rect>
+       <x>500</x>
+       <y>190</y>
+       <width>160</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Total Produtos R$</string>
+     </property>
+     <widget class="QLineEdit" name="LEditProductTotal">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>140</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Informar o Total de Produtos da Nota Fiscal...</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="GBoxInsurance">
+     <property name="geometry">
+      <rect>
+       <x>840</x>
+       <y>10</y>
+       <width>160</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Seguro R$</string>
+     </property>
+     <widget class="QLineEdit" name="LEditInsurance">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>140</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Informar o Valor do Seguro, caso Tenha...</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="GBoxSupplier">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>80</y>
+       <width>400</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Fornecedor</string>
+     </property>
+     <widget class="QComboBox" name="CBoxSupplier">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>381</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Selecionar o Fornecedor do Produto...</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="GBoxTransport">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>220</y>
+       <width>400</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Transportadora</string>
+     </property>
+     <widget class="QComboBox" name="CBoxTransport">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>381</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Selecionar a Transportadora de Transportes...</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="GBoxFreight">
+     <property name="geometry">
+      <rect>
+       <x>670</x>
+       <y>10</y>
+       <width>160</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Frete R$</string>
+     </property>
+     <widget class="QLineEdit" name="LEditFreight">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>140</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Informar o Frete de Recebimento...</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="GBoxIPITax">
+     <property name="geometry">
+      <rect>
+       <x>840</x>
+       <y>70</y>
+       <width>160</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>IPI R$</string>
+     </property>
+     <widget class="QLineEdit" name="LEditIPITax">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>140</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Informar o Total de IPI da Nota Fiscal...</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="GBoxNFTotal">
+     <property name="geometry">
+      <rect>
+       <x>670</x>
+       <y>190</y>
+       <width>160</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Total Notal Fiscal R$</string>
+     </property>
+     <widget class="QLineEdit" name="LEditNFTotal">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>140</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Informar o Valor Total da Nota Fiscal...</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="GBoxDiscount">
+     <property name="geometry">
+      <rect>
+       <x>670</x>
+       <y>130</y>
+       <width>160</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string> Desconto R$</string>
+     </property>
+     <widget class="QLineEdit" name="LEditDiscount">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>140</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Informar os Descontos, caso Tenha...</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="GBoxPurchaseOrder">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>150</y>
+       <width>201</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Número Pedido</string>
+     </property>
+     <widget class="QComboBox" name="BoxPurchaseOrder">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>181</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Selecionar o Número do Pedido de Compras, caso Tenha...</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="GBoxDatePurchase">
+     <property name="geometry">
+      <rect>
+       <x>500</x>
+       <y>130</y>
+       <width>160</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Data do Pedido</string>
+     </property>
+     <widget class="QDateEdit" name="DEditDatePurchase">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>140</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Informar a data de Geração do Pedido...</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="GBoxICMSTax">
+     <property name="geometry">
+      <rect>
+       <x>670</x>
+       <y>70</y>
+       <width>160</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>ICMS Total R$</string>
+     </property>
+     <widget class="QLineEdit" name="LEditICMSTax">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>140</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Informar o Total de ICMS da Nota Fiscal...</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="GBoxUnitSite">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>210</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Unidade</string>
+     </property>
+     <widget class="QComboBox" name="CBoxLocalSite">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>191</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Selecionar o Local Deposito/Filial do Produto...</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="GBoxOverHeads">
+     <property name="geometry">
+      <rect>
+       <x>840</x>
+       <y>130</y>
+       <width>160</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Despesas Variaveis R$</string>
+     </property>
+     <widget class="QLineEdit" name="LEditOverHeads">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>140</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Informar Outras Despesas, caso Tenha...</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="GBoxBillOfEntry">
+     <property name="geometry">
+      <rect>
+       <x>500</x>
+       <y>10</y>
+       <width>160</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Nota Fiscal</string>
+     </property>
+     <widget class="QLineEdit" name="LEditBillOfEntry">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>140</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Informe o Número da Nota Fiscal de Entrada...</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="GBoxNote">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>330</y>
+       <width>991</width>
+       <height>131</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Nota</string>
+     </property>
+     <widget class="QTextEdit" name="TEditNote">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>971</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Informar uma Observação para a Nota Fiscal...</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QToolButton" name="TButtonValidFormNf">
+     <property name="geometry">
+      <rect>
+       <x>810</x>
+       <y>470</y>
+       <width>90</width>
+       <height>80</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Validar campos e dados..</string>
+     </property>
+     <property name="text">
+      <string>Validar</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../../../../../batista/Aplications/App-Camadas/AppAccount/images.qrc">
+       <normaloff>:/images/PNG/120x120/120px-Gtk-refresh.png</normaloff>:/images/PNG/120x120/120px-Gtk-refresh.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>48</width>
+       <height>48</height>
+      </size>
+     </property>
+     <property name="toolButtonStyle">
+      <enum>Qt::ToolButtonTextUnderIcon</enum>
+     </property>
+    </widget>
+    <widget class="QToolButton" name="TButtonCleanForm">
+     <property name="geometry">
+      <rect>
+       <x>910</x>
+       <y>470</y>
+       <width>90</width>
+       <height>80</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Limpa o Formulário para Preencher Novamente...</string>
+     </property>
+     <property name="text">
+      <string>Limpar</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../../../../../batista/Aplications/App-Camadas/AppAccount/images.qrc">
+       <normaloff>:/images/PNG/48x48/Rebuild-48x48.png</normaloff>:/images/PNG/48x48/Rebuild-48x48.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>48</width>
+       <height>48</height>
+      </size>
+     </property>
+     <property name="toolButtonStyle">
+      <enum>Qt::ToolButtonTextUnderIcon</enum>
+     </property>
+    </widget>
+    <widget class="QGroupBox" name="GBoxOverHeadsFixed">
+     <property name="geometry">
+      <rect>
+       <x>840</x>
+       <y>190</y>
+       <width>160</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Despesas Fixas R$</string>
+     </property>
+     <widget class="QLineEdit" name="LEditOverHeadsFixed">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>140</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Informar Outras Despesas, caso Tenha...</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="GBoxMarkUP">
+     <property name="geometry">
+      <rect>
+       <x>500</x>
+       <y>250</y>
+       <width>160</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Mark-UP     % </string>
+     </property>
+     <widget class="QLineEdit" name="LEditMarkUP">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>140</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Informar Outras Despesas, caso Tenha...</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="TabProducts">
+    <attribute name="title">
+     <string>Intens da Nota Fiscal</string>
+    </attribute>
+    <widget class="QGroupBox" name="GBoxFullDescription">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>120</y>
+       <width>520</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Descrição Completa</string>
+     </property>
+     <widget class="QLineEdit" name="LEditFullDescription">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>500</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Mostra a  Descrição do Produto...</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="GBoxCategory">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>0</y>
+       <width>221</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Categoria</string>
+     </property>
+     <widget class="QComboBox" name="CBoxCategory">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>200</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Seleciona a Categoria do Produto...</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="GBoxSearchProductDesc">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>60</y>
+       <width>520</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Pesquisar</string>
+     </property>
+     <widget class="QComboBox" name="CBoxSearchProduct">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>500</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Selecionar ou Digitar o Código/Descrição do Produto...</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="GBoxSubCategory">
+     <property name="geometry">
+      <rect>
+       <x>270</x>
+       <y>0</y>
+       <width>221</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Sub-Categoria</string>
+     </property>
+     <widget class="QComboBox" name="CBoxSubCategory">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>200</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Selecionar a Sub-Categoria do Produto...</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QToolButton" name="TButtonProductAdd">
+     <property name="geometry">
+      <rect>
+       <x>850</x>
+       <y>210</y>
+       <width>90</width>
+       <height>80</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Clicar para Adicionar o  Produto na Lista de Recebimentos...</string>
+     </property>
+     <property name="text">
+      <string>Adicionar</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../../../../../batista/Aplications/App-Camadas/AppAccount/images.qrc">
+       <normaloff>:/images/PNG/128x128/agt_action_success-128.png</normaloff>:/images/PNG/128x128/agt_action_success-128.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>48</width>
+       <height>48</height>
+      </size>
+     </property>
+     <property name="toolButtonStyle">
+      <enum>Qt::ToolButtonTextUnderIcon</enum>
+     </property>
+    </widget>
+    <widget class="QGroupBox" name="GBoxProductCode">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>120</y>
+       <width>141</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Código</string>
+     </property>
+     <widget class="QLineEdit" name="LEditProductCode">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>120</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Mostra o Código do Produto...</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="GBoxProductQuantity">
+     <property name="geometry">
+      <rect>
+       <x>690</x>
+       <y>120</y>
+       <width>131</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Quant.</string>
+     </property>
+     <widget class="QLineEdit" name="LEditProductQuantity">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>113</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Informar a Quantidade a Ser Lançada da Nota Fiscal...</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QTableView" name="TbViewProducts">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>200</y>
+       <width>811</width>
+       <height>361</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Tabela com os Produtos da Nota Fiscal...</string>
+     </property>
+    </widget>
+    <widget class="QToolButton" name="TButtonProductDelete">
+     <property name="geometry">
+      <rect>
+       <x>850</x>
+       <y>310</y>
+       <width>90</width>
+       <height>80</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Remove um Item da Lista,  para Correção...</string>
+     </property>
+     <property name="text">
+      <string>Remover</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../../../../../batista/Aplications/App-Camadas/AppAccount/images.qrc">
+       <normaloff>:/images/PNG/128x128/agt_action_fail1-128.png</normaloff>:/images/PNG/128x128/agt_action_fail1-128.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>48</width>
+       <height>48</height>
+      </size>
+     </property>
+     <property name="toolButtonStyle">
+      <enum>Qt::ToolButtonTextUnderIcon</enum>
+     </property>
+    </widget>
+    <widget class="QGroupBox" name="GBoxProductPrice">
+     <property name="geometry">
+      <rect>
+       <x>830</x>
+       <y>120</y>
+       <width>131</width>
+       <height>60</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Preço R$</string>
+     </property>
+     <widget class="QLineEdit" name="LEditProductPrice">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>113</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Informar o Custo de Compra do Produto da Nota Fiscal...</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QToolButton" name="TButtonSave">
+   <property name="geometry">
+    <rect>
+     <x>110</x>
+     <y>620</y>
+     <width>90</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>Salva os Dados de Recebimento...</string>
+   </property>
+   <property name="text">
+    <string>Salvar</string>
+   </property>
+   <property name="icon">
+    <iconset resource="../../../../../batista/Aplications/App-Camadas/AppAccount/images.qrc">
+     <normaloff>:/images/PNG/120x120/120px-System-floppy.png</normaloff>:/images/PNG/120x120/120px-System-floppy.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>48</width>
+     <height>48</height>
+    </size>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextUnderIcon</enum>
+   </property>
+  </widget>
+  <widget class="QToolButton" name="TButtonExit">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>620</y>
+     <width>90</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>Fecha a Janela Descartando Mudanças...</string>
+   </property>
+   <property name="text">
+    <string>Saída</string>
+   </property>
+   <property name="icon">
+    <iconset resource="../../../../../batista/Aplications/App-Camadas/AppAccount/images.qrc">
+     <normaloff>:/images/PNG/48x48/Exithome-48x48.png</normaloff>:/images/PNG/48x48/Exithome-48x48.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>48</width>
+     <height>48</height>
+    </size>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextUnderIcon</enum>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../../../../../batista/Aplications/App-Camadas/AppAccount/images.qrc"/>
+ </resources>
+ <connections/>
+</ui>

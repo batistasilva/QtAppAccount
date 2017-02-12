@@ -1,0 +1,949 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MngFormStockByProduct</class>
+ <widget class="QDialog" name="MngFormStockByProduct">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1010</width>
+    <height>710</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1010</width>
+    <height>710</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1010</width>
+    <height>710</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MngFormStockByProduct</string>
+  </property>
+  <widget class="QTabWidget" name="TabWidgetEntryStock">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1001</width>
+     <height>591</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>Seleciona a Categoria do Produto...</string>
+   </property>
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
+   <widget class="QWidget" name="TabEntryStock">
+    <attribute name="title">
+     <string>Entrada de Estoque</string>
+    </attribute>
+    <widget class="QToolButton" name="TButtonCleanForm">
+     <property name="geometry">
+      <rect>
+       <x>880</x>
+       <y>460</y>
+       <width>90</width>
+       <height>80</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Limpa o Formulário para Preencher Novamente...</string>
+     </property>
+     <property name="text">
+      <string>Limpar</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../../../../../batista/Aplications/App-Camadas/AppAccount/images.qrc">
+       <normaloff>:/images/PNG/48x48/Rebuild-48x48.png</normaloff>:/images/PNG/48x48/Rebuild-48x48.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>48</width>
+       <height>48</height>
+      </size>
+     </property>
+     <property name="toolButtonStyle">
+      <enum>Qt::ToolButtonTextUnderIcon</enum>
+     </property>
+    </widget>
+    <widget class="QToolButton" name="TButtonSave">
+     <property name="geometry">
+      <rect>
+       <x>780</x>
+       <y>460</y>
+       <width>90</width>
+       <height>80</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Confirmar a Atualização do Estoque para o Produto...</string>
+     </property>
+     <property name="text">
+      <string>Salvar</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../../../../../batista/Aplications/App-Camadas/AppAccount/images.qrc">
+       <normaloff>:/images/PNG/120x120/120px-System-floppy.png</normaloff>:/images/PNG/120x120/120px-System-floppy.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>48</width>
+       <height>48</height>
+      </size>
+     </property>
+     <property name="toolButtonStyle">
+      <enum>Qt::ToolButtonTextUnderIcon</enum>
+     </property>
+    </widget>
+    <widget class="QGroupBox" name="GBoxProduct">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>130</y>
+       <width>971</width>
+       <height>311</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Produto</string>
+     </property>
+     <widget class="QGroupBox" name="GBoxProductCode">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>211</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Código</string>
+      </property>
+      <widget class="QComboBox" name="CBoxProductCode">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>161</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>Selecionar ou Digitar o Código do Produto...</string>
+       </property>
+      </widget>
+      <widget class="QToolButton" name="TButtonProductSearch">
+       <property name="geometry">
+        <rect>
+         <x>170</x>
+         <y>20</y>
+         <width>30</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>Clicar para Pesquisar o Produto pelo Código Informado...</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="../../../../../batista/Aplications/App-Camadas/AppAccount/images.qrc">
+         <normaloff>:/images/PNG/24x24/Search.png</normaloff>:/images/PNG/24x24/Search.png</iconset>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="GBoxFullDescription">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>20</y>
+        <width>731</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Descrição Completa</string>
+      </property>
+      <widget class="QLineEdit" name="LEditFullDescription">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>711</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>Informar uma Descrição para Pesquisa do Produto...</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="GBoxActualStock">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>110</y>
+        <width>211</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Estoque Atual</string>
+      </property>
+      <widget class="QLineEdit" name="LEditActualStock">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>190</width>
+         <height>27</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>Exibe o Estoque Atual do Produto...</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QLabel" name="LabelStockSum">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>130</y>
+        <width>30</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Verdana</family>
+        <pointsize>14</pointsize>
+        <weight>75</weight>
+        <italic>false</italic>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{font-color:rgb(170, 255, 0);}</string>
+      </property>
+      <property name="text">
+       <string>+</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="GBoxStockSum">
+      <property name="geometry">
+       <rect>
+        <x>370</x>
+        <y>110</y>
+        <width>211</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Estoque Soma</string>
+      </property>
+      <widget class="QLineEdit" name="LEditStockSum">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>190</width>
+         <height>27</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>Informar o Estoque a ser Acrescentado ao Atual...</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QLabel" name="LabelStockEqual">
+      <property name="geometry">
+       <rect>
+        <x>650</x>
+        <y>130</y>
+        <width>30</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Verdana</family>
+        <pointsize>14</pointsize>
+        <weight>75</weight>
+        <italic>false</italic>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-color:rgb(170, 255, 0);</string>
+      </property>
+      <property name="text">
+       <string>=</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="GBoxNewActualStock">
+      <property name="geometry">
+       <rect>
+        <x>750</x>
+        <y>110</y>
+        <width>211</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Novo Estoque Atual</string>
+      </property>
+      <widget class="QLineEdit" name="LEditNewActualStock">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>190</width>
+         <height>27</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>Exibe o Novo Estoque Atual sem a Atualização Confirmada...</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="GBoxNote">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>180</y>
+        <width>951</width>
+        <height>111</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Nota</string>
+      </property>
+      <widget class="QTextEdit" name="TEditNoteEntry">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>931</width>
+         <height>78</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>Informa uma Nota Referente a Atualização que está sendo Feita...</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="GBoxFilter">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>971</width>
+       <height>101</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Filtros</string>
+     </property>
+     <widget class="QGroupBox" name="GBoxLocalSite">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>210</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Local</string>
+      </property>
+      <widget class="QComboBox" name="CBoxLocalSite">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>191</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>Selecionar o Local Deposito/Filial do Produto...</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="GBoxSupplier">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>20</y>
+        <width>270</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Fornecedor</string>
+      </property>
+      <widget class="QComboBox" name="CBoxSupplier">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>251</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>Selecionar o Fornecedor do Produto...</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="GBoxCategory">
+      <property name="geometry">
+       <rect>
+        <x>510</x>
+        <y>20</y>
+        <width>221</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Categoria</string>
+      </property>
+      <widget class="QComboBox" name="CBoxCategory">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>200</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>Seleciona a Categoria do Produto...</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="GBoxSubCategory">
+      <property name="geometry">
+       <rect>
+        <x>740</x>
+        <y>20</y>
+        <width>221</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Sub-Categoria</string>
+      </property>
+      <widget class="QComboBox" name="CBoxSubCategory">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>200</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>Selecionar a Sub-Categoria do Produto...</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="TabFixStock">
+    <attribute name="title">
+     <string>Acerto de Estoque</string>
+    </attribute>
+    <widget class="QGroupBox" name="GBoxProductStockFix">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>130</y>
+       <width>971</width>
+       <height>311</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Produto</string>
+     </property>
+     <widget class="QGroupBox" name="GBoxProductCodeStockFix">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>211</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Código</string>
+      </property>
+      <widget class="QComboBox" name="CBoxProductCodeStockFix">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>161</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>Selecionar ou Digitar o Código do Produto...</string>
+       </property>
+      </widget>
+      <widget class="QToolButton" name="TButtonProductSearchStockFix">
+       <property name="geometry">
+        <rect>
+         <x>170</x>
+         <y>20</y>
+         <width>30</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>Clicar para Pesquisar o Produto pelo Código Informado...</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="../../../../../batista/Aplications/App-Camadas/AppAccount/images.qrc">
+         <normaloff>:/images/PNG/24x24/Search.png</normaloff>:/images/PNG/24x24/Search.png</iconset>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="GBoxFullDescriptionStockFix">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>20</y>
+        <width>731</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Descrição Completa</string>
+      </property>
+      <widget class="QLineEdit" name="LEditFullDescriptionStockFix">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>711</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>Informar uma Descrição para Pesquisa do Produto...</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="GBoxActualStockFix">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>110</y>
+        <width>211</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Estoque Atual</string>
+      </property>
+      <widget class="QLineEdit" name="LEditActualStockFix">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>190</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>Exibe o Estoque Atual do Produto...</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QLabel" name="LabelStockEqualStockFix">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>130</y>
+        <width>30</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Verdana</family>
+        <pointsize>14</pointsize>
+        <weight>75</weight>
+        <italic>false</italic>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel{font-color:rgb(170, 255, 0);}</string>
+      </property>
+      <property name="text">
+       <string>=</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="GBoxStockFixNewValue">
+      <property name="geometry">
+       <rect>
+        <x>370</x>
+        <y>110</y>
+        <width>211</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Valor Correção do Estoque</string>
+      </property>
+      <widget class="QLineEdit" name="LEditStockFixNewValue">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>190</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>Informar o Novo Estoque Atual do Produto...</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QLabel" name="LabelStockFixNewEqual">
+      <property name="geometry">
+       <rect>
+        <x>650</x>
+        <y>130</y>
+        <width>30</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Verdana</family>
+        <pointsize>14</pointsize>
+        <weight>75</weight>
+        <italic>false</italic>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-color:rgb(170, 255, 0);</string>
+      </property>
+      <property name="text">
+       <string>=</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="GBoxNewActualStockFix">
+      <property name="geometry">
+       <rect>
+        <x>750</x>
+        <y>110</y>
+        <width>211</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Novo Estoque Atual</string>
+      </property>
+      <widget class="QLineEdit" name="LEditNewActualStockFix">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>190</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>Exibe o Novo Estoque Atual do Produto sem a Confirmação de Alteração...</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="GBoxNoteStockFix">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>180</y>
+        <width>951</width>
+        <height>111</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Nota</string>
+      </property>
+      <widget class="QTextEdit" name="TEditNoteEntryStockFix">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>931</width>
+         <height>78</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>Informa uma Nota Referente ao Acerto do Estoque  que está sendo Feito...</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="GBoxFilterStockFix">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>971</width>
+       <height>101</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Filtros</string>
+     </property>
+     <widget class="QGroupBox" name="GBoxLocalSiteStockFix">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>210</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Local</string>
+      </property>
+      <widget class="QComboBox" name="CBoxLocalSiteStockFix">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>191</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>Selecionar o Local Deposito/Filial do Produto...</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="GBoxSupplierStockFix">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>20</y>
+        <width>270</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Fornecedor</string>
+      </property>
+      <widget class="QComboBox" name="CBoxSupplierStockFix">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>251</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>Selecionar o Fornecedor do Produto...</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="GBoxCategoryStockFix">
+      <property name="geometry">
+       <rect>
+        <x>510</x>
+        <y>20</y>
+        <width>221</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Categoria</string>
+      </property>
+      <widget class="QComboBox" name="CBoxCategoryStockFix">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>200</width>
+         <height>30</height>
+        </rect>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="GBoxSubCategoryStockFix">
+      <property name="geometry">
+       <rect>
+        <x>740</x>
+        <y>20</y>
+        <width>221</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Sub-Categoria</string>
+      </property>
+      <widget class="QComboBox" name="CBoxSubCategoryStockFix">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>200</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>Selecionar a Sub-Categoria do Produto...</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QToolButton" name="TButtonCleanFormStockFix">
+     <property name="geometry">
+      <rect>
+       <x>880</x>
+       <y>460</y>
+       <width>90</width>
+       <height>80</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Limpa o Formulário para Preencher Novamente...</string>
+     </property>
+     <property name="text">
+      <string>Limpar</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../../../../../batista/Aplications/App-Camadas/AppAccount/images.qrc">
+       <normaloff>:/images/PNG/48x48/Rebuild-48x48.png</normaloff>:/images/PNG/48x48/Rebuild-48x48.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>48</width>
+       <height>48</height>
+      </size>
+     </property>
+     <property name="toolButtonStyle">
+      <enum>Qt::ToolButtonTextUnderIcon</enum>
+     </property>
+    </widget>
+    <widget class="QToolButton" name="TButtonSaveStockFix">
+     <property name="geometry">
+      <rect>
+       <x>780</x>
+       <y>460</y>
+       <width>90</width>
+       <height>80</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Confirmar o Acerto do Estoque para o Produto...</string>
+     </property>
+     <property name="text">
+      <string>Confirmar</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../../../../../batista/Aplications/App-Camadas/AppAccount/images.qrc">
+       <normaloff>:/images/PNG/120x120/120px-System-floppy.png</normaloff>:/images/PNG/120x120/120px-System-floppy.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>48</width>
+       <height>48</height>
+      </size>
+     </property>
+     <property name="toolButtonStyle">
+      <enum>Qt::ToolButtonTextUnderIcon</enum>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QToolButton" name="TButtonExit">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>610</y>
+     <width>90</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>Fecha a Janela Descartando Mudanças...</string>
+   </property>
+   <property name="text">
+    <string>Saída</string>
+   </property>
+   <property name="icon">
+    <iconset resource="../../../../../batista/Aplications/App-Camadas/AppAccount/images.qrc">
+     <normaloff>:/images/PNG/48x48/Exithome-48x48.png</normaloff>:/images/PNG/48x48/Exithome-48x48.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>48</width>
+     <height>48</height>
+    </size>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextUnderIcon</enum>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../../../../../batista/Aplications/App-Camadas/AppAccount/images.qrc"/>
+ </resources>
+ <connections/>
+</ui>
