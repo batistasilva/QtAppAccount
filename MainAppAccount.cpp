@@ -31,9 +31,9 @@ int main(int argc, char *argv[]) {
  *
  * Created on 6 de Maio de 2013, 09:31
  */
-#include <QApplication>
 //#include <QApplication>
-#include <QCommonStyle>
+//#include <QApplication>
+//#include <QCommonStyle>
 //#include <qwindowsstyle.h>
 //#include <qmacstyle_mac.h>
 //#include <QMacStyle>
@@ -43,7 +43,7 @@ int main(int argc, char *argv[]) {
 //#include <qwindowsvistastyle.h>
 //#include <QtWidgets/QWindowsVistaStyle>
 //#include <qcleanlooksstyle.h>
-#include <QWidget>
+//#include <QWidget>
 #include <QPalette>
 //#include <qwidget.h>
 #include "src/mainwindow.h"
