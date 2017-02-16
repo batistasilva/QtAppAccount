@@ -123,7 +123,7 @@ void WSClient::doHttpPostPostalCode() {
             "&Numero=" + postcode->GetNumberStreet() +
             "&cfm=1&Metodo=listaLogradouro&TipoConsulta=logradouro";
 
-    postData.append(data.toAscii());
+    postData.append(data.toLatin1());
     //
     nam->post(QNetworkRequest(QUrl(url)), postData);
 }
@@ -385,179 +385,10 @@ void WSClient::skipUnknownElement(QXmlStreamReader & reader) {
  * @param bytes
  * @return 
  */
-QList<PostalCode*> WSClient::getResultLogradouroForHttp(QByteArray bytes) {
-    QString strelement, newstr;
-    QList<PostalCode*> postcode_list;
-    QList<QString> list_str;
-
-    QWebPage page;
-    page.mainFrame()->setContent(bytes);
-
-    QWebElement document = page.mainFrame()->documentElement();
-
-    QWebElementCollection collection = document.findAll("td");
-
-    foreach(QWebElement paraElement, collection) {
-        //
-        strelement = paraElement.toPlainText();
-        //
-
-        //
-        if (!strelement.trimmed().toUpper().contains("LOGRADOURO") && !strelement.trimmed().toUpper().contains("BAIRRO"))
-            if ((strelement.trimmed().toUpper() != "LOGRADOURO") &&
-                    (strelement.trimmed().toUpper() != "BAIRRO") &&
-                    (strelement.trimmed().toUpper() != "LOCALIDADE") &&
-                    (strelement.trimmed().toUpper() != "UF") &&
-                    (strelement.trimmed().toUpper() != "CEP") &&
-                    !strelement.isEmpty()) {
-                //
-                if (strelement.contains("Para mais"))
-                    break;
-
-                qDebug() << "[" << strelement.trimmed() << "]" << endl;
-
-                if (strelement.contains("-") && strelement.size() == 9) {
-                    newstr += strelement;
-                    list_str.append(newstr);
-                    newstr.clear();
-                } else {
-                    newstr += strelement + "|";
-                }
-                //
-                qDebug() << newstr << endl;
-            }
-    }
-    //
-
-    foreach(QString strsp, list_str) {
-        //
-        postcode = new PostalCode();
-        //
-        QStringList list1 = strsp.split("|");
-        //
-
-
-        if (list1.length() == 5) {
-            //
-
-            //
-            if (list1.at(0).contains('-')) {
-                QStringList listcomp = list1.at(0).split("-");
-                QString varaddr = listcomp.at(0);
-                //varaddr.replace(QString("\x22"), QString(""))
-                postcode->SetStreet(varaddr);
-                //
-                postcode->SetComplement(listcomp.at(1));
-            } else {
-                //varaddr.replace(QString("\x22"), QString(""))
-                QString varaddr = list1.at(0);
-                postcode->SetStreet(varaddr);
-                //
-            }
-            //
-            postcode->SetDistrict(list1.at(1));
-            postcode->SetCity(list1.at(2));
-            postcode->SetState(list1.at(3));
-            postcode->SetPostalcode(list1.at(4));
-            //
-            qDebug() << "Add:...." << postcode->GetDistrict() << " - " << postcode->GetStreet() << endl;
-            postcode_list.push_back(postcode);
-            //
-        }
-
-    }
-
-    return postcode_list;
-}
 
 /**
  * Method for get address by postalcode
  * @param bytes
  * @return 
  */
-PostalCode * WSClient::getResultPostalCodeForHttp(QByteArray bytes) {
-    QString strelement, newstr;
-    QList<QString> list_str;
 
-    QWebPage page;
-    page.mainFrame()->setContent(bytes);
-
-    QWebElement document = page.mainFrame()->documentElement();
-
-    //examineChildElements(document, treeWidget->invisibleRootItem());
-
-    QWebElementCollection collection = document.findAll("td");
-
-    qDebug() << "\n**************************************************************************************" << endl;
-
-    foreach(QWebElement paraElement, collection) {
-        //
-        strelement = paraElement.toPlainText();
-        // qDebug() << "[" << strelement.trimmed() << "]" << endl;
-        //
-
-        //
-        if (!strelement.trimmed().toUpper().contains("LOGRADOURO") && !strelement.trimmed().toUpper().contains("BAIRRO"))
-            if ((strelement.trimmed().toUpper() != "LOGRADOURO") &&
-                    (strelement.trimmed().toUpper() != "BAIRRO") &&
-                    (strelement.trimmed().toUpper() != "LOCALIDADE") &&
-                    (strelement.trimmed().toUpper() != "UF") &&
-                    (strelement.trimmed().toUpper() != "CEP") &&
-                    !strelement.isEmpty()) {
-                //
-                if (strelement.contains("Para mais"))
-                    break;
-
-                qDebug() << "[" << strelement.trimmed() << "]" << endl;
-
-                if (strelement.contains("-") && strelement.size() == 9) {
-                    newstr += strelement;
-                    list_str.append(newstr);
-                    newstr.clear();
-                } else {
-                    newstr += strelement + "|";
-                }
-                //
-                qDebug() << newstr << endl;
-            }
-
-    }
-    //
-
-    foreach(QString strsp, list_str) {
-        //
-        postcode = new PostalCode();
-        //
-        QStringList list1 = strsp.split("|");
-        //
-
-
-        if (list1.length() == 5) {
-            //
-            if (list1.at(0).contains('-')) {
-                QStringList listcomp = list1.at(0).split("-");
-                QString varaddr = listcomp.at(0);
-                //varaddr.replace(QString("\x22"), QString(""))
-                postcode->SetStreet(varaddr);
-                //
-                postcode->SetComplement(listcomp.at(1));
-            } else {
-                //varaddr.replace(QString("\x22"), QString(""))
-                QString varaddr = list1.at(0);
-                postcode->SetStreet(varaddr);
-                //
-            }
-            //
-            postcode->SetDistrict(list1.at(1));
-            postcode->SetCity(list1.at(2));
-            postcode->SetState(list1.at(3));
-            postcode->SetPostalcode(list1.at(4));
-            //
-            qDebug() << "Add:...." << postcode->GetDistrict() << " - " << postcode->GetStreet() << endl;
-            //
-        }
-
-    }
-
-    return postcode;
-}

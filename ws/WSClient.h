@@ -12,18 +12,20 @@
 #include "common/Util.h"
 //
 #include "../qtsoap/src/qtsoap.h"
-#include <QtGui>
-#include <qt4/QtXml/QtXml>
+//#include <QtGui>
+#include <QtXml/QtXml>
 #include <iostream>
 #include <QDebug>
 #include <QList>
 #include <qglobal.h>
 #include <QXmlStreamReader>
-#include <qt4/QtNetwork/QNetworkAccessManager>
-#include <qt4/QtNetwork/QNetworkReply>
-#include <QMessageBox>
+#include <QtNetwork/QNetworkAccessManager>
+#include <QtNetwork/QNetworkReply>
+#include <QtWidgets/QMessageBox>
 #include<QByteArray>
 #include <QUrl>
+#include <QtWebEngine/QtWebEngine>
+#include <QtWebEngineWidgets/QtWebEngineWidgets>
 
 class WSClient : private ShowMsg {
 public:
@@ -68,8 +70,8 @@ public:
     void doHttpPostPostalCode();
     //
     Address * ResPostalCode(QtSoapHttpTransport &http);
-    QList<PostalCode*> getResultLogradouroForHttp(QByteArray bytes);
-    PostalCode * getResultPostalCodeForHttp(QByteArray bytes);
+   // QList<PostalCode*> getResultLogradouroForHttp(QByteArray bytes);
+   // PostalCode * getResultPostalCodeForHttp(QByteArray bytes);
     //
 
 private:
