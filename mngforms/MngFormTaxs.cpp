@@ -1,5 +1,5 @@
 #include "mngforms/MngFormTaxs.h"
-#include "ui_MngFormTaxs.h"
+#include "IUs/ui_MngFormTaxs.h"
 
 MngFormTaxs::MngFormTaxs(QWidget *parent) :
     QDialog(parent),

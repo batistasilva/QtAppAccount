@@ -1,7 +1,7 @@
 #ifndef MNGFORMCHARTACCOUNTS_H
 #define MNGFORMCHARTACCOUNTS_H
 
-#include <QDialog>
+#include <QtWidgets/QDialog>
 
 namespace Ui {
 class MngFormChartAccounts;

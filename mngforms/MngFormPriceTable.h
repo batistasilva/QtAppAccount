@@ -8,7 +8,7 @@
 #ifndef _MNGFORMPRICETABLE_H
 #define	_MNGFORMPRICETABLE_H
 
-#include "ui_MngFormPriceTable.h"
+#include "IUs/ui_MngFormPriceTable.h"
 
 class MngFormPriceTable : public QDialog, private Ui_MngFormPriceTable {
     Q_OBJECT

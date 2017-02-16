@@ -5,7 +5,7 @@
  * Created on 14 de Maio de 2013, 11:39
  */
 
-#include <qdialog.h>
+#include <QtWidgets/QDialog>
 
 #include "MngFormProduct.h"
 #include "src/ProductSubCategory.h"

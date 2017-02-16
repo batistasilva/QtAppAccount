@@ -1,5 +1,5 @@
 #include "mngforms/MngFormChartAccounts.h"
-#include "ui_MngFormChartAccounts.h"
+#include "IUs/ui_MngFormChartAccounts.h"
 
 MngFormChartAccounts::MngFormChartAccounts(QWidget *parent) :
     QDialog(parent),

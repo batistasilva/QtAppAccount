@@ -13,10 +13,10 @@
 #include <QMouseEvent>
 #include <QtCore/QTimer>
 #include <QObject>
-#include <QApplication>
-#include <QMessageBox>
-#include <QWidget>
-#include "ui_MngFormQuote.h"
+//#include <QApplication>
+//#include <QMessageBox>
+//#include <QWidget>
+#include "IUs/ui_MngFormQuote.h"
 
 class MngFormQuote : public QDialog, private Ui::MngFormQuote {
     Q_OBJECT

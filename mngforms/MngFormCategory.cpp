@@ -1,8 +1,5 @@
-
-#include "MngFormCategory.h"
-
 #include "mngforms/MngFormCategory.h"
-#include "ui_MngFormCategory.h"
+#include "IUs/ui_MngFormCategory.h"
 
 MngFormCategory::MngFormCategory(QWidget *parent) : QDialog(parent) {
     setupUi(this);

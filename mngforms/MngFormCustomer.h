@@ -16,7 +16,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QMessageBox>
 #include <QtWidgets/QWidget>
-#include "ui_MngFormCustomer.h"
+#include "IUs/ui_MngFormCustomer.h"
 
 
 using namespace std;

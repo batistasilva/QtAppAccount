@@ -1,5 +1,5 @@
 #include "mngforms/MngFormBusinessActivity.h"
-#include "ui_MngFormFactory.h"
+#include "IUs/ui_MngFormFactory.h"
 //#include "ui_FormBusinessActivity.h"
 
 MngFormBusinessActivity::MngFormBusinessActivity(QWidget *parent) : QDialog(parent) {

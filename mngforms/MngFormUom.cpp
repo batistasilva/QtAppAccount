@@ -1,5 +1,5 @@
 #include "mngforms/MngFormUom.h"
-#include "ui_MngFormUom.h"
+#include "IUs/ui_MngFormUom.h"
 
 MngFormUom::MngFormUom(QWidget *parent) : QDialog(parent) {
     setupUi(this);

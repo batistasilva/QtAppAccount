@@ -13,10 +13,10 @@
 #include <QMouseEvent>
 #include <QtCore/QTimer>
 #include <QObject>
-#include <QApplication>
-#include <QMessageBox>
-#include <QWidget>
-#include "ui_MngFormStockByNf.h"
+//#include <QApplication>
+//#include <QMessageBox>
+//#include <QWidget>
+#include "IUs/ui_MngFormStockByNf.h"
 
 class MngFormStockByNf : public QDialog, private Ui_MngFormStockByNf {
     Q_OBJECT

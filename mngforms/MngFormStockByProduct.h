@@ -8,7 +8,7 @@
 #ifndef _MNGFORMSTOCKBYPRODUCT_H
 #define	_MNGFORMSTOCKBYPRODUCT_H
 
-#include "ui_MngFormStockByProduct.h"
+#include "IUs/ui_MngFormStockByProduct.h"
 
 class MngFormStockByProduct : public QDialog, private Ui_MngFormStockByProduct {
     Q_OBJECT

@@ -13,10 +13,10 @@
 #include <QMouseEvent>
 #include <QtCore/QTimer>
 #include <QObject>
-#include <QApplication>
-#include <QMessageBox>
-#include <QWidget>
-#include "ui_MngFormReceiptCash.h"
+//#include <QApplication>
+//#include <QMessageBox>
+//#include <QWidget>
+#include "IUs/ui_MngFormReceiptCash.h"
 
 class MngFormReceiptCash : public QDialog, private Ui_MngFormReceiptCash {
     Q_OBJECT

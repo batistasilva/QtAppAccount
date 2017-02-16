@@ -1,5 +1,5 @@
 #include "mngforms/MngFormProfitCenter.h"
-#include "ui_MngFormProfitCenter.h"
+#include "IUs/ui_MngFormProfitCenter.h"
 
 MngFormProfitCenter::MngFormProfitCenter(QWidget *parent) :
     QDialog(parent),

@@ -1,5 +1,5 @@
 #include "mngforms/MngFormLocalWareHouse.h"
-#include "ui_MngFormLocalWareHouse.h"
+#include "IUs/ui_MngFormLocalWareHouse.h"
 
 MngFormLocalWareHouse::MngFormLocalWareHouse(QWidget *parent) :
 QDialog(parent) {

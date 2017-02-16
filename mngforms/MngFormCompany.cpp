@@ -1,5 +1,5 @@
 #include "mngforms/MngFormCompany.h"
-#include "ui_MngFormCompany.h"
+#include "IUs/ui_MngFormCompany.h"
 
 MngFormCompany::MngFormCompany(QWidget *parent) :
     QDialog(parent),

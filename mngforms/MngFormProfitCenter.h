@@ -1,7 +1,7 @@
 #ifndef MNGFORMPROFITCENTER_H
 #define MNGFORMPROFITCENTER_H
 
-#include <QDialog>
+#include <QtWidgets/QDialog>
 
 namespace Ui {
 class MngFormProfitCenter;

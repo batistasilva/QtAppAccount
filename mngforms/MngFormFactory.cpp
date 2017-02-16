@@ -1,5 +1,5 @@
 #include "mngforms/MngFormFactory.h"
-#include "ui_MngFormFactory.h"
+#include "IUs/ui_MngFormFactory.h"
 #include "src/Factory.h"
 
 MngFormFactory::MngFormFactory(QDialog *parent) : QDialog(parent)/*, prodfac(0), dbconn(0), facmodel(0)*/ {

@@ -1,7 +1,7 @@
 #ifndef MNGFORMTAXS_H
 #define MNGFORMTAXS_H
 
-#include <QDialog>
+#include <QtWidgets/QDialog>
 
 namespace Ui {
 class MngFormTaxs;

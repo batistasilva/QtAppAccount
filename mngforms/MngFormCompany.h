@@ -1,7 +1,7 @@
 #ifndef MNGFORMCOMPANY_H
 #define MNGFORMCOMPANY_H
 
-#include <QDialog>
+#include <QtWidgets/QDialog>
 
 namespace Ui {
 class MngFormCompany;

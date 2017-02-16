@@ -1,5 +1,5 @@
 #include "mngforms/MngFormProdLines.h"
-#include "ui_MngFormProdLines.h"
+#include "IUs/ui_MngFormProdLines.h"
 #include "MngFormBusinessActivity.h"
 #include "src/Product.h"
 
