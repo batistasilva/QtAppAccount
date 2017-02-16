@@ -31,18 +31,10 @@ int main(int argc, char *argv[]) {
  *
  * Created on 6 de Maio de 2013, 09:31
  */
-//#include <QApplication>
-//#include <QApplication>
-//#include <QCommonStyle>
-//#include <qwindowsstyle.h>
-//#include <qmacstyle_mac.h>
-//#include <QMacStyle>
-//#include <qcdestyle.h>
-//#include <qplastiquestyle.h>
-//#include <qgtkstyle.h>
-//#include <qwindowsvistastyle.h>
-//#include <QtWidgets/QWindowsVistaStyle>
-//#include <qcleanlooksstyle.h>
+#include <QApplication>
+#include <QCommonStyle>
+#include <QStyle>
+
 //#include <QWidget>
 #include <QPalette>
 //#include <qwidget.h>
@@ -54,12 +46,12 @@ int main(int argc, char *argv[]) {
 
     QApplication app(argc, argv);
     //
-    //app.setStyle(new QWindowsStyle());
-    //app.setStyle(new QCDEStyle);
-    //app.setStyle(new QPlastiqueStyle());
-    //app.setStyle(new QGtkStyle());
-    //app.setStyle(new QMotifStyle);
-//    app.setStyle(new QCleanlooksStyle());
+    //app.setStyle("QWindowsStyle");
+    //app.setStyle("QCDEStyle");
+    //app.setStyle("QPlastiqueStyle");
+    //app.setStyle("QGtkStyle");
+    //app.setStyle("QMotifStyle");
+    //app.setStyle("QCleanlooksStyle");
     //
     MainWindow mainWin;
     mainWin.show();

@@ -16,9 +16,10 @@
 DbConn::DbConn() {
     //
     tmut = new TimeUtil();
+    status_readconf = false;
 
 
-    //msg->ShowMessage("Mensagem: Construtor Principal DbConn()!!", COLOR_BLUE, COLOR_PINK);
+    msg->ShowMessage("Mensagem: Construtor Principal DbConn()!!", COLOR_BLUE, COLOR_PINK);
     //
     //Abre banco Sqlite na memoria
     //openConnInSqLite();
@@ -55,7 +56,7 @@ DbConn::~DbConn() {
 bool DbConn::openConnInPGree() {
     QString erro_log;
 
-    status_readconf = readFile("./Xml/ConfigConn.xml");
+    status_readconf = readFile("Xml/ConfigConn.xml");
     //
     if (status_readconf) {
 
@@ -92,7 +93,7 @@ bool DbConn::openConnInPGree() {
             //
             msg->ShowMessage(erro_log, COLOR_BLUE, COLOR_RED);
             //
-            dir->setFolder_write("./Logs/LogDB/");
+            dir->setFolder_write("Logs/LogDB/");
             //
             dir->CreateLogFile("LOGPGSQL", erro_log);
             //        
@@ -127,7 +128,7 @@ bool DbConn::isOpenConnPGree() {
         //
         msg->ShowMessage(erro_log, COLOR_BLUE, COLOR_RED);
         //
-        dir->setFolder_write("./Logs/LogDB/");
+        dir->setFolder_write("Logs/LogDB/");
         //
         dir->CreateLogFile("LOGPGSQL", erro_log);
         //

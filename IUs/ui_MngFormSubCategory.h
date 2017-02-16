@@ -33,11 +33,11 @@ public:
     QToolButton *TButtonRemoveSubCategory;
     QToolButton *TButtonCleanSubCategory;
     QToolButton *TButtonExitSubCategory;
-    QToolButton *TButtonSaveSubCategory;
     QGroupBox *GBoxDataSubCategory;
     QLabel *LabelCodeSubCategory;
     QLabel *LabelNameSubCategory;
     QLabel *LabelShortNameSubCategory;
+    QToolButton *TButtonSaveSubCategory;
     QComboBox *CBoxCodeSubCategory;
     QLineEdit *LEditIDSubCategory;
     QLineEdit *LEditNameSubCategory;
