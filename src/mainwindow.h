@@ -41,7 +41,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 #include <QtWidgets/QMainWindow>
-#include <qt5/QtWidgets/QMdiArea>
+#include <QtWidgets/QMdiArea>
 #include "mngforms/MngFormCustomer.h"
 #include "mngforms/MngFormEmployee.h"
 #include "mngforms/MngFormProduct.h"
@@ -69,6 +69,8 @@ class MngFormCustomer;
 QT_BEGIN_NAMESPACE
 class QAction;
 class QMenu;
+class QMenuBar;
+class QStatusBar;
 class QMdiArea;
 class QMdiSubWindow;
 class QSignalMapper;

@@ -8,13 +8,13 @@
 #ifndef CONFIGCONN_H
 #define	CONFIGCONN_H
 #include <QtGui>
-#include <qt5/QtXml/QtXml>
+#include <QtXml/QtXml>
 #include <QFile>
 #include <QXmlStreamReader>
 #include <QObject>
 #include <iostream>
 #include <QDebug>
-#include <QMessageBox>
+#include <QtWidgets/QMessageBox>
 #include "DataConn.h"
 
 class ConfigConn : public DataConn {

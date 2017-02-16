@@ -6,7 +6,7 @@
  */
 
 #include "ConfigConn.h"
-#include <qt5/QtSql/QSqlDatabase>
+#include <QtSql/QSqlDatabase>
 
 ConfigConn::ConfigConn() {
     qDebug() << "drivers: "<< QSqlDatabase::drivers();

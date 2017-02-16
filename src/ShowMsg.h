@@ -15,8 +15,8 @@
 #include <QtGui>
 #include <QObject>
 #include <QDebug>
-#include <QMessageBox>
-#include <QPushButton>
+#include <QtWidgets/QMessageBox>
+#include <QtWidgets/QPushButton>
 #include <QString>
 #include <QList>
 

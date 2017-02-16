@@ -18,18 +18,18 @@
 #include <sstream>
 #include <unistd.h>
 #include <QString>
-#include <QLineEdit>
+//#include <QLineEdit>
 #include <QFocusEvent>
 #include <QKeyEvent>
 #include <QLocale>
 #include <QMouseEvent>
 #include <QValidator>
-#include <QAction>
-#include <QLineEdit>
+//#include <QAction>
+//#include <QLineEdit>
 #include <QFocusEvent>
 #include <QKeyEvent>
 #include <QMouseEvent>
-#include <QMessageBox>
+//#include <QMessageBox>
 #include <QString>
 
 #define DEBUG                 false

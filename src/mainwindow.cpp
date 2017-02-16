@@ -38,8 +38,12 @@
  **
  ****************************************************************************/
 
-#include <QtGui/QtGui>
-#include <qwidget.h>
+//#include <QtGui/QtGui>
+#include <QtWidgets/QWidget>
+#include <QtWidgets/QMdiSubWindow>
+#include <QtWidgets/QMenu>
+#include <QtWidgets/QMenuBar>
+#include <QtWidgets/QStatusBar>
 #include "mainwindow.h"
 
 class MdiArea : public QMdiArea
