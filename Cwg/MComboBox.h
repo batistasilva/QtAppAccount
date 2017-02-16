@@ -8,13 +8,13 @@
 #ifndef MCOMBOBOX_H
 #define	MCOMBOBOX_H
 #include <QObject>
-#include <QApplication>
+//#include <QApplication>
 #include <QtUiTools/QUiLoader>
-#include <QApplication>
-#include <QWidget>
+//#include <QApplication>
+#include <QtWidgets/QWidget>
 #include <QFile>
-#include <QMainWindow>
-#include <QLineEdit>
+//#include <QMainWindow>
+//#include <QLineEdit>
 #include <QtGui>
 #include <QtScript/QtScript>
 #include <QtScript/QScriptEngine>
@@ -24,13 +24,13 @@
 #include <QtScript/QScriptEngine>
 #include <QDebug>
 #include <QObject>
-#include <QComboBox>
-#include <QAbstractItemView>
-#include <QComboBox>
+#include <QtWidgets/QComboBox>
+#include <QtWidgets/QAbstractItemView>
+
 #include <QString>
-#include <QPushButton>
-#include <QListWidget>
-#include <QWidget>
+#include <QtWidgets/QPushButton>
+#include <QtWidgets/QListWidget>
+#include <QtWidgets/QWidget>
 #include <QAbstractItemModel>
 
 class QScriptEngine;

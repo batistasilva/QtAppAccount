@@ -12,8 +12,8 @@
  */
 
 #include "MComboBox.h"
-#include <QAbstractItemView>
-#include <qwidget.h>
+//#include <QAbstractItemView>
+#include <QtWidgets/QWidget>
 #include <QtUiTools/QUiLoader>
 //contains(QT_CONFIG, scripttools): QT += scripttools   #Para Debug
 //CONFIG += uitools                                     #Para QUiLoader
@@ -56,7 +56,7 @@ void MComboBox::hidePopup() {
 void MComboBox::addButton(const QString& text) {
     //
     QAbstractItemView *view = this->view();
-    vp = qobject_cast<QWidget*>(view->parent());
+    //vp = qobject_cast<QWidget*>(view->parent());
     //
     QPushButton *bt_ = new QPushButton(text, this->view());
     //bt_->setGeometry(QRect(120, 30, 100, 30));
