@@ -24,8 +24,7 @@
 #include <QtWidgets/QMessageBox>
 #include<QByteArray>
 #include <QUrl>
-#include <QtWebEngine/QtWebEngine>
-#include <QtWebEngineWidgets/QtWebEngineWidgets>
+#include <QtWebEngine/qtwebengineglobal.h>
 
 class WSClient : private ShowMsg {
 public:

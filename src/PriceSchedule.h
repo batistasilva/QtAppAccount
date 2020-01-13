@@ -7,7 +7,7 @@
 
 #ifndef PRICESCHEDULE_H
 #define	PRICESCHEDULE_H
-#include <qt5/QtSql/qsqlerror.h>
+#include <QtSql/qtsqlglobal.h>
 #include <QString>
 #include <QByteArray>
 #include <QVector>

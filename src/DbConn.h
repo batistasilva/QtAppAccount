@@ -8,7 +8,9 @@
 #ifndef DBCONN_H
 #define	DBCONN_H
 #include <iostream>
+#include <QtSql/qtsqlglobal.h>
 #include <QtSql/QSqlDatabase>
+#include <QtSql/QSqlError>
 #include <QDebug>
 #include <QtSql/QSqlQuery>
 #include <QVector>

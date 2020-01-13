@@ -33,7 +33,7 @@ int Address::getNextIdFromMainTable() {
     if (query.first()) {
         item_id = query.value(0).toInt();
     } else {
-        QString str_erro = query.lastError().text();
+        QString str_erro = query.lastQuery();//lasterro to lastquery
         //
         QString erro_query = "Error SQL in geting: NEXTVAL " + str_erro;
         //
@@ -101,7 +101,7 @@ bool Address::addMainAddress() {
     //
     if (!query.isActive() || !result) {
 
-        QString str_erro = query.lastError().text();
+        QString str_erro = query.lastQuery();
         //
         QString erro_query = "Error SQL in Add Main Address for query: " + vquery +
                 "\nQuery Error: " + str_erro.arg(__FILE__).arg(__LINE__);
@@ -190,7 +190,7 @@ bool Address::addMainSupplierAddress() {
     //
     if (!query.isActive() || !result) {
 
-        QString str_erro = query.lastError().text();
+        QString str_erro = query.lastQuery();
         //
         QString erro_query = "Error SQL in Add Supplier Address for query: " + vquery +
                 "\nQuery Error: " + str_erro.arg(__FILE__).arg(__LINE__);
@@ -235,7 +235,7 @@ bool Address::removeSupplierAddress() {
     }
     //
     if (!query.isActive()) {
-        QString str_erro = query.lastError().text();
+        QString str_erro = query.lastQuery();
         //
         QString erro_query = "Error SQL in Remove Supplier Address for query: " + vquery +
                 "\nQuery Error: " + str_erro;
@@ -309,7 +309,7 @@ bool Address::updateSupplierAddress() {
     //
     if (!query.isActive() || !result) {
 
-        QString str_erro = query.lastError().text();
+        QString str_erro = query.lastQuery();
         //
         QString erro_query = "Error SQL in Updt Supplier Address for query: " + vquery +
                 "\nQuery Error: " + str_erro.arg(__FILE__).arg(__LINE__);

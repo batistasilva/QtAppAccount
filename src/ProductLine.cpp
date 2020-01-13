@@ -5,7 +5,7 @@
  * Created on 9 de Julho de 2013, 10:45
  */
 
-#include <qt5/QtSql/qsqlrecord.h>
+#include <QtSql/qtsqlglobal.h>
 
 #include "ProductLine.h"
 

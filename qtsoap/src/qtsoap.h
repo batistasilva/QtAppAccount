@@ -41,6 +41,7 @@
 #define QTSOAP_H
 #include <QtCore/QString>
 #include <QtCore/QVariant>
+#include <QtXml/QDomNode>
 #include <QtXml/QtXml>
 #include <QtNetwork/QNetworkAccessManager>
 #include <QtCore/QUrl>
@@ -430,7 +431,7 @@ public:
     const QtSoapType &method() const;
     const QtSoapType &returnValue() const;
     void setMethod(const QtSoapQName &);
-    void setMethod(const QString &name, const QString &url = QString::null);
+    void setMethod(const QString &name, const QString &url = QString());
     void addMethodArgument(QtSoapType *);
     void addMethodArgument(const QString &uri, const QString &name, const QString &value);
     void addMethodArgument(const QString &uri, const QString &name, bool value, int dummy);
@@ -519,7 +520,7 @@ public:
     QtSoapType *createObject(QDomNode node)
     {
 	T *t = new T();
-	if (t->parse(node)) {
+        if (t->parse(node)) {
 	    return t;
 	} else {
 	    errorStr = t->errorString();

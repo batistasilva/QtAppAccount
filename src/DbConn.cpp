@@ -6,7 +6,7 @@
  */
 
 
-#include <qt5/QtSql/qsqlerror.h>
+#include <QtSql/qtsqlglobal.h>
 
 #include "DbConn.h"
 
@@ -76,7 +76,7 @@ bool DbConn::openConnInPGree() {
          * @return 
          */
         if (!DbPGree.isValid()) {
-            QString sqlerro = DbPGree.lastError().text();
+            QString sqlerro = DbPGree.lastError().databaseText();
             //
             QMessageBox::critical(0, QString::fromUtf8("Erro: Dados para conexão inválidos!"), sqlerro);
             return false;

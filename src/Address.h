@@ -7,7 +7,7 @@
 
 #ifndef ADDRESS_H
 #define	ADDRESS_H
-#include <qt5/QtSql/QSqlError>
+#include <QtSql/qtsqlglobal.h>
 #include <QAbstractItemModel>
 #include <qt5/QtSql/QSqlQueryModel>
 #include <qt5/QtSql/QSqlQuery>

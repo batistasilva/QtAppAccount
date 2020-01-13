@@ -7,7 +7,7 @@
 
 #ifndef PRODUCTFACTORY_H
 #define	PRODUCTFACTORY_H
-#include <qt5/QtSql/qsqlerror.h>
+#include <QtSql/qtsqlglobal.h>
 #include <QString>
 #include <QByteArray>
 #include <QVector>

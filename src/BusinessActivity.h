@@ -7,7 +7,7 @@
 
 #ifndef BUSINESSACTIVITY_H
 #define	BUSINESSACTIVITY_H
-#include <qt5/QtSql/qsqlerror.h>
+
 #include <QString>
 #include <QByteArray>
 #include <QVector>

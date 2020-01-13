@@ -7,7 +7,7 @@
 
 #ifndef PRODUCTSUBCATEGORY_H
 #define	PRODUCTSUBCATEGORY_H
-#include <qt5/QtSql/qsqlerror.h>
+#include <QtSql/qtsqlglobal.h>
 #include <QString>
 #include <QByteArray>
 #include <QVector>
