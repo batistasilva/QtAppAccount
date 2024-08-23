@@ -9,9 +9,9 @@
 #define	ADDRESS_H
 #include <QtSql/qtsqlglobal.h>
 #include <QAbstractItemModel>
-#include <qt5/QtSql/QSqlQueryModel>
-#include <qt5/QtSql/QSqlQuery>
-#include <qt5/QtSql/QSqlRecord>
+#include <QSqlQueryModel>
+#include <QSqlQuery>
+#include <QSqlRecord>
 #include <QString>
 #include <QByteArray>
 #include <QVector>

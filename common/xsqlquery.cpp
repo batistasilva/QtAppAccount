@@ -18,12 +18,12 @@
  * Please contact info@openmfg.com with any questions on this license.
  */
 
-#include <qt5/QtSql/QSqlRecord>
-#include <qt5/QtSql/QSqlQuery>
-#include <qt5/QtSql/QSqlError>
+#include <QSqlRecord>
+#include <QSqlQuery>
+#include <QSqlError>
 #include <QVariant>
-#include <qt5/QtSql/QSqlDriver>
-#include <qt5/QtSql/QSqlResult>
+#include <QSqlDriver>
+#include <QSqlResult>
 #include <QCursor>
 //#include <QApplication>
 #include <QMap>

@@ -125,7 +125,9 @@ void MngFormBusinessActivity::runAddBusinesActivity() {
         maplist.append(getMsgTrans(QMessageBox::Yes, QString::fromUtf8("Sim")));
         maplist.append(getMsgTrans(QMessageBox::No, QString::fromUtf8("Não")));
         //
-        QMessageBox qmsgb(QMessageBox::Information, QString::fromUtf8("Informação!!!"), QString::fromUtf8("Deseja Salvar as Alterações..?"),
+        QMessageBox qmsgb(QMessageBox::Information,
+                QString::fromUtf8("Informação!!!"),
+                QString::fromUtf8("Deseja Salvar as Alterações..?"),
                 QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel);
         //
         res = ShowGuiQuestion(qmsgb, maplist);

@@ -5,7 +5,7 @@
  * Created on 3 de Julho de 2013, 16:35
  */
 #include <QtSql/qtsqlglobal.h>
-#include <qt5/QtSql/qsqlrecord.h>
+#include <QSqlRecord>
 
 #include "ProductSubCategory.h"
 

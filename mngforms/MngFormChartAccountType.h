@@ -22,7 +22,7 @@
 #include <QItemSelectionModel>
 #include <QStandardItemModel>
 #include <QtWidgets/QTableView>
-#include <qt5/QtSql/QSqlQueryModel>
+#include <QSqlQueryModel>
 #include <QAbstractItemModel>
 #include <QWidgetMapper>
 #include <QtWidgets/QCompleter>

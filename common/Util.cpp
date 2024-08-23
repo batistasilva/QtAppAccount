@@ -1,6 +1,6 @@
 #include "Util.h"
-#include <qt5/QtSql/QSqlRecord>
-#include <qt5/QtSql/QSqlQuery>
+#include <QSqlRecord>
+#include <QSqlQuery>
 #include <QtCore/QCoreApplication>
 
 /**

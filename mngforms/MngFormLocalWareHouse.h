@@ -20,7 +20,7 @@
 #include <QItemSelectionModel>
 #include <QStandardItemModel>
 //#include <QTableView>
-#include <qt5/QtSql/QSqlQueryModel>
+#include <QSqlQueryModel>
 #include <QAbstractItemModel>
 #include <QWidgetMapper>
 //#include <QCompleter>

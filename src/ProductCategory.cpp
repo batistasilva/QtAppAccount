@@ -6,7 +6,7 @@
  */
 
 #include <QtSql/qtsqlglobal.h>
-#include <qt5/QtSql/qsqlrecord.h>
+#include <QSqlRecord>
 
 #include "ProductCategory.h"
 

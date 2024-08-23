@@ -8,7 +8,7 @@
 #ifndef TERMS_H
 #define	TERMS_H
 #include <QtSql/qtsqlglobal.h>
-#include <qt5/QtSql/QSqlRecord>
+#include <QSqlRecord>
 #include <QString>
 #include <QByteArray>
 #include <QVector>

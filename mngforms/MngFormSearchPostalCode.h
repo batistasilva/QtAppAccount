@@ -24,7 +24,7 @@
 #include <QAbstractItemModel>
 #include <QItemSelectionModel>
 #include <QStandardItemModel>
-#include <qt5/QtSql/QSqlTableModel>
+#include <QSqlTableModel>
 #include <QtWidgets/QTableView>
 #include <QtSql/QSqlQueryModel>
 #include <QtSql/QSqlRecord>

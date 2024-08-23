@@ -18,7 +18,7 @@ MngFormConfig::MngFormConfig() {
 }
 
 MngFormConfig::~MngFormConfig() {
-    runClose();
+  //  runClose();
 }
 
 /**

@@ -21,7 +21,7 @@
 #ifndef __XSQLQUERY_H__
 #define __XSQLQUERY_H__
 
-#include <qt5/QtSql/QSqlQuery>
+#include <QSqlQuery>
 
 class XSqlQueryPrivate;
 class QSqlError;
