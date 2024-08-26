@@ -23,6 +23,8 @@ ConfigConn::~ConfigConn() {
  */
 bool ConfigConn::readFile(const QString& fileName) {
     //Ler arquivo de configuração setado
+    qDebug() << "My Real File..." << fileName;
+
     QFile file(fileName);
 
     if (!file.open(QFile::ReadOnly | QFile::Text)) {

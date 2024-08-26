@@ -39,6 +39,7 @@ int main(int argc, char *argv[]) {
 #include <QPalette>
 //#include <qwidget.h>
 #include "src/mainwindow.h"
+#include "src/DbConn.h"
 
 int main(int argc, char *argv[]) {
     // initialize resources, if needed
@@ -53,15 +54,16 @@ int main(int argc, char *argv[]) {
     //app.setStyle("QMotifStyle");
     //app.setStyle("QCleanlooksStyle");
     //
-    MainWindow mainWin;
-    mainWin.show();
-    mainWin.setMinimumSize(1024, 700);
-    
-
-
-
+    // MainWindow mainWin;
+    // mainWin.show();
+    // mainWin.setMinimumSize(1024, 700);
+    //
     //mainWin.setFixedSize(1024, 768);
     //mainWin.setFixedSize(1024, 768);
+
+    DbConn mDbC;
+    mDbC.openConnInPGree();
+
 
     return app.exec();
 }

@@ -193,10 +193,12 @@ void DirFile::CreateLogFile(QString filename, QString message) {
     // QString name_file = "LOGREAD" + sndpager.getRoom_code() + tmu.getTimeFormat("%d%m%H%M%S") + ".TXT";
     QString name_file = filename + tmu->getTimeFormat("%d%m%H%M%S") + ".TXT";
 
-    //Seta o caminho do arquivo com a pasta especificada e nome do arquivo
-    QString pathfile = folder_write + name_file;
+    folder_write = "QtAppAccount/Logs/";
 
-    msg->ShowMessage("GRAVANDO PARA PASTA: " + pathfile, COLOR_CIANO, COLOR_PINK);
+    QString dirpath = QDir(folder_write).dirName();
+    QDir dir(dirpath);
+
+    QString pathfile = dirpath + name_file;
 
     /**
      * Abre o arquivo para gravacao. Caso ele exista
@@ -204,17 +206,9 @@ void DirFile::CreateLogFile(QString filename, QString message) {
      */
     QFile file(pathfile);
 
-    QDir dir(folder_write);
+    msg->ShowMessage("GRAVANDO PARA PASTA: " + pathfile, COLOR_CIANO, COLOR_PINK);
 
-    //QDir dir("/home/bob");
-    QString dirpath;
-
-    dirpath = dir.absolutePath(); // s is "images/file.jpg"
-
-   // msg->ShowMessage("CreateLogFile(), PATH " + dirpath, COLOR_CIANO, COLOR_RED);
-
-
-    if (!dir.exists()) {
+     if (!dir.exists()) {
         if (!dir.mkdir(dirpath))
             //qWarning("Cannot find the example directory");
             msg->ShowMessage("CreateLogFile(), ERRO PASTA NAO ENCONTRADA, E NAO FOI POSSIVEL CRIAR" + dirpath, COLOR_CIANO, COLOR_RED);
@@ -236,7 +230,7 @@ void DirFile::CreateLogCap(char str, char t, char type_write) {
     //seta o nome do arquivo
     QString name_file = "LOGCAP.TXT";
 
-    QString pathfile = "/home/multitone/sistema/Logs/" + name_file;
+    QString pathfile = "QtAppAccount/Logs/" + name_file;
 
     fstream file_op(pathfile.toStdString().c_str(), ios::out | ios::app);
     //cout << "Decimal: " << dec << (int) c;

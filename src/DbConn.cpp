@@ -55,8 +55,8 @@ DbConn::~DbConn() {
  */
 bool DbConn::openConnInPGree() {
     QString erro_log;
-
-    status_readconf = readFile("Xml/ConfigConn.xml");
+    //Using this feature temporarily "../../Xml" to find the configuration file..
+    status_readconf = readFile("../../Xml/ConfigConn.xml");
     //
     if (status_readconf) {
 
