@@ -8,7 +8,7 @@
 #include "PriceSchedule.h"
 
 PriceSchedule::PriceSchedule() {
-    dir = new DirFile();
+    dir = new DbgDirFile*();
 }
 
 PriceSchedule::~PriceSchedule() {

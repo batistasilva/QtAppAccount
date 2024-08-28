@@ -8,7 +8,7 @@
 #include "ProductSite.h"
 
 ProductSite::ProductSite() {
-    dir = new DirFile();
+    dir = new DirFile*();
 }
 
 ProductSite::~ProductSite() {

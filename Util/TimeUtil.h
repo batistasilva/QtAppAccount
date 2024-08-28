@@ -17,6 +17,7 @@
 #include <iostream>
 #include <sstream>
 #include <unistd.h>
+#include <QObject>
 #include <QString>
 //#include <QLineEdit>
 #include <QFocusEvent>
@@ -40,9 +41,10 @@ using namespace std;
 using std::string;
 
 class QValidator;
-class TimeUtil {
+class TimeUtil: public QObject {
+    Q_OBJECT
 public:
-    TimeUtil();
+    explicit TimeUtil(QObject *parent = nullptr);
     virtual ~TimeUtil();
 public:
     

@@ -12,9 +12,9 @@
 #include <QString>
 #include <QByteArray>
 #include <QVector>
-#include "DirFile.h"
-#include "DbConn.h"
-#include "ShowMsg.h"
+#include "Util/dbgdirfile.h"
+#include "Util/DbConn.h"
+#include "Util/ShowMsg.h"
 
 class QSqlQueryModel;
 class Terms {
@@ -199,7 +199,7 @@ public:
 private:
     Terms * term;
     ShowMsg * msg;
-    DirFile * dir;
+    DbgDirFile* * dir;
     DbConn  * dbconn;
     //
     

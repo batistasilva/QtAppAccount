@@ -29,8 +29,8 @@
 #include <QtCore/QTimer>
 #include <QtWidgets/QDialog>
 #include "IUs/ui_MngFormUom.h"
-#include "src/DbConn.h"
-#include "src/ShowMsg.h"
+#include "Util/DbConn.h"
+#include "Util/ShowMsg.h"
 #include "src/ProductUoM.h"
 
 namespace Ui {

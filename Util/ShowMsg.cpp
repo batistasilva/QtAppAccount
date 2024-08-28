@@ -5,9 +5,9 @@
  * Created on 8 de Mar�o de 2013, 20:45
  */
 
-#include "ShowMsg.h"
+#include "Util/ShowMsg.h"
 
-ShowMsg::ShowMsg() {
+ShowMsg::ShowMsg(QObject *parent) {
 }
 
 ShowMsg::~ShowMsg() {

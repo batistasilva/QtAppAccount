@@ -7,7 +7,13 @@
 
 #include "Tax.h"
 
-Tax::Tax() {
+
+Tax::Tax(QObject *parent): QObject(parent),
+    m_dir(new DbgDirFile(this)),
+    m_msg(new ShowMsg(this)),
+    dbconn(new DbConn(this))
+{
+
 }
 
 Tax::~Tax() {
@@ -64,7 +70,7 @@ QVector<Tax*> Tax::getAllTaxs() {
     //
 
     //
-    msg->ShowMessage("Lendo todos os Impostos do banco de dados PostgreSql!!", COLOR_BLUE, COLOR_PINK);
+    m_msg->ShowMessage("Lendo todos os Impostos do banco de dados PostgreSql!!", COLOR_BLUE, COLOR_PINK);
     //
 
     //
@@ -85,7 +91,7 @@ QVector<Tax*> Tax::getAllTaxs() {
         //TAX_DESCRIP
         tax->setTaxDescrip(query.value(2).toString()); // 2=coluna
 
-        msg->ShowMessage("Add Taxs: " + tax->getTaxDescrip(), COLOR_BLUE, COLOR_PINK);
+        m_msg->ShowMessage("Add Taxs: " + tax->getTaxDescrip(), COLOR_BLUE, COLOR_PINK);
         //
         vector_taxs.push_back(tax);
         //
@@ -99,9 +105,9 @@ QVector<Tax*> Tax::getAllTaxs() {
         QString erro_query = "Taxs not found for query: " + vquery +
                 "\nQuery Error: " + str_erro;
         //
-        dir->setFolder_write("./Logs/Taxs/");
+        m_dir->setFolder_write("./Logs/Taxs/");
         //   
-        dir->CreateLogFile("TAXS-NOT-FOUND", erro_query);
+        m_dir->CreateLogFile("TAXS-NOT-FOUND", erro_query);
     }
 
     //

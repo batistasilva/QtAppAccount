@@ -15,9 +15,9 @@
 #include <QString>
 #include <QByteArray>
 #include <QVector>
-#include "DirFile.h"
-#include "DbConn.h"
-#include "ShowMsg.h"
+#include "Util/dbgdirfile.h"
+#include "Util/DbConn.h"
+#include "Util/ShowMsg.h"
 #include "common/Util.h"
 
 class Address {
@@ -192,7 +192,7 @@ private:
     Address * addrsupp;
     Address * addrmain;
     ShowMsg * msg;
-    DirFile * dir;
+    DbgDirFile * dir;
     DbConn * dbconn;
     //
     

@@ -156,7 +156,7 @@ private:
 class QT_QTSOAP_EXPORT QtSoapQName
 {
 public:
-    QtSoapQName(const QString &name = QString::null, const QString &uri = QString::null);
+    QtSoapQName(const QString &name = QString(), const QString &uri = QString());
     ~QtSoapQName();
 
     QtSoapQName &operator =(const QString &s);

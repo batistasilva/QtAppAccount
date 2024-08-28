@@ -29,15 +29,15 @@
 #include <QtWidgets/QWidget>
 #include <QtCore/QTimer>
 #include <QtWidgets/QDialog>
-#include "src/DbConn.h"
-#include "src/ShowMsg.h"
+#include "Util/DbConn.h"
+#include "Util/ShowMsg.h"
 #include "src/BusinessActivity.h"
 #include "IUs/ui_MngFormBusinessActivity.h"
 namespace Ui {
     class MngFormBusinessActivity;
 }
 
-class MngFormBusinessActivity : public QDialog, private Ui_FormBusinessActivity, private ShowMsg {
+class MngFormBusinessActivity : public QDialog, private Ui_FormBusinessActivity {
     Q_OBJECT
 
 public:
@@ -80,6 +80,7 @@ private slots:
 private:
     BusinessActivity * busact;
     DbConn * dbconn;
+    ShowMsg * m_msg;
     //
     QSqlQueryModel * busact_modeltbl;
     QSqlQueryModel * busact_modelsch;

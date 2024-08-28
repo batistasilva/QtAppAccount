@@ -7,11 +7,14 @@
 
 #ifndef DATACONN_H
 #define	DATACONN_H
+
+#include <QObject>
 #include <QString>
 
 class DataConn {
+    Q_OBJECT
 public:
-    DataConn();
+   explicit DataConn(QObject *parent = nullptr);
     //
     virtual ~DataConn();
     //

@@ -28,8 +28,8 @@
 #include <QtCore/QTimer>
 //#include <QDialog>
 #include "IUs/ui_MngFormLocalWareHouse.h"
-#include "src/DbConn.h"
-#include "src/ShowMsg.h"
+#include "Util/DbConn.h"
+#include "Util/ShowMsg.h"
 
 
 namespace Ui {

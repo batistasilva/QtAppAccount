@@ -28,7 +28,7 @@ WSClient::~WSClient() {
  * @return 
  */
 void WSClient::ReqPostalCode(QtSoapHttpTransport &http, QString postcold) {
-    qDebug() << "\nPesquisando dados!!!" << postcold << endl;
+    qDebug() << "\nPesquisando dados!!!" << postcold << Qt::endl;
 
     QtSoapMessage request;
     // request.setMethod("http://www.buscacep.correios.com.br/servicos/dnec/consultaLogradouroAction.do?Metodo=listaLogradouro&CEP=" + postcold.trimmed() + "&TipoConsulta=cep");

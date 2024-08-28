@@ -29,8 +29,8 @@
 #include <QtCore/QTimer>
 //#include <QDialog>
 #include "IUs/ui_MngFormProdLines.h"
-#include "src/DbConn.h"
-#include "src/ShowMsg.h"
+#include "Util/DbConn.h"
+#include "Util/ShowMsg.h"
 #include "src/ProductLine.h"
 
 

@@ -4,26 +4,6 @@
  * and open the template in the editor.
  */
 
-/*
- * File:   MainAppAccount.cpp
- * Author: batista
- *
- * Created on 31 de Janeiro de 2017, 21:01
- */
-/*
-#include <QApplication>
-
-int main(int argc, char *argv[]) {
-    // initialize resources, if needed
-    // Q_INIT_RESOURCE(resfile);
-
-    QApplication app(argc, argv);
-
-    // create and show your widgets here
-
-    return app.exec();
-}
-*/
 
 /*
  * File:   AppAccount.cpp
@@ -39,7 +19,7 @@ int main(int argc, char *argv[]) {
 #include <QPalette>
 //#include <qwidget.h>
 #include "src/mainwindow.h"
-#include "src/DbConn.h"
+#include "Util/DbConn.h"
 
 int main(int argc, char *argv[]) {
     // initialize resources, if needed
@@ -60,9 +40,17 @@ int main(int argc, char *argv[]) {
     //
     //mainWin.setFixedSize(1024, 768);
     //mainWin.setFixedSize(1024, 768);
+    DbConn * mdbc;
+    mdbc = new DbConn();
 
-    DbConn mDbC;
-    mDbC.openConnInPGree();
+    QString erro_log = "Nao foi possivel Gravar o Arquivo...";
+
+   // mdbc->dir->setFolder_write("/home/system/WorkSpace/QtProjects/QtAppAccount/Logs/");
+    //
+   // mdbc->dir->CreateLogFile("LOGPGSQL", erro_log);
+
+
+     mdbc->openConnInPGree();
 
 
     return app.exec();

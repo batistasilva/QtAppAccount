@@ -7,14 +7,18 @@
 
 #include "MngFormConfig.h"
 
-MngFormConfig::MngFormConfig() {
+MngFormConfig::MngFormConfig(QWidget *parent): QDialog(parent),
+    dbconn(new DbConn()),
+    confconn(new ConfigConn())
+{
     setupUi(this);
     setAttribute(Qt::WA_DeleteOnClose);
-    
+
     //
     connect(TButtonTestConn, SIGNAL(clicked()), this, SLOT(runTestConf()));
     connect(TButtonConfigDbSave, SIGNAL(clicked()), this, SLOT(runSaveConf()));
     connect(TButtonConfigDbExit, SIGNAL(clicked()), this, SLOT(runClose()));
+
 }
 
 MngFormConfig::~MngFormConfig() {
@@ -66,13 +70,13 @@ void MngFormConfig::runSaveConf() {
          * seta os dados para o objeto, para que
          * sejam salvos para o arquivo xml
          */
-        confconn.setDatabase(ConfigLEDbName->text());
-        confconn.setHostname(ConfigLEDbHost->text());
-        confconn.setPort(ConfigLEDbPort->text());
-        confconn.setUsername(ConfigLEDbUser->text());
-        confconn.setPassword(ConfigLEDbPass->text());
+        setDatabase(ConfigLEDbName->text());
+        confconn->setHostname(ConfigLEDbHost->text());
+        confconn->setPort(ConfigLEDbPort->text());
+        confconn->setUsername(ConfigLEDbUser->text());
+        confconn->setPassword(ConfigLEDbPass->text());
         //
-        if (confconn.writeFile("Xml/ConfigConn.xml")) {
+        if (confconn->writeFile("Xml/ConfigConn.xml")) {
             ConfigLEDbTestResult->setStyleSheet(QString("QLineEdit { color: blue }"));
             ConfigLEDbTestResult->setText("Arquivo gerado com sucesso!!");
         }
@@ -88,13 +92,13 @@ void MngFormConfig::runSaveConf() {
 void MngFormConfig::runTestConf() {
     //
     if (VlFillForm() == true) {
-        dbconn.setDatabase(ConfigLEDbName->text());
-        dbconn.setHostname(ConfigLEDbHost->text());
-        dbconn.setPort(ConfigLEDbPort->text());
-        dbconn.setUsername(ConfigLEDbUser->text());
-        dbconn.setPassword(ConfigLEDbPass->text());
+        dbconn->setDatabase(ConfigLEDbName->text());
+        dbconn->setHostname(ConfigLEDbHost->text());
+        dbconn->setPort(ConfigLEDbPort->text());
+        dbconn->setUsername(ConfigLEDbUser->text());
+        dbconn->setPassword(ConfigLEDbPass->text());
         //
-        if(dbconn.openConnInPGree()){
+        if(dbconn->openConnInPGree()){
            ConfigLEDbTestResult->setStyleSheet(QString("QLineEdit { color: green }")); 
            ConfigLEDbTestResult->setText(QString::fromUtf8("Conexão feita com sucesso!!")); 
         }

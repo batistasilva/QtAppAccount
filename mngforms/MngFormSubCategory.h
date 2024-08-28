@@ -29,8 +29,8 @@
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QDialog>
 #include "IUs/ui_MngFormSubCategory.h"
-#include "src/DbConn.h"
-#include "src/ShowMsg.h"
+#include "Util/DbConn.h"
+#include "Util/ShowMsg.h"
 #include "src/ProductSubCategory.h"
 
 namespace Ui {

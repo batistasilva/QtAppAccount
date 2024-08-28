@@ -11,9 +11,9 @@
 #include <QString>
 #include <QByteArray>
 #include <QVector>
-#include "DirFile.h"
-#include "DbConn.h"
-#include "ShowMsg.h"
+#include "Util/dbgdirfile.h"
+#include "Util/DbConn.h"
+#include "Util/ShowMsg.h"
 #include "common/Util.h"
 
 class QSqlQueryModel;
@@ -127,7 +127,7 @@ public:
 private:
     BusinessActivity * businesact;
     ShowMsg * msg;
-    DirFile * dir;
+    DbgDirFile * dir;
     DbConn * dbconn;
     //
 

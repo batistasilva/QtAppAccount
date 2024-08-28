@@ -12,10 +12,9 @@
 #include <QFile>
 #include <QXmlStreamReader>
 #include <QObject>
-#include <iostream>
 #include <QDebug>
 #include <QtWidgets/QMessageBox>
-#include "DataConn.h"
+#include "Util/DataConn.h"
 
 class ConfigConn : public DataConn {
 public:

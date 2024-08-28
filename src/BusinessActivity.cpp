@@ -8,7 +8,7 @@
 #include "BusinessActivity.h"
 
 BusinessActivity::BusinessActivity() {
-    dir = new DirFile();
+    dir = new DbgDirFile();
     //
     dbconn = new DbConn();
 }
@@ -106,7 +106,7 @@ bool BusinessActivity::addNewBusinessActivity() {
         //
         msg->ShowMessage("ERRO SQL: " + erro_query, COLOR_BLUE, COLOR_RED);
         //
-        dir->setFolder_write("./Logs/BusinessAct/");
+        dir->setLogwrite_fdname("./Logs/BusinessAct/");
         //   
         dir->CreateLogFile("BUSINESSACT-ERRO-ADD-SQL", erro_query);
         //        
@@ -152,7 +152,7 @@ bool BusinessActivity::removeBusinessActivity() {
         //
         msg->ShowMessage("ERRO SQL: " + erro_query, COLOR_BLUE, COLOR_RED);
         //
-        dir->setFolder_write("./Logs/BusinessAct/");
+        dir->setLogwrite_fdname("./Logs/BusinessAct/");
         //   
         dir->CreateLogFile("BUSINESSACT-ERRO-RM-SQL", erro_query);
         //
@@ -214,7 +214,7 @@ bool BusinessActivity::updateBusinessActivity() {
         //
         msg->ShowMessage("ERRO SQL: " + erro_query, COLOR_BLUE, COLOR_RED);
         //
-        dir->setFolder_write("./Logs/BusinessAct/");
+        dir->setLogwrite_fdname("./Logs/BusinessAct/");
         //   
         dir->CreateLogFile("BUSINESSACT-ERRO-UPDT-SQL", erro_query);
         //        

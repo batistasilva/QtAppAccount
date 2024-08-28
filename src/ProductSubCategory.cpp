@@ -9,8 +9,11 @@
 
 #include "ProductSubCategory.h"
 
-ProductSubCategory::ProductSubCategory() {
-    dir = new DirFile();
+ProductSubCategory::ProductSubCategory(QObject *parent): QObject(parent),
+    m_dir(new DbgDirFile(this)),
+    m_msg(new ShowMsg(this))
+{
+
 }
 
 ProductSubCategory::~ProductSubCategory() {
@@ -36,7 +39,7 @@ int ProductSubCategory::getNextIdFromTable() {
         //
         QString erro_query = "Error SQL in geting: NEXTVAL " + str_erro;
         //
-        msg->ShowMessage("ERRO SQL: " + erro_query, COLOR_BLUE, COLOR_RED);
+        m_m_msg->ShowMessage("ERRO SQL: " + erro_query, COLOR_BLUE, COLOR_RED);
     }
     //
     return item_id;
@@ -90,7 +93,7 @@ bool ProductSubCategory::addNewSubCategory() {
     result = query.exec();
     //
     if (result) {
-        msg->ShowMessage("Inclusão feita com sucesso!", COLOR_BLUE, COLOR_PINK);
+        m_m_msg->ShowMessage("Inclusão feita com sucesso!", COLOR_BLUE, COLOR_PINK);
     }
     //
     if (!query.isActive() || !result) {
@@ -100,11 +103,11 @@ bool ProductSubCategory::addNewSubCategory() {
         QString erro_query = "Error SQL in Add SubCategory for query: " + vquery +
                 "\nQuery Error: " + str_erro.arg(__FILE__).arg(__LINE__);
         //
-        msg->ShowMessage("ERRO SQL: " + erro_query, COLOR_BLUE, COLOR_RED);
+        m_msg->ShowMessage("ERRO SQL: " + erro_query, COLOR_BLUE, COLOR_RED);
         //
-        dir->setFolder_write("./Logs/SubCategory/");
+        m_m_dir->setFolder_write("./Logs/SubCategory/");
         //   
-        dir->CreateLogFile("SUBCATEGORY-ERRO-ADD-SQL", erro_query);
+        m_m_dir->CreateLogFile("SUBCATEGORY-ERRO-ADD-SQL", erro_query);
         //        
         query.exec("ROLLBACK;");
         //
@@ -143,7 +146,7 @@ bool ProductSubCategory::removeSubCategory() {
     result = query.exec();
     //
     if (result) {
-        msg->ShowMessage("Remocao feita com sucesso!", COLOR_BLUE, COLOR_PINK);
+        m_msg->ShowMessage("Remocao feita com sucesso!", COLOR_BLUE, COLOR_PINK);
     }
     //
     if (!query.isActive() || !result) {
@@ -153,11 +156,11 @@ bool ProductSubCategory::removeSubCategory() {
         QString erro_query = "Error SQL in Remove SubCategory for query: " + vquery +
                 "\nQuery Error: " + str_erro.arg(__FILE__).arg(__LINE__);
         //
-        msg->ShowMessage("ERRO SQL: " + erro_query, COLOR_BLUE, COLOR_RED);
+        m_msg->ShowMessage("ERRO SQL: " + erro_query, COLOR_BLUE, COLOR_RED);
         //
-        dir->setFolder_write("./Logs/SubCategory/");
+        m_dir->setFolder_write("./Logs/SubCategory/");
         //   
-        dir->CreateLogFile("SUBCATEGORY-ERRO-RM-SQL", erro_query);
+        m_dir->CreateLogFile("SUBCATEGORY-ERRO-RM-SQL", erro_query);
         //        
         query.exec("ROLLBACK;");
         //
@@ -209,7 +212,7 @@ bool ProductSubCategory::updateSubCategory() {
     result = query.exec();
     //
     if (result) {
-        msg->ShowMessage("Alteracao feita com sucesso!", COLOR_BLUE, COLOR_PINK);
+        m_msg->ShowMessage("Alteracao feita com sucesso!", COLOR_BLUE, COLOR_PINK);
     }
     //
     if (!query.isActive() || !result) {
@@ -219,11 +222,11 @@ bool ProductSubCategory::updateSubCategory() {
         QString erro_query = "Error SQL in Updt SubCategory for query: " + vquery +
                 "\nQuery Error: " + str_erro.arg(__FILE__).arg(__LINE__);
         //
-        msg->ShowMessage("ERRO SQL: " + erro_query, COLOR_BLUE, COLOR_RED);
+        m_msg->ShowMessage("ERRO SQL: " + erro_query, COLOR_BLUE, COLOR_RED);
         //
-        dir->setFolder_write("./Logs/SubCategory/");
+        m_dir->setFolder_write("./Logs/SubCategory/");
         //   
-        dir->CreateLogFile("SUBCATEGORY-ERRO-UPDT-SQL", erro_query);
+        m_dir->CreateLogFile("SUBCATEGORY-ERRO-UPDT-SQL", erro_query);
         //        
         query.exec("ROLLBACK;");
         //
@@ -259,7 +262,7 @@ QVector<ProductSubCategory*> ProductSubCategory::getAllSubCategory() {
     QString vquery = "SELECT * FROM subcategory ORDER BY subcat_code";
     //
     //
-    msg->ShowMessage("Lendo todas as SubCategorias do banco de dados PostgreSql!!", COLOR_BLUE, COLOR_YELLOW);
+    m_msg->ShowMessage("Lendo todas as SubCategorias do banco de dados PostgreSql!!", COLOR_BLUE, COLOR_YELLOW);
     //
 
     //
@@ -287,7 +290,7 @@ QVector<ProductSubCategory*> ProductSubCategory::getAllSubCategory() {
         //PRODSUBCAT_SHORTDESCRIP
         prodsubcat->setSubCatShortDescrip(record.value("subcat_shortdescrip").toString());
 
-        //            msg->ShowMessage("Add Categorias: " + prodcat->GetCategory_code(), COLOR_BLUE, COLOR_PINK);
+        //            m_msg->ShowMessage("Add Categorias: " + prodcat->GetCategory_code(), COLOR_BLUE, COLOR_PINK);
         //
         vec_all_subcat.push_back(prodsubcat);
         //
@@ -301,9 +304,9 @@ QVector<ProductSubCategory*> ProductSubCategory::getAllSubCategory() {
         QString erro_query = "SubCategorys not found for query: " + vquery +
                 "\nQuery Error: " + str_erro;
         //
-        dir->setFolder_write("./Logs/SubCategory/");
+        m_dir->setFolder_write("./Logs/SubCategory/");
         //   
-        dir->CreateLogFile("SUBCATEGORY-NOT-FOUND", erro_query);
+        m_dir->CreateLogFile("SUBCATEGORY-NOT-FOUND", erro_query);
     }
 
     return vec_all_subcat;

@@ -5,10 +5,12 @@
  * Created on 8 de Mar�o de 2013, 20:41
  */
 
-#include "src/ShowMsg.h"
+#include "Util/ShowMsg.h"
 #include "TimeUtil.h"
 
-TimeUtil::TimeUtil() {
+TimeUtil::TimeUtil(QObject *parent): QObject(parent)
+{
+
 }
 
 TimeUtil::~TimeUtil() {

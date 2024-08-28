@@ -10,8 +10,11 @@
 
 #include "ProductCategory.h"
 
-ProductCategory::ProductCategory() {
-    dir = new DirFile();
+ProductCategory::ProductCategory(QObject *parent): QObject(parent),
+    m_dir(new DbgDirFile(this)),
+    m_msg(new ShowMsg(this))
+{
+
 }
 
 ProductCategory::~ProductCategory() {
@@ -37,7 +40,7 @@ int ProductCategory::getNextIdFromTable() {
         //
         QString erro_query = "Error SQL in geting: NEXTVAL " + str_erro;
         //
-        msg->ShowMessage("ERRO SQL: " + erro_query, COLOR_BLUE, COLOR_RED);
+        m_msg->ShowMessage("ERRO SQL: " + erro_query, COLOR_BLUE, COLOR_RED);
     }
     //
     return item_id;
@@ -91,7 +94,7 @@ bool ProductCategory::addNewCategory() {
     result = query.exec();
     //
     if (result) {
-        msg->ShowMessage("Inclusão feita com sucesso!", COLOR_BLUE, COLOR_PINK);
+        m_msg->ShowMessage("Inclusão feita com sucesso!", COLOR_BLUE, COLOR_PINK);
     }
     //
     if (!query.isActive() || !result) {
@@ -101,11 +104,11 @@ bool ProductCategory::addNewCategory() {
         QString erro_query = "Error SQL in Add Category for query: " + vquery +
                 "\nQuery Error: " + str_erro.arg(__FILE__).arg(__LINE__);
         //
-        msg->ShowMessage("ERRO SQL: " + erro_query, COLOR_BLUE, COLOR_RED);
+        m_msg->ShowMessage("ERRO SQL: " + erro_query, COLOR_BLUE, COLOR_RED);
         //
-        dir->setFolder_write("./Logs/Category/");
+        m_dir->setFolder_write("./Logs/Category/");
         //   
-        dir->CreateLogFile("CATEGORY-ERRO-ADD-SQL", erro_query);
+        m_dir->CreateLogFile("CATEGORY-ERRO-ADD-SQL", erro_query);
         //        
         query.exec("ROLLBACK;");
         //
@@ -157,7 +160,7 @@ bool ProductCategory::updateCategory() {
     result = query.exec();
     //
     if (result) {
-        msg->ShowMessage("Alteracao feita com sucesso!", COLOR_BLUE, COLOR_PINK);
+        m_msg->ShowMessage("Alteracao feita com sucesso!", COLOR_BLUE, COLOR_PINK);
     }
     //
     if (!query.isActive() || !result) {
@@ -167,11 +170,11 @@ bool ProductCategory::updateCategory() {
         QString erro_query = "Error SQL in Updt Category for query: " + vquery +
                 "\nQuery Error: " + str_erro.arg(__FILE__).arg(__LINE__);
         //
-        msg->ShowMessage("ERRO SQL: " + erro_query, COLOR_BLUE, COLOR_RED);
+        m_msg->ShowMessage("ERRO SQL: " + erro_query, COLOR_BLUE, COLOR_RED);
         //
-        dir->setFolder_write("./Logs/Category/");
+        m_dir->setFolder_write("./Logs/Category/");
         //   
-        dir->CreateLogFile("CATEGORY-ERRO-UPDT-SQL", erro_query);
+        m_dir->CreateLogFile("CATEGORY-ERRO-UPDT-SQL", erro_query);
         //        
         query.exec("ROLLBACK;");
         //
@@ -210,7 +213,7 @@ bool ProductCategory::removeCategory() {
     result = query.exec();
     //
     if (result) {
-        msg->ShowMessage("Remocao feita com sucesso!", COLOR_BLUE, COLOR_PINK);
+        m_msg->ShowMessage("Remocao feita com sucesso!", COLOR_BLUE, COLOR_PINK);
     }
     //
     if (!query.isActive() || !result) {
@@ -220,11 +223,11 @@ bool ProductCategory::removeCategory() {
         QString erro_query = "Error SQL in Remove Category for query: " + vquery +
                 "\nQuery Error: " + str_erro.arg(__FILE__).arg(__LINE__);
         //
-        msg->ShowMessage("ERRO SQL: " + erro_query, COLOR_BLUE, COLOR_RED);
+        m_msg->ShowMessage("ERRO SQL: " + erro_query, COLOR_BLUE, COLOR_RED);
         //
-        dir->setFolder_write("./Logs/Category/");
+        m_dir->setFolder_write("./Logs/Category/");
         //   
-        dir->CreateLogFile("CATEGORY-ERRO-RM-SQL", erro_query);
+        m_dir->CreateLogFile("CATEGORY-ERRO-RM-SQL", erro_query);
         //        
         query.exec("ROLLBACK;");
         //
@@ -261,7 +264,7 @@ QVector<ProductCategory *> ProductCategory::getAllCategory() {
     //
 
     //
-    msg->ShowMessage("Lendo todas as Categorias do banco de dados PostgreSql!!", COLOR_BLUE, COLOR_YELLOW);
+    m_msg->ShowMessage("Lendo todas as Categorias do banco de dados PostgreSql!!", COLOR_BLUE, COLOR_YELLOW);
     //
 
     //
@@ -302,9 +305,9 @@ QVector<ProductCategory *> ProductCategory::getAllCategory() {
         QString erro_query = "Categorys not found for query: " + vquery +
                 "\nQuery Error: " + str_erro;
         //
-        dir->setFolder_write("./Logs/Category/");
+        m_dir->setFolder_write("./Logs/Category/");
         //   
-        dir->CreateLogFile("CATEGORY-NOT-FOUND", erro_query);
+        m_dir->CreateLogFile("CATEGORY-NOT-FOUND", erro_query);
     }
 
     //

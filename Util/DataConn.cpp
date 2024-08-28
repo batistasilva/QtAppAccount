@@ -8,8 +8,10 @@
 
 #include "DataConn.h"
 
-DataConn::DataConn(){
-    
+
+DataConn::DataConn(QObject *parent)
+{
+
 }
 
 DataConn::~DataConn() {

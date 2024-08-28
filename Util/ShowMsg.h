@@ -100,8 +100,9 @@ struct MsgTrans {
 };
 
 class ShowMsg {
+    Q_OBJECT
 public:
-    ShowMsg();
+    explicit ShowMsg(QObject *parent = nullptr);
     virtual ~ShowMsg();
     //
 

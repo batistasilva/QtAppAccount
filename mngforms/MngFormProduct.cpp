@@ -10,11 +10,12 @@
 #include "MngFormProduct.h"
 #include "src/ProductSubCategory.h"
 
-MngFormProduct::MngFormProduct(QDialog *parent) : QDialog(parent) {
+MngFormProduct::MngFormProduct(QDialog *parent) : QDialog(parent),
+    dbconn(new DbConn(this))
+{
     setupUi(this);
     setAttribute(Qt::WA_DeleteOnClose);
 
-    dbconn = new DbConn();
     //factory = new MngFormFactory();
 
     dbconn->openConnInPGree();

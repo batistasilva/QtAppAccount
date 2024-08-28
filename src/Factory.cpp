@@ -7,11 +7,12 @@
 
 #include "Factory.h"
 
-Factory::Factory() {
-    dir = new DirFile();
-    //
-    dbconn = new DbConn();
-    //
+Factory::Factory(QObject *parent): QObject(parent),
+    m_dir(new DbgDirFile(this)),
+    m_msg(new ShowMsg(this)),
+    dbconn(new DbConn(this))
+{
+
 }
 
 Factory::~Factory() {
@@ -37,7 +38,7 @@ int Factory::getNextIdFromTable() {
         //
         QString erro_query = "Error SQL in geting: NEXTVAL " + str_erro;
         //
-        msg->ShowMessage("ERRO SQL: " + erro_query, COLOR_BLUE, COLOR_RED);
+        m_msg->ShowMessage("ERRO SQL: " + erro_query, COLOR_BLUE, COLOR_RED);
     }
     //
     return item_id;
@@ -71,10 +72,10 @@ bool Factory::addNewFactory() {
 
     if (!query.exec() || query.lastError().type() != QSqlError::NoError) {
         query.exec("ROLLBACK;");
-        msg->ShowMessage("Inclusão feita com sucesso!", COLOR_BLUE, COLOR_PINK);
+        m_msg->ShowMessage("Inclusão feita com sucesso!", COLOR_BLUE, COLOR_PINK);
     }
     //  if (query.exec()) {
-    //      msg->ShowMessage("Inclusão feita com sucesso!", COLOR_BLUE, COLOR_PINK);
+    //      m_msg->ShowMessage("Inclusão feita com sucesso!", COLOR_BLUE, COLOR_PINK);
     //  }
     //
     if (!query.isActive()) {
@@ -83,11 +84,11 @@ bool Factory::addNewFactory() {
         QString erro_query = "Error SQL in Add Factory for query: " + vquery +
                 "\nQuery Error: " + str_erro;
         //
-        msg->ShowMessage("ERRO SQL: " + erro_query, COLOR_BLUE, COLOR_RED);
+        m_msg->ShowMessage("ERRO SQL: " + erro_query, COLOR_BLUE, COLOR_RED);
         //
-        dir->setFolder_write("./Logs/Factory/");
+        m_dir->setLogwrite_fdname("./Logs/Factory/");
         //   
-        dir->CreateLogFile("FACTORY-ERROADD-SQL", erro_query);
+        m_dir->CreateLogFile("FACTORY-ERROADD-SQL", erro_query);
         //        
         return false;
     }
@@ -118,7 +119,7 @@ bool Factory::removeFactory() {
     query.addBindValue(getFactoryId());
     //
     if (query.exec()) {
-        msg->ShowMessage("Fabricante removido com sucesso!", COLOR_BLUE, COLOR_PINK);
+        m_msg->ShowMessage("Fabricante removido com sucesso!", COLOR_BLUE, COLOR_PINK);
     }
     //
     if (!query.isActive()) {
@@ -127,11 +128,11 @@ bool Factory::removeFactory() {
         QString erro_query = "Error SQL in Remove Factory for query: " + vquery +
                 "\nQuery Error: " + str_erro;
         //
-        msg->ShowMessage("ERRO SQL: " + erro_query, COLOR_BLUE, COLOR_RED);
+        m_msg->ShowMessage("ERRO SQL: " + erro_query, COLOR_BLUE, COLOR_RED);
         //
-        dir->setFolder_write("./Logs/Factory/");
+        m_dir->setLogwrite_fdname("./Logs/Factory/");
         //   
-        dir->CreateLogFile("FACTORY-ERRORM-SQL", erro_query);
+        m_dir->CreateLogFile("FACTORY-ERRORM-SQL", erro_query);
         //
         return false;
     }
@@ -153,7 +154,7 @@ bool Factory::updateFactory() {
     QSqlQuery query;
     query.exec("BEGIN;");
     //
-    msg->ShowMessage("Conexao updateFactory(), feita com sucesso", COLOR_WHITE, COLOR_GREEN);
+    m_msg->ShowMessage("Conexao updateFactory(), feita com sucesso", COLOR_WHITE, COLOR_GREEN);
 
     // QSqlDatabase::database().transaction();
     //
@@ -184,9 +185,9 @@ bool Factory::updateFactory() {
 
     //
     if (query.exec()) {
-        msg->ShowMessage("Atualizacao feita com Sucesso!", COLOR_BLUE, COLOR_PINK);
+        m_msg->ShowMessage("Atualizacao feita com Sucesso!", COLOR_BLUE, COLOR_PINK);
     } else {
-        qDebug() << query.lastError().databaseText() << __FILE__ << __LINE__ << endl;
+        qDebug() << query.lastError().databaseText() << __FILE__ << __LINE__ << Qt::endl;
         query.exec("ROLLBACK;");
     }
     //
@@ -198,11 +199,11 @@ bool Factory::updateFactory() {
         QString erro_query = "Error SQL in Update Factory for query: " + vquery +
                 "\nQuery Error: " + str_erro;
         //
-        msg->ShowMessage("ERRO SQL: " + erro_query, COLOR_BLUE, COLOR_RED);
+        m_msg->ShowMessage("ERRO SQL: " + erro_query, COLOR_BLUE, COLOR_RED);
         //
-        dir->setFolder_write("./Logs/Factory/");
+        m_dir->setFolder_write("./Logs/Factory/");
         //   
-        dir->CreateLogFile("FACTORY-ERROUPDT-SQL", erro_query);
+        m_dir->CreateLogFile("FACTORY-ERROUPDT-SQL", erro_query);
         //
         return false;
     }
@@ -224,7 +225,7 @@ QVector<Factory*> Factory::getAllFactory() {
     //
 
     //
-  //  msg->ShowMessage("Lendo todos os Fabricantes do banco de dados PostgreSql!!", COLOR_BLUE, COLOR_PINK);
+  //  m_msg->ShowMessage("Lendo todos os Fabricantes do banco de dados PostgreSql!!", COLOR_BLUE, COLOR_PINK);
     //
 
     //
@@ -248,7 +249,7 @@ QVector<Factory*> Factory::getAllFactory() {
         //PRODCAT_SHORTDESCRIP
         factory->setFactoryShortDescrip(query.value(getColNumberToStr(query, "factory_shortdescrip")).toString()); // 3=coluna
 
-        //            msg->ShowMessage("Add Categorias: " + prodcat->GetCategory_code(), COLOR_BLUE, COLOR_PINK);
+        //            m_msg->ShowMessage("Add Categorias: " + prodcat->GetCategory_code(), COLOR_BLUE, COLOR_PINK);
         //
         vector_factorys.push_back(factory);
         //
@@ -262,11 +263,11 @@ QVector<Factory*> Factory::getAllFactory() {
         QString erro_query = "Factorys not found for query: " + vquery +
                 "\nQuery Error: " + str_erro;
         //
-        msg->ShowMessage("ERRO SQL: " + erro_query, COLOR_BLUE, COLOR_RED);
+        m_msg->ShowMessage("ERRO SQL: " + erro_query, COLOR_BLUE, COLOR_RED);
         //
-        dir->setFolder_write("./Logs/Factory/");
+        m_dir->setFolder_write("./Logs/Factory/");
         //   
-        dir->CreateLogFile("FACTORY-NOT-FOUND", erro_query);
+        m_dir->CreateLogFile("FACTORY-NOT-FOUND", erro_query);
     }
 
     //

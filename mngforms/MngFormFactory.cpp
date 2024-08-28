@@ -2,7 +2,10 @@
 #include "IUs/ui_MngFormFactory.h"
 #include "src/Factory.h"
 
-MngFormFactory::MngFormFactory(QDialog *parent) : QDialog(parent)/*, prodfac(0), dbconn(0), facmodel(0)*/ {
+MngFormFactory::MngFormFactory(QDialog *parent) : QDialog(parent),
+    m_msg(new ShowMsg()),
+    dbconn(new DbConn())
+{
     setupUi(this);
     setAttribute(Qt::WA_DeleteOnClose);
     //
@@ -109,7 +112,7 @@ void MngFormFactory::runAddFactory() {
             factory->setFactoryActive(CheckBoxFactoryStatusActive->isChecked());
             //
             if (factory->addNewFactory()) {
-                ShowGuiMessage("info", "Mensagem!", QString::fromUtf8("Inclusão feita com Sucesso!!"),"");
+                m_msg->ShowGuiMessage("info", "Mensagem!", QString::fromUtf8("Inclusão feita com Sucesso!!"),"");
                 //
                 factory = new Factory();
                 //
@@ -122,13 +125,13 @@ void MngFormFactory::runAddFactory() {
         int res = 0;
         QList<MsgTrans> maplist;
         //
-        maplist.append(getMsgTrans(QMessageBox::Yes, QString::fromUtf8("Sim")));
-        maplist.append(getMsgTrans(QMessageBox::No, QString::fromUtf8("Não")));
+        maplist.append(m_msg->getMsgTrans(QMessageBox::Yes, QString::fromUtf8("Sim")));
+        maplist.append(m_msg->getMsgTrans(QMessageBox::No, QString::fromUtf8("Não")));
         //
         QMessageBox qmsgb(QMessageBox::Information, QString::fromUtf8("Informação!!!"), QString::fromUtf8("Deseja Salvar as Alterações..?"),
                 QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel);
         //
-        res = ShowGuiQuestion(qmsgb, maplist);
+        res = m_msg->ShowGuiQuestion(qmsgb, maplist);
         //
         if (res == QMessageBox::Yes) {
 
@@ -142,7 +145,7 @@ void MngFormFactory::runAddFactory() {
             factory->setFactoryActive(CheckBoxFactoryStatusActive->isChecked());
             //
             if (factory->updateFactory()) {
-                ShowGuiMessage("info", "Mensagem!", QString::fromUtf8("Alteração feita com Sucesso!!"),"");
+                m_msg->ShowGuiMessage("info", "Mensagem!", QString::fromUtf8("Alteração feita com Sucesso!!"),"");
                 //
                 factory = new Factory();
                 //
@@ -168,20 +171,20 @@ void MngFormFactory::runRemoveFactory() {
         int res = 0;
         QList<MsgTrans> maplist;
         //
-        maplist.append(getMsgTrans(QMessageBox::Yes, QString::fromUtf8("Sim")));
-        maplist.append(getMsgTrans(QMessageBox::No, QString::fromUtf8("Não")));
+        maplist.append(m_msg->getMsgTrans(QMessageBox::Yes, QString::fromUtf8("Sim")));
+        maplist.append(m_msg->getMsgTrans(QMessageBox::No, QString::fromUtf8("Não")));
         //
         QMessageBox qmsgb(QMessageBox::Information, QString::fromUtf8("Informação!!!"), QString::fromUtf8("Deseja Remover o Fabricante..?"),
                 QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel);
         //
-        res = ShowGuiQuestion(qmsgb, maplist);
+        res = m_msg->ShowGuiQuestion(qmsgb, maplist);
         //
         if (res == QMessageBox::Yes) {
 
             factory->setFactoryId(LEditIDFactory->text().toInt());
 
             if (factory->removeFactory()) {
-                ShowGuiMessage("info", "Mensagem!", QString::fromUtf8("Remoção feita com Sucesso!!"),"");
+                m_msg->ShowGuiMessage("info", "Mensagem!", QString::fromUtf8("Remoção feita com Sucesso!!"),"");
                 //
                 factory = new Factory();
                 //

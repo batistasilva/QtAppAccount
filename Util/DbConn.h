@@ -7,37 +7,38 @@
 
 #ifndef DBCONN_H
 #define	DBCONN_H
-#include <iostream>
+
+#include <QObject>
 #include <QtSql/qtsqlglobal.h>
 #include <QtSql/QSqlDatabase>
 #include <QtSql/QSqlError>
 #include <QDebug>
 #include <QtSql/QSqlQuery>
 #include <QVector>
-#include "ShowMsg.h"
-#include "DirFile.h"
+#include "Util/ShowMsg.h"
+#include "dbgdirfile.h"
 #include "TimeUtil.h"
 #include "DataConn.h"
 #include "ConfigConn.h"
 
-
-using namespace std;
-using std::string;
-
-class DbConn : public ConfigConn {
+class DbgDirFile;
+class ShowMsg;
+class TimeUtil;
+class DbConn :public QObject, ConfigConn {
+    Q_OBJECT
 public:
-    DbConn();
+    explicit DbConn(QObject *parent = nullptr);
     //
     virtual ~DbConn();
 
     //QSqlQuery query;
 
-    DirFile* getDir() const {
-        return dir;
+    DbgDirFile* getDir() const {
+        return m_dir;
     }
 
-    void setDir(DirFile* dir) {
-        this->dir = dir;
+    void setDir(DbgDirFile* dir) {
+        this->m_dir = dir;
     }
 
     QSqlDatabase getDbPGree() const {
@@ -75,8 +76,6 @@ public:
     bool isOpenConnPGree();
 
 
-private:
-    //
 
 protected:
     QSqlDatabase DbPGree;
@@ -85,11 +84,9 @@ protected:
 private:
     bool status_readconf;
 
-private:
-    //
-    DirFile *dir;
-    TimeUtil *tmut;
-    ShowMsg *msg;
+    DbgDirFile * m_dir;
+    TimeUtil * m_tmut;
+    ShowMsg * m_msg;
 
 };
 

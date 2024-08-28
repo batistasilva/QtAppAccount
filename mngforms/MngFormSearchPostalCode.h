@@ -38,8 +38,8 @@
 #include <QStringList>
 #include <QtWidgets/QWidget>
 #include <QtCore/QTimer>
-#include "src/DbConn.h"
-#include "src/ShowMsg.h"
+#include "Util/DbConn.h"
+#include "Util/ShowMsg.h"
 #include "src/Address.h"
 #include "../ws/WSClient.h"
 #include "../ws/postalcode.h"

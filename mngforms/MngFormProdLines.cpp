@@ -134,7 +134,7 @@ void MngFormProdLines::runAddProdLines() {
         //
         if (res == QMessageBox::Yes) {
 
-            qDebug() << "\n\nID: " << LEditIDProdLines->text().toInt() << endl;
+            qDebug() << "\n\nID: " << LEditIDProdLines->text().toInt() << Qt::endl;
 
             //
             prodline->setProdLineId(LEditIDProdLines->text().toInt());

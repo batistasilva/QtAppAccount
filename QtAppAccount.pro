@@ -16,6 +16,13 @@ INCLUDEPATH += .
 
 # Input
 HEADERS += common/Util.h \
+           Util/ConfigConn.h \
+           Util/DataConn.h \
+           Util/DbConn.h \
+           Util/ShowMsg.h \
+           Util/TimeUtil.h \
+           Util/dbgdirfile.h \
+           Util/mngdfilesettings.h \
            common/xsqlquery.h \
            Cwg/MComboBox.h \
            IUs/ui_MngFormBusinessActivity.h \
@@ -79,10 +86,9 @@ HEADERS += common/Util.h \
            src/Address.h \
            src/BusinessActivity.h \
            src/Commission.h \
-           src/ConfigConn.h \
-           src/DataConn.h \
-           src/DbConn.h \
-           src/DirFile.h \
+           Util/ConfigConn.h \
+           Util/DataConn.h \
+           Util/DbConn.h \
            src/Factory.h \
            src/mainwindow.h \
            src/PriceSchedule.h \
@@ -92,10 +98,10 @@ HEADERS += common/Util.h \
            src/ProductSite.h \
            src/ProductSubCategory.h \
            src/ProductUoM.h \
-           src/ShowMsg.h \
+           Util/ShowMsg.h \
            src/Tax.h \
            src/Terms.h \
-           src/TimeUtil.h \
+           Util/TimeUtil.h \
            src/WareHouse.h \
            ws/postalcode.h \
            ws/WSClient.h \
@@ -131,6 +137,13 @@ FORMS += forms/MngFormBusinessActivity.ui \
          forms/MngFormUom.ui \
          forms/MngFormUsers.ui
 SOURCES += MainAppAccount.cpp \
+           Util/ConfigConn.cpp \
+           Util/DataConn.cpp \
+           Util/DbConn.cpp \
+           Util/ShowMsg.cpp \
+           Util/TimeUtil.cpp \
+           Util/dbgdirfile.cpp \
+           Util/mngdfilesettings.cpp \
            common/Util.cpp \
            common/xsqlquery.cpp \
            Cwg/MComboBox.cpp \
@@ -165,10 +178,9 @@ SOURCES += MainAppAccount.cpp \
            src/Address.cpp \
            src/BusinessActivity.cpp \
            src/Commission.cpp \
-           src/ConfigConn.cpp \
-           src/DataConn.cpp \
-           src/DbConn.cpp \
-           src/DirFile.cpp \
+           Util/ConfigConn.cpp \
+           Util/DataConn.cpp \
+           Util/DbConn.cpp \
            src/Factory.cpp \
            src/mainwindow.cpp \
            src/PriceSchedule.cpp \
@@ -178,10 +190,10 @@ SOURCES += MainAppAccount.cpp \
            src/ProductSite.cpp \
            src/ProductSubCategory.cpp \
            src/ProductUoM.cpp \
-           src/ShowMsg.cpp \
+           Util/ShowMsg.cpp \
            src/Tax.cpp \
            src/Terms.cpp \
-           src/TimeUtil.cpp \
+           Util/TimeUtil.cpp \
            src/WareHouse.cpp \
            ws/postalcode.cpp \
            ws/WSClient.cpp \

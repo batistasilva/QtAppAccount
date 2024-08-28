@@ -2,7 +2,9 @@
 #include "IUs/ui_MngFormFactory.h"
 //#include "ui_FormBusinessActivity.h"
 
-MngFormBusinessActivity::MngFormBusinessActivity(QWidget *parent) : QDialog(parent) {
+MngFormBusinessActivity::MngFormBusinessActivity(QWidget *parent) : QDialog(parent),
+    m_msg(new ShowMsg())
+{
     this->setupUi(this);
     setAttribute(Qt::WA_DeleteOnClose);
 
@@ -109,7 +111,7 @@ void MngFormBusinessActivity::runAddBusinesActivity() {
             busact->setBusinessActive(CheckBoxBusinessActivityStatusActive->isChecked());
             //
             if (busact->addNewBusinessActivity()) {
-                ShowGuiMessage("info", "Mensagem!", QString::fromUtf8("Inclusão feita com Sucesso!!"),"");
+                m_msg->ShowGuiMessage("info", "Mensagem!", QString::fromUtf8("Inclusão feita com Sucesso!!"),"");
                 //
                 busact = new BusinessActivity();
                 //
@@ -122,19 +124,19 @@ void MngFormBusinessActivity::runAddBusinesActivity() {
         int res = 0;
         QList<MsgTrans> maplist;
         //
-        maplist.append(getMsgTrans(QMessageBox::Yes, QString::fromUtf8("Sim")));
-        maplist.append(getMsgTrans(QMessageBox::No, QString::fromUtf8("Não")));
+        maplist.append(m_msg->getMsgTrans(QMessageBox::Yes, QString::fromUtf8("Sim")));
+        maplist.append(m_msg->getMsgTrans(QMessageBox::No, QString::fromUtf8("Não")));
         //
         QMessageBox qmsgb(QMessageBox::Information,
                 QString::fromUtf8("Informação!!!"),
                 QString::fromUtf8("Deseja Salvar as Alterações..?"),
                 QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel);
         //
-        res = ShowGuiQuestion(qmsgb, maplist);
+        res = m_msg->ShowGuiQuestion(qmsgb, maplist);
         //
         if (res == QMessageBox::Yes) {
 
-            qDebug() << "\n\nID: " << LEditIDBusinessActivity->text().toInt() << endl;
+            qDebug() << "\n\nID: " << LEditIDBusinessActivity->text().toInt();
 
             //
             busact->setBusinessActivityId(LEditIDBusinessActivity->text().toInt());
@@ -144,7 +146,7 @@ void MngFormBusinessActivity::runAddBusinesActivity() {
             busact->setBusinessActive(CheckBoxBusinessActivityStatusActive->isChecked());
             //
             if (busact->updateBusinessActivity()) {
-                ShowGuiMessage("info", "Mensagem!", QString::fromUtf8("Alteração feita com Sucesso!!"),"");
+                m_msg->ShowGuiMessage("info", "Mensagem!", QString::fromUtf8("Alteração feita com Sucesso!!"),"");
                 //
                 busact = new BusinessActivity();
                 //
@@ -170,20 +172,20 @@ void MngFormBusinessActivity::runRemoveBusinesActivity() {
         int res = 0;
         QList<MsgTrans> maplist;
         //
-        maplist.append(getMsgTrans(QMessageBox::Yes, QString::fromUtf8("Sim")));
-        maplist.append(getMsgTrans(QMessageBox::No, QString::fromUtf8("Não")));
+        maplist.append(m_msg->getMsgTrans(QMessageBox::Yes, QString::fromUtf8("Sim")));
+        maplist.append(m_msg->getMsgTrans(QMessageBox::No, QString::fromUtf8("Não")));
         //
         QMessageBox qmsgb(QMessageBox::Information, QString::fromUtf8("Informação!!!"), QString::fromUtf8("Deseja Remover o Ramo de Atividade Selecionado..?"),
                 QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel);
         //
-        res = ShowGuiQuestion(qmsgb, maplist);
+        res = m_msg->ShowGuiQuestion(qmsgb, maplist);
         //
         if (res == QMessageBox::Yes) {
 
             busact->setBusinessActivityId(LEditIDBusinessActivity->text().toInt());
 
             if (busact->removeBusinessActivity()) {
-                ShowGuiMessage("info", "Mensagem!", QString::fromUtf8("Remoção feita com Sucesso!!"),"");
+                m_msg->ShowGuiMessage("info", "Mensagem!", QString::fromUtf8("Remoção feita com Sucesso!!"),"");
                 //
                 busact = new BusinessActivity();
                 //

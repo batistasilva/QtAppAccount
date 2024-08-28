@@ -8,7 +8,7 @@
 #include "Address.h"
 
 Address::Address() {
-    dir = new DirFile();
+    dir = new DbgDirFile();
     //
     dbconn = new DbConn();
 }
@@ -108,7 +108,7 @@ bool Address::addMainAddress() {
         //
         msg->ShowMessage("ERRO SQL: " + erro_query, COLOR_BLUE, COLOR_RED);
         //
-        dir->setFolder_write("./Logs/Address/");
+        dir->setLogwrite_fdname("./Logs/Address/");
         //   
         dir->CreateLogFile("ADDRESS-ERRO-ADD-SQL", erro_query);
         //        
@@ -197,7 +197,7 @@ bool Address::addMainSupplierAddress() {
         //
         msg->ShowMessage("ERRO SQL: " + erro_query, COLOR_BLUE, COLOR_RED);
         //
-        dir->setFolder_write("./Logs/Address/");
+        dir->setLogwrite_fdname("./Logs/Address/");
         //   
         dir->CreateLogFile("SUPPADDRESS-ERRO-ADD-SQL", erro_query);
         //        
@@ -242,7 +242,7 @@ bool Address::removeSupplierAddress() {
         //
         msg->ShowMessage("ERRO SQL: " + erro_query, COLOR_BLUE, COLOR_RED);
         //
-        dir->setFolder_write("./Logs/Address/");
+        dir->setLogwrite_fdname("./Logs/Address/");
         //   
         dir->CreateLogFile("ADDRESS-ERRO-RM-SQL", erro_query);
         //
@@ -316,7 +316,7 @@ bool Address::updateSupplierAddress() {
         //
         msg->ShowMessage("ERRO SQL: " + erro_query, COLOR_BLUE, COLOR_RED);
         //
-        dir->setFolder_write("./Logs/Address/");
+        dir->setLogwrite_fdname("./Logs/Address/");
         //   
         dir->CreateLogFile("ADDRESS-ERRO-UPDT-SQL", erro_query);
         //        
