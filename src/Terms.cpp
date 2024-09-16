@@ -8,7 +8,7 @@
 #include "Terms.h"
 
 Terms::Terms() {
-    dir = new DirFile*();
+    dir = new DirFile();
     //
     dbconn = new DbConn();
 }

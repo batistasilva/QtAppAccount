@@ -28,9 +28,9 @@
 #include <QtCore/QTimer>
 #include <QtWidgets/QDialog>
 #include "IUs/ui_MngFormFactory.h"
-#include "Util/DbConn.h"
+#include "src/DbConn.h"
 #include "src/Factory.h"
-#include "Util/ShowMsg.h"
+#include "src/ShowMsg.h"
 
 //namespace Ui {
   //  class MngFormFactory;
@@ -39,7 +39,7 @@
 class DbConn;
 class Factory;
 
-class MngFormFactory : public QDialog, private Ui_MngFormFactory {
+class MngFormFactory : public QDialog, private Ui_MngFormFactory, private ShowMsg {
     Q_OBJECT
 
 public:
@@ -75,7 +75,6 @@ private slots:
 private:
     Factory * factory;
     DbConn * dbconn;
-    ShowMsg * m_msg;
     //
     QSqlQueryModel * facmodeltbl;
     QSqlQueryModel * facmodelsch;

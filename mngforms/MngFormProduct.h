@@ -1,4 +1,4 @@
-/*
+/* 
  * File:   MngFormProduct.h
  * Author: batista
  *
@@ -21,9 +21,9 @@
 //#include <QWidget>
 #include <QtCore/QTimer>
 #include "IUs/ui_MngFormProduct.h"
-#include "Util/ShowMsg.h"
-#include "Util/ConfigConn.h"
-#include "Util/DbConn.h"
+#include "src/ShowMsg.h"
+#include "src/ConfigConn.h"
+#include "src/DbConn.h"
 #include "src/ProductCategory.h"
 #include "src/ProductSubCategory.h"
 #include "src/WareHouse.h"

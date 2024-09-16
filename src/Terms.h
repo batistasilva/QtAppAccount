@@ -8,13 +8,13 @@
 #ifndef TERMS_H
 #define	TERMS_H
 #include <QtSql/qtsqlglobal.h>
-#include <QSqlRecord>
+#include <qt5/QtSql/QSqlRecord>
 #include <QString>
 #include <QByteArray>
 #include <QVector>
-#include "Util/dbgdirfile.h"
-#include "Util/DbConn.h"
-#include "Util/ShowMsg.h"
+#include "DirFile.h"
+#include "DbConn.h"
+#include "ShowMsg.h"
 
 class QSqlQueryModel;
 class Terms {
@@ -199,7 +199,7 @@ public:
 private:
     Terms * term;
     ShowMsg * msg;
-    DbgDirFile* * dir;
+    DirFile * dir;
     DbConn  * dbconn;
     //
     

@@ -62,8 +62,8 @@ protected:
         QPainter painter(viewport());
 
         // Calculate the logo position - the bottom right corner of the mdi area.
-        int x = width() - m_pixmap.width();
-        int y = height() - m_pixmap.height();
+        int x = (geometry().width() - m_pixmap.width() ) /2;
+        int y = (geometry().height() - m_pixmap.height() ) /2;
         painter.drawPixmap(x, y, m_pixmap);
     }
 private:

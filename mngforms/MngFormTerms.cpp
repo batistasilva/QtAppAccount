@@ -245,7 +245,7 @@ void MngFormTerms::runAddTerms() {
             //
             if (res == QMessageBox::Yes) {
 
-                qDebug() << "\n\nID: " << LEditTermsID->text().toInt() << endl;
+                qDebug() << "\n\nID: " << LEditTermsID->text().toInt() << Qt::endl;
 
                 //
                 terms->setTermId(LEditTermsID->text().toInt());

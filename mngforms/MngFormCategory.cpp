@@ -1,10 +1,7 @@
 #include "mngforms/MngFormCategory.h"
 #include "IUs/ui_MngFormCategory.h"
 
-MngFormCategory::MngFormCategory(QWidget *parent) : QDialog(parent),
-    m_msg(new ShowMsg()),
-    dbconn(new DbConn())
-{
+MngFormCategory::MngFormCategory(QWidget *parent) : QDialog(parent) {
     setupUi(this);
     setAttribute(Qt::WA_DeleteOnClose);
     //
@@ -113,7 +110,7 @@ void MngFormCategory::runAddCategory() {
             category->setCatStatus(CheckBoxCategoryStatusActive->isChecked());
             //
             if (category->addNewCategory()) {
-                m_msg->ShowGuiMessage("info", "Mensagem!", QString::fromUtf8("Inclusão feita com Sucesso!!"),"");
+                ShowGuiMessage("info", "Mensagem!", QString::fromUtf8("Inclusão feita com Sucesso!!"),"");
                 //
                 category = new ProductCategory();
                 //
@@ -126,17 +123,17 @@ void MngFormCategory::runAddCategory() {
         int res = 0;
         QList<MsgTrans> maplist;
         //
-        maplist.append(m_msg->getMsgTrans(QMessageBox::Yes, QString::fromUtf8("Sim")));
-        maplist.append(m_msg->getMsgTrans(QMessageBox::No, QString::fromUtf8("Não")));
+        maplist.append(getMsgTrans(QMessageBox::Yes, QString::fromUtf8("Sim")));
+        maplist.append(getMsgTrans(QMessageBox::No, QString::fromUtf8("Não")));
         //
         QMessageBox qmsgb(QMessageBox::Information, QString::fromUtf8("Informação!!!"), QString::fromUtf8("Deseja Salvar as Alterações..?"),
                 QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel);
         //
-        res = m_msg->ShowGuiQuestion(qmsgb, maplist);
+        res = ShowGuiQuestion(qmsgb, maplist);
         //
         if (res == QMessageBox::Yes) {
 
-            qDebug() << "\n\nID: " << LEditIDCategory->text().toInt();
+            qDebug() << "\n\nID: " << LEditIDCategory->text().toInt() << Qt::endl;
 
             //
             category->setCatId(LEditIDCategory->text().toInt());
@@ -146,7 +143,7 @@ void MngFormCategory::runAddCategory() {
             category->setCatStatus(CheckBoxCategoryStatusActive->isChecked());
             //
             if (category->updateCategory()) {
-                m_msg->ShowGuiMessage("info", "Mensagem!", QString::fromUtf8("Alteração feita com Sucesso!!"),"");
+                ShowGuiMessage("info", "Mensagem!", QString::fromUtf8("Alteração feita com Sucesso!!"),"");
                 //
                 category = new ProductCategory();
                 //
@@ -172,20 +169,20 @@ void MngFormCategory::runRemoveCategory() {
         int res = 0;
         QList<MsgTrans> maplist;
         //
-        maplist.append(m_msg->getMsgTrans(QMessageBox::Yes, QString::fromUtf8("Sim")));
-        maplist.append(m_msg->getMsgTrans(QMessageBox::No, QString::fromUtf8("Não")));
+        maplist.append(getMsgTrans(QMessageBox::Yes, QString::fromUtf8("Sim")));
+        maplist.append(getMsgTrans(QMessageBox::No, QString::fromUtf8("Não")));
         //
         QMessageBox qmsgb(QMessageBox::Information, QString::fromUtf8("Informação!!!"), QString::fromUtf8("Deseja Remover a Categoria..?"),
                 QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel);
         //
-        res = m_msg->ShowGuiQuestion(qmsgb, maplist);
+        res = ShowGuiQuestion(qmsgb, maplist);
         //
         if (res == QMessageBox::Yes) {
 
             category->setCatId(LEditIDCategory->text().toInt());
 
             if (category->removeCategory()) {
-                m_msg->ShowGuiMessage("info", "Mensagem!", QString::fromUtf8("Remoção feita com Sucesso!!"),"");
+                ShowGuiMessage("info", "Mensagem!", QString::fromUtf8("Remoção feita com Sucesso!!"),"");
                 //
                 category = new ProductCategory();
                 //

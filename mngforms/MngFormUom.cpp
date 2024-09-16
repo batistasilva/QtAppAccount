@@ -129,7 +129,7 @@ void MngFormUom::runAddProdUom() {
         //
         if (res == QMessageBox::Yes) {
 
-            qDebug() << "\n\nID: " << LEditIDUnitUom->text().toInt() << endl;
+            qDebug() << "\n\nID: " << LEditIDUnitUom->text().toInt() << Qt::endl;
 
             //
             produom->setUomId(LEditIDUnitUom->text().toInt());

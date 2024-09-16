@@ -7,12 +7,9 @@
 
 #include "ProductUoM.h"
 
-ProductUoM::ProductUoM(QObject *parent): QObject(parent),
-    m_dir(new DbgDirFile(this)),
-    m_msg(new ShowMsg(this)),
-    dbconn(new DbConn(this))
-{
-
+ProductUoM::ProductUoM() {
+    dir = new DirFile();
+    //
 }
 
 ProductUoM::~ProductUoM() {
@@ -39,7 +36,7 @@ int ProductUoM::getNextIdFromTable() {
         //
         QString erro_query = "Error SQL in geting: NEXTVAL " + str_erro;
         //
-        m_msg->ShowMessage("ERRO SQL: " + erro_query, COLOR_BLUE, COLOR_RED);
+        msg->ShowMessage("ERRO SQL: " + erro_query, COLOR_BLUE, COLOR_RED);
     }
     //
     return item_id;
@@ -78,7 +75,7 @@ ProductUoM * ProductUoM::getUomForQuery(QString vquery) {
         //UOFM_ITEM_WEIGHT
         produom->setUomWeight(record.value("uofm_item_weight").toBool());
 
-        //            m_msg->ShowMessage("Add Categorias: " + prodcat->GetCategory_code(), COLOR_BLUE, COLOR_PINK);
+        //            msg->ShowMessage("Add Categorias: " + prodcat->GetCategory_code(), COLOR_BLUE, COLOR_PINK);
     }    
     //
     if (!query.first()) {
@@ -89,9 +86,9 @@ ProductUoM * ProductUoM::getUomForQuery(QString vquery) {
         QString erro_query = "Unit of Measure not found for query: " + vquery +
                 "\nQuery Error: " + str_erro;
         //
-        m_dir->setFolder_write("./Logs/ProductUom/");
+        dir->setFolder_write("./Logs/ProductUom/");
         //   
-        m_dir->CreateLogFile("PRODUCTUOM-NOT-FOUND", erro_query);
+        dir->CreateLogFile("PRODUCTUOM-NOT-FOUND", erro_query);
     }
     //
     return produom;
@@ -146,7 +143,7 @@ bool ProductUoM::addNewUom() {
     result = query.exec();
     //
     if (result) {
-        m_msg->ShowMessage("Inclusão feita com sucesso!", COLOR_BLUE, COLOR_PINK);
+        msg->ShowMessage("Inclusão feita com sucesso!", COLOR_BLUE, COLOR_PINK);
     }
     //
     if (!query.isActive() || !result) {
@@ -156,11 +153,11 @@ bool ProductUoM::addNewUom() {
         QString erro_query = "Error SQL in Add Product Uom for query: " + vquery +
                 "\nQuery Error: " + str_erro.arg(__FILE__).arg(__LINE__);
         //
-        m_msg->ShowMessage("ERRO SQL: " + erro_query, COLOR_BLUE, COLOR_RED);
+        msg->ShowMessage("ERRO SQL: " + erro_query, COLOR_BLUE, COLOR_RED);
         //
-        m_dir->setFolder_write("./Logs/ProductUom/");
+        dir->setFolder_write("./Logs/ProductUom/");
         //   
-        m_dir->CreateLogFile("ERRO-ADD-PRODUCTUOMS", erro_query); //
+        dir->CreateLogFile("ERRO-ADD-PRODUCTUOMS", erro_query); //       
 
         query.exec("ROLLBACK;");
         //
@@ -200,7 +197,7 @@ bool ProductUoM::removeUom() {
     result = query.exec();
     //
     if (result) {
-        m_msg->ShowMessage("Remocao feita com sucesso!", COLOR_BLUE, COLOR_PINK);
+        msg->ShowMessage("Remocao feita com sucesso!", COLOR_BLUE, COLOR_PINK);
     }
     //
     if (!query.isActive() || !result) {
@@ -210,11 +207,11 @@ bool ProductUoM::removeUom() {
         QString erro_query = "Error SQL in Remove Product Uom for query: " + vquery +
                 "\nQuery Error: " + str_erro.arg(__FILE__).arg(__LINE__);
         //
-        m_msg->ShowMessage("ERRO SQL: " + erro_query, COLOR_BLUE, COLOR_RED);
+        msg->ShowMessage("ERRO SQL: " + erro_query, COLOR_BLUE, COLOR_RED);
         //
-        m_dir->setFolder_write("./Logs/ProductUom/");
+        dir->setFolder_write("./Logs/ProductUom/");
         //   
-        m_dir->CreateLogFile("ERRO-RM-PRODUCTUOMS", erro_query); //
+        dir->CreateLogFile("ERRO-RM-PRODUCTUOMS", erro_query); //       
 
         query.exec("ROLLBACK;");
         //
@@ -266,7 +263,7 @@ bool ProductUoM::updateUom() {
     result = query.exec();
     //
     if (result) {
-        m_msg->ShowMessage("Alteracao feita com sucesso!", COLOR_BLUE, COLOR_PINK);
+        msg->ShowMessage("Alteracao feita com sucesso!", COLOR_BLUE, COLOR_PINK);
     }
     //
     if (!query.isActive() || !result) {
@@ -276,11 +273,11 @@ bool ProductUoM::updateUom() {
         QString erro_query = "Error SQL in UPDT Product Uom for query: " + vquery +
                 "\nQuery Error: " + str_erro.arg(__FILE__).arg(__LINE__);
         //
-        m_msg->ShowMessage("ERRO SQL: " + erro_query, COLOR_BLUE, COLOR_RED);
+        msg->ShowMessage("ERRO SQL: " + erro_query, COLOR_BLUE, COLOR_RED);
         //
-        m_dir->setFolder_write("./Logs/ProductUom/");
+        dir->setFolder_write("./Logs/ProductUom/");
         //   
-        m_dir->CreateLogFile("ERRO-UPDT-PRODUCTUOMS", erro_query); //
+        dir->CreateLogFile("ERRO-UPDT-PRODUCTUOMS", erro_query); //       
 
         query.exec("ROLLBACK;");
         //
@@ -319,7 +316,7 @@ QVector<ProductUoM*> ProductUoM::getAllUoms() {
     //
 
     //
-    m_msg->ShowMessage("Lendo todas as Unidades de Medidas do banco de dados PostgreSql!!", COLOR_BLUE, COLOR_PINK);
+    msg->ShowMessage("Lendo todas as Unidades de Medidas do banco de dados PostgreSql!!", COLOR_BLUE, COLOR_PINK);
     //
 
     //
@@ -348,7 +345,7 @@ QVector<ProductUoM*> ProductUoM::getAllUoms() {
         //UOFM_ITEM_WEIGHT
         produom->setUomWeight(record.value("uofm_item_weight").toBool());
 
-        //            m_msg->ShowMessage("Add Categorias: " + prodcat->GetCategory_code(), COLOR_BLUE, COLOR_PINK);
+        //            msg->ShowMessage("Add Categorias: " + prodcat->GetCategory_code(), COLOR_BLUE, COLOR_PINK);
         //
         vector_uoms.push_back(produom);
         //
@@ -362,9 +359,9 @@ QVector<ProductUoM*> ProductUoM::getAllUoms() {
         QString erro_query = "Unit of Measure not found for query: " + vquery +
                 "\nQuery Error: " + str_erro;
         //
-        m_dir->setFolder_write("./Logs/ProductUom/");
+        dir->setFolder_write("./Logs/ProductUom/");
         //   
-        m_dir->CreateLogFile("PRODUCTUOMS-NOT-FOUND", erro_query);
+        dir->CreateLogFile("PRODUCTUOMS-NOT-FOUND", erro_query);
     }
 
     //

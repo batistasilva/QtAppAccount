@@ -22,22 +22,22 @@
 #include <QItemSelectionModel>
 #include <QStandardItemModel>
 #include <QtWidgets/QTableView>
-#include <QSqlQueryModel>
+#include <QtSql/QSqlQueryModel>
 #include <QAbstractItemModel>
 #include <QWidgetMapper>
 #include <QtWidgets/QCompleter>
 #include <QtWidgets/QWidget>
 #include <QtCore/QTimer>
 #include <QtWidgets/QDialog>
-#include "Util/DbConn.h"
-#include "Util/ShowMsg.h"
+#include "src/DbConn.h"
+#include "src/ShowMsg.h"
 #include "src/BusinessActivity.h"
 #include "IUs/ui_MngFormBusinessActivity.h"
 namespace Ui {
     class MngFormBusinessActivity;
 }
 
-class MngFormBusinessActivity : public QDialog, private Ui_FormBusinessActivity {
+class MngFormBusinessActivity : public QDialog, private Ui_FormBusinessActivity, private ShowMsg {
     Q_OBJECT
 
 public:
@@ -80,7 +80,6 @@ private slots:
 private:
     BusinessActivity * busact;
     DbConn * dbconn;
-    ShowMsg * m_msg;
     //
     QSqlQueryModel * busact_modeltbl;
     QSqlQueryModel * busact_modelsch;

@@ -22,14 +22,14 @@
 #include <QItemSelectionModel>
 #include <QStandardItemModel>
 #include <QtWidgets/QTableView>
-#include <QSqlQueryModel>
+#include <qt5/QtSql/QSqlQueryModel>
 #include <QAbstractItemModel>
 #include <QWidgetMapper>
 #include <QtWidgets/QCompleter>
 #include <QtWidgets/QWidget>
 #include <QtCore/QTimer>
-#include "Util/DbConn.h"
-#include "Util/ShowMsg.h"
+#include "src/DbConn.h"
+#include "src/ShowMsg.h"
 #include "IUs/ui_MngFormChartAccountType.h"
 
 namespace Ui {

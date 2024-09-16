@@ -28,15 +28,15 @@
 #include <QtCore/QTimer>
 #include <QtWidgets/QDialog>
 #include "IUs/ui_MngFormCategory.h"
-#include "Util/DbConn.h"
-#include "Util/ShowMsg.h"
+#include "src/DbConn.h"
+#include "src/ShowMsg.h"
 #include "src/ProductCategory.h"
 
 namespace Ui {
     class MngFormCategory;
 }
 
-class MngFormCategory : public QDialog, private Ui_MngFormCategory {
+class MngFormCategory : public QDialog, private Ui_MngFormCategory, private ShowMsg {
     Q_OBJECT
 
 public:
@@ -70,7 +70,6 @@ private slots:
 private:
     ProductCategory * category;
     DbConn * dbconn;
-    ShowMsg * m_msg;
     //
     QSqlQueryModel * catmodeltbl;
     QSqlQueryModel * catmodelsch;

@@ -18,12 +18,12 @@
  * Please contact info@openmfg.com with any questions on this license.
  */
 
-#include <QSqlRecord>
-#include <QSqlQuery>
-#include <QSqlError>
+#include <qt5/QtSql/QSqlRecord>
+#include <qt5/QtSql/QSqlQuery>
+#include <qt5/QtSql/QSqlError>
 #include <QVariant>
-#include <QSqlDriver>
-#include <QSqlResult>
+#include <qt5/QtSql/QSqlDriver>
+#include <qt5/QtSql/QSqlResult>
 #include <QCursor>
 //#include <QApplication>
 #include <QMap>
@@ -133,7 +133,7 @@ XSqlQuery::XSqlQuery(QSqlResult * r) :
 }
 
 XSqlQuery::XSqlQuery(const QString &pSql, QSqlDatabase db) :
-  QSqlQuery(QString::null, db)
+  QSqlQuery("", db)
 {
   _data = new XSqlQueryPrivate(this);
   //qApp->setOverrideCursor(Qt::WaitCursor);

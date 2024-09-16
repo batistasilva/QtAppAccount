@@ -28,8 +28,8 @@
 #include <QtWidgets/QCompleter>
 #include <QtWidgets/QWidget>
 #include <QtCore/QTimer>
-#include "Util/DbConn.h"
-#include "Util/ShowMsg.h"
+#include "src/DbConn.h"
+#include "src/ShowMsg.h"
 #include "IUs/ui_MngFormSubSegment.h"
 
 namespace Ui {

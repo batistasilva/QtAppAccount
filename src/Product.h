@@ -11,11 +11,11 @@
 #include <QString>
 #include <QByteArray>
 #include <QVector>
-#include "Util/dbgdirfile.h"
-#include "Util/ShowMsg.h"
+#include "DirFile.h"
+#include "ShowMsg.h"
 #include "ProductCategory.h"
 #include "ProductSubCategory.h"
-#include "Util/DbConn.h"
+#include "DbConn.h"
 
 class Product : private DbConn {
 public:
@@ -332,7 +332,7 @@ public:
 private:
     Product * prod;
     ShowMsg * msg;
-    DbgDirFile * dir;
+    DirFile * dir;
     DbConn * dbconn;
 
     //

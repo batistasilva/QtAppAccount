@@ -7,8 +7,8 @@
 
 #ifndef UTIL_H
 #define	UTIL_H
-#include <QSqlRecord>
-#include <QSqlQuery>
+#include <QtSql/QSqlRecord>
+#include <QtSql/QSqlQuery>
 #include <QString>
 #include <QDateTime>
 #include <QtGui>

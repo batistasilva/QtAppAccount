@@ -9,13 +9,8 @@
 
 #include "ProductLine.h"
 
-
-ProductLine::ProductLine(QObject *parent): QObject(parent),
-    m_dir(new DbgDirFile(this)),
-    m_msg(new ShowMsg(this)),
-    dbconn(new DbConn(this))
-{
-
+ProductLine::ProductLine() {
+    dir = new DirFile();
 }
 
 ProductLine::~ProductLine() {
@@ -41,7 +36,7 @@ int ProductLine::getNextIdFromTable() {
         //
         QString erro_query = "Error SQL in geting: NEXTVAL " + str_erro;
         //
-        m_msg->ShowMessage("ERRO SQL: " + erro_query, COLOR_BLUE, COLOR_RED);
+        msg->ShowMessage("ERRO SQL: " + erro_query, COLOR_BLUE, COLOR_RED);
     }
     //
     return item_id;
@@ -95,7 +90,7 @@ bool ProductLine::addNewLine() {
     result = query.exec();
     //
     if (result) {
-        m_msg->ShowMessage("Inclusão feita com sucesso!", COLOR_BLUE, COLOR_PINK);
+        msg->ShowMessage("Inclusão feita com sucesso!", COLOR_BLUE, COLOR_PINK);
     }
     //
     if (!query.isActive() || !result) {
@@ -105,11 +100,11 @@ bool ProductLine::addNewLine() {
         QString erro_query = "Error SQL in Add Product Line for query: " + vquery +
                 "\nQuery Error: " + str_erro.arg(__FILE__).arg(__LINE__);
         //
-        m_msg->ShowMessage("ERRO SQL: " + erro_query, COLOR_BLUE, COLOR_RED);
+        msg->ShowMessage("ERRO SQL: " + erro_query, COLOR_BLUE, COLOR_RED);
         //
-        m_dir->setFolder_write("./Logs/ProductLines/");
+        dir->setFolder_write("./Logs/ProductLines/");
         //   
-        m_dir->CreateLogFile("ERRO-ADD-PRODUCTLINES", erro_query); //
+        dir->CreateLogFile("ERRO-ADD-PRODUCTLINES", erro_query); //       
         
         query.exec("ROLLBACK;");
         //
@@ -148,7 +143,7 @@ bool ProductLine::removeLine() {
     result = query.exec();
     //
     if (result) {
-        m_msg->ShowMessage("Remocao feita com sucesso!", COLOR_BLUE, COLOR_PINK);
+        msg->ShowMessage("Remocao feita com sucesso!", COLOR_BLUE, COLOR_PINK);
     }
     //
       if (!query.isActive() || !result) {
@@ -158,11 +153,11 @@ bool ProductLine::removeLine() {
         QString erro_query = "Error SQL in Remove Product Line for query: " + vquery +
                 "\nQuery Error: " + str_erro.arg(__FILE__).arg(__LINE__);
         //
-        m_msg->ShowMessage("ERRO SQL: " + erro_query, COLOR_BLUE, COLOR_RED);
+        msg->ShowMessage("ERRO SQL: " + erro_query, COLOR_BLUE, COLOR_RED);
         //
-        m_dir->setFolder_write("./Logs/ProductLines/");
+        dir->setFolder_write("./Logs/ProductLines/");
         //   
-        m_dir->CreateLogFile("ERRO-RM-PRODUCTLINES", erro_query); //
+        dir->CreateLogFile("ERRO-RM-PRODUCTLINES", erro_query); //       
         
         query.exec("ROLLBACK;");
         //
@@ -213,7 +208,7 @@ bool ProductLine::updateLine() {
     result = query.exec();
     //
     if (result) {
-        m_msg->ShowMessage("Alteracao feita com sucesso!", COLOR_BLUE, COLOR_PINK);
+        msg->ShowMessage("Alteracao feita com sucesso!", COLOR_BLUE, COLOR_PINK);
     }
     //
     if (!query.isActive() || !result) {
@@ -223,11 +218,11 @@ bool ProductLine::updateLine() {
         QString erro_query = "Error SQL in UPDT Product Line for query: " + vquery +
                 "\nQuery Error: " + str_erro.arg(__FILE__).arg(__LINE__);
         //
-        m_msg->ShowMessage("ERRO SQL: " + erro_query, COLOR_BLUE, COLOR_RED);
+        msg->ShowMessage("ERRO SQL: " + erro_query, COLOR_BLUE, COLOR_RED);
         //
-        m_dir->setFolder_write("./Logs/ProductLines/");
+        dir->setFolder_write("./Logs/ProductLines/");
         //   
-        m_dir->CreateLogFile("ERRO-UPDT-PRODUCTLINES", erro_query); //
+        dir->CreateLogFile("ERRO-UPDT-PRODUCTLINES", erro_query); //       
         
         query.exec("ROLLBACK;");
         //
@@ -264,7 +259,7 @@ QVector<ProductLine*> ProductLine::getAllLines() {
     //
 
     //
-    m_msg->ShowMessage("Lendo todas as Linhas de Produto do banco de dados PostgreSql!!", COLOR_BLUE, COLOR_YELLOW);
+    msg->ShowMessage("Lendo todas as Linhas de Produto do banco de dados PostgreSql!!", COLOR_BLUE, COLOR_YELLOW);
     //
 
     //
@@ -292,7 +287,7 @@ QVector<ProductLine*> ProductLine::getAllLines() {
         //PRODLINE_ACTIVE
         prodline->setProdLineStatus(record.value("prodline_active").toBool());
 
-        //            m_msg->ShowMessage("Add Categorias: " + prodcat->GetCategory_code(), COLOR_BLUE, COLOR_PINK);
+        //            msg->ShowMessage("Add Categorias: " + prodcat->GetCategory_code(), COLOR_BLUE, COLOR_PINK);
         //
         vector_lines.push_back(prodline);
         //
@@ -306,9 +301,9 @@ QVector<ProductLine*> ProductLine::getAllLines() {
         QString erro_query = "Lines not found for query: " + vquery +
                 "\nQuery Error: " + str_erro;
         //
-        m_dir->setFolder_write("./Logs/ProductLines/");
+        dir->setFolder_write("./Logs/ProductLines/");
         //   
-        m_dir->CreateLogFile("ERRO-PRODUCTLINES-NOT-FOUND", erro_query);
+        dir->CreateLogFile("ERRO-PRODUCTLINES-NOT-FOUND", erro_query);
     }
 
     //

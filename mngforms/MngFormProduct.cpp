@@ -10,12 +10,11 @@
 #include "MngFormProduct.h"
 #include "src/ProductSubCategory.h"
 
-MngFormProduct::MngFormProduct(QDialog *parent) : QDialog(parent),
-    dbconn(new DbConn(this))
-{
+MngFormProduct::MngFormProduct(QDialog *parent) : QDialog(parent) {
     setupUi(this);
     setAttribute(Qt::WA_DeleteOnClose);
 
+    dbconn = new DbConn();
     //factory = new MngFormFactory();
 
     dbconn->openConnInPGree();
@@ -157,7 +156,7 @@ void MngFormProduct::runPopulateFactory() {
     fac = new Factory();
     //
     //
-    int i = 0;
+    //int i = 0;
 
     //CBoxProductManufacture->addItem("[ SELECIONE ]");
     //CBoxProductManufacture->setItemData(i, Qt::AlignCenter, Qt::TextAlignmentRole); //para alinhamento no centro
@@ -166,12 +165,12 @@ void MngFormProduct::runPopulateFactory() {
 
     if (fac->getDbconn()->isOpenConnPGree()) {
 
-        foreach(Factory * fact, fac->getAllFactory()) {
-            //
-           // CBoxProductManufacture->addItem(fact->getFactoryDescrip());
-           // CBoxProductManufacture->setItemData(i++, Qt::AlignCenter, Qt::TextAlignmentRole); //para alinhamento no centro
-            //
-        }
+//        foreach(Factory * fact, fac->getAllFactory()) {
+//            //
+//           // CBoxProductManufacture->addItem(fact->getFactoryDescrip());
+//           // CBoxProductManufacture->setItemData(i++, Qt::AlignCenter, Qt::TextAlignmentRole); //para alinhamento no centro
+//            //
+//        }
     }
 
     //Obs: so alinha no centro se usar as tres linhas abaixo

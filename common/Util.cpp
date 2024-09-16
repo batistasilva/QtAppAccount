@@ -1,6 +1,6 @@
 #include "Util.h"
-#include <QSqlRecord>
-#include <QSqlQuery>
+#include <QtSql/QSqlRecord>
+#include <QtSql/QSqlQuery>
 #include <QtCore/QCoreApplication>
 
 /**
@@ -59,12 +59,12 @@ QString unaccent(QString str) {
 
     for (unsigned int j = 0; j < sizeof (tA); j++) {
         if (tA[j] == str[j])
-            qDebug() << "Encontrou.... Oba..." << tA[j] << str[j] << endl;
+            qDebug() << "Encontrou.... Oba..." << tA[j] << str[j] << Qt::endl;
         str.replace(tA[j], "A");
     }
     
     for (unsigned int j = 0; j < sizeof (tE); j++) {      
-        qDebug() << tE[j] << str[j] << endl; 
+        qDebug() << tE[j] << str[j] << Qt::endl;
         str.replace(tE[j], "E");
     }
     

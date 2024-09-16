@@ -134,7 +134,7 @@ void MngFormSubCategory::runAddSubCategory() {
         //
         if (res == QMessageBox::Yes) {
 
-            qDebug() << "\n\nID: " << LEditIDSubCategory->text().toInt() << endl;
+            qDebug() << "\n\nID: " << LEditIDSubCategory->text().toInt() << Qt::endl;
 
             //
             subcat->setSubCatId(LEditIDSubCategory->text().toInt());

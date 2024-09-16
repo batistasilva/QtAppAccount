@@ -8,7 +8,7 @@
 #include "Commission.h"
 
 Commission::Commission() {
-    dir = new DbgDirFile();
+    dir = new DirFile();
 }
 
 Commission::~Commission() {
@@ -105,7 +105,7 @@ QVector<Commission*> Commission::getAllCommissions() {
         //
 
         //
-        dir->setLogwrite_fdname("./Logs/Commissions/");
+        dir->setFolder_write("./Logs/Commissions/");
         //   
         dir->CreateLogFile("COMMISSION-NOT-FOUND", erro_query);
     }

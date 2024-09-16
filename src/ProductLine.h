@@ -7,22 +7,18 @@
 
 #ifndef PRODUCTLINE_H
 #define	PRODUCTLINE_H
-
-#include <QObject>
 #include <QtSql/qtsqlglobal.h>
 #include <QString>
 #include <QByteArray>
 #include <QVector>
 #include "common/Util.h"
-#include "Util/dbgdirfile.h"
-#include "Util/DbConn.h"
-#include "Util/ShowMsg.h"
+#include "DirFile.h"
+#include "DbConn.h"
+#include "ShowMsg.h"
 
-class ProductLine: public QObject {
-    Q_OBJECT
-
+class ProductLine {
 public:
-    explicit ProductLine(QObject *parent = nullptr);
+    ProductLine();
     virtual ~ProductLine();
     //
 
@@ -137,8 +133,8 @@ public:
     //
 private:
     ProductLine * prodline;
-    ShowMsg * m_msg;
-    DbgDirFile * m_dir;
+    ShowMsg * msg;
+    DirFile * dir;
     DbConn  * dbconn;
     
 private:

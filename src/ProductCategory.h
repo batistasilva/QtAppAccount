@@ -12,17 +12,13 @@
 #include <QByteArray>
 #include <QVector>
 #include "common/Util.h"
-#include "Util/dbgdirfile.h"
-#include "Util/DbConn.h"
-#include "Util/ShowMsg.h"
+#include "DirFile.h"
+#include "DbConn.h"
+#include "ShowMsg.h"
 
-class ProductCategory : public QObject
-{
-    Q_OBJECT
+class ProductCategory {
 public:
-    explicit ProductCategory(QObject *parent = nullptr);
-
-
+    ProductCategory();
     virtual ~ProductCategory();
     //
 
@@ -136,8 +132,8 @@ public:
 
 private:
     ProductCategory * prodcat;
-    ShowMsg * m_msg;
-    DbgDirFile * m_dir;
+    ShowMsg * msg;
+    DirFile * dir;
     DbConn * dbconn;
     //
 private:

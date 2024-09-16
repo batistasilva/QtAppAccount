@@ -14,7 +14,9 @@
 #include "MComboBox.h"
 //#include <QAbstractItemView>
 #include <QtWidgets/QWidget>
-#include <QtUiTools/QUiLoader>
+#include <QApplication> 
+#include <QScriptValue>
+
 //contains(QT_CONFIG, scripttools): QT += scripttools   #Para Debug
 //CONFIG += uitools                                     #Para QUiLoader
 #ifndef QT_NO_SCRIPTTOOLS
@@ -109,5 +111,5 @@ void MComboBox::runAppScript() {
     //! [3]
     ui->show();
 
-    qDebug() << "Run Script Clicked!!!" << endl;
+    qDebug() << "Run Script Clicked!!!";
 }

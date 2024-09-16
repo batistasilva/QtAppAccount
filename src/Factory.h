@@ -7,22 +7,19 @@
 
 #ifndef PRODUCTFACTORY_H
 #define	PRODUCTFACTORY_H
-#include <QObject>
 #include <QtSql/qtsqlglobal.h>
 #include <QString>
 #include <QByteArray>
 #include <QVector>
 #include "common/Util.h"
-#include "Util/dbgdirfile.h"
-#include "Util/DbConn.h"
-#include "Util/ShowMsg.h"
+#include "DirFile.h"
+#include "DbConn.h"
+#include "ShowMsg.h"
 
 class QSqlQueryModel;
-class Factory: public QObject {
-    Q_OBJECT
+class Factory {
 public:
-    explicit Factory(QObject *parent = nullptr);
-
+    Factory();
     virtual ~Factory();
     //
 
@@ -126,8 +123,8 @@ public:
     //
 private:
     Factory * factory;
-    ShowMsg * m_msg;
-    DbgDirFile * m_dir;
+    ShowMsg * msg;
+    DirFile * dir;
     DbConn * dbconn;
     //TimeUtil * tm;
 

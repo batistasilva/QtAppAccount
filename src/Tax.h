@@ -7,22 +7,17 @@
 
 #ifndef TAX_H
 #define	TAX_H
-
-#include <QObject>
 #include <QtSql/qtsqlglobal.h>
 #include <QString>
 #include <QByteArray>
 #include <QVector>
-#include "Util/dbgdirfile.h"
-#include "Util/DbConn.h"
-#include "Util/ShowMsg.h"
+#include "DirFile.h"
+#include "DbConn.h"
+#include "ShowMsg.h"
 
-class Tax: public QObject {
-    Q_OBJECT
-
+class Tax {
 public:
-    explicit Tax(QObject *parent = nullptr);
-
+    Tax();
     virtual ~Tax();
     //
     DbConn* getDbconn() const {
@@ -116,8 +111,8 @@ public:
     //
 private:
     Tax * tax;
-    ShowMsg * m_msg;
-    DbgDirFile * m_dir;
+    ShowMsg * msg;
+    DirFile * dir;
     DbConn  * dbconn;
     
 private:

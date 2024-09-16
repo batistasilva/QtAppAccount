@@ -21,7 +21,7 @@
 #include <QItemSelectionModel>
 #include <QStandardItemModel>
 //#include <QTableView>
-#include <QSqlQueryModel>
+#include <QtSql/QSqlQueryModel>
 #include <QAbstractItemModel>
 #include <QWidgetMapper>
 //#include <QCompleter>
@@ -29,8 +29,8 @@
 #include <QtCore/QTimer>
 //#include <QDialog>
 #include "IUs/ui_MngFormProdLines.h"
-#include "Util/DbConn.h"
-#include "Util/ShowMsg.h"
+#include "src/DbConn.h"
+#include "src/ShowMsg.h"
 #include "src/ProductLine.h"
 
 

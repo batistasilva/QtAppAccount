@@ -11,9 +11,9 @@
 #include <QString>
 #include <QByteArray>
 #include <QVector>
-#include "Util/dbgdirfile.h"
-#include "Util/DbConn.h"
-#include "Util/ShowMsg.h"
+#include "DirFile.h"
+#include "DbConn.h"
+#include "ShowMsg.h"
 
 
 class Commission {
@@ -98,7 +98,7 @@ public:
 private:
     Commission * commis;
     ShowMsg * msg;
-    DbgDirFile * dir;
+    DirFile * dir;
     DbConn  * dbconn;
     
 private:

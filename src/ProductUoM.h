@@ -7,22 +7,18 @@
 
 #ifndef PRODUCTUOM_H
 #define	PRODUCTUOM_H
-
-#include <QObject>
 #include <QtSql/qtsqlglobal.h>
 #include <QString>
 #include <QByteArray>
 #include <QVector>
 #include "common/Util.h"
-#include "Util/dbgdirfile.h"
-#include "Util/DbConn.h"
-#include "Util/ShowMsg.h"
+#include "DirFile.h"
+#include "DbConn.h"
+#include "ShowMsg.h"
 
-class ProductUoM: public QObject {
-    Q_OBJECT
-
+class ProductUoM {
 public:
-    explicit ProductUoM(QObject * parent = nullptr);
+    ProductUoM();
     virtual ~ProductUoM();
     //
 
@@ -146,7 +142,7 @@ public:
 private:
     ProductUoM * produom;
     ShowMsg * msg;
-    DbgDirFile * dir;
+    DirFile * dir;
     DbConn * dbconn;
 
 private:

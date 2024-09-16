@@ -11,15 +11,23 @@
 #include <QKeyEvent>
 #include <QEvent>
 #include <QMouseEvent>
+//#include <QScrollBar>
 #include <QtCore/QTimer>
 #include <QObject>
+//#include <QTableWidget>
+//#include <QTableWidgetItem>
 #include <QStringListModel>
+//#include <QApplication>
+//#include <QHeaderView>
 #include <QItemSelectionModel>
 #include <QStandardItemModel>
+//#include <QTableView>
+//#include <QSpinBox>
 #include <QSortFilterProxyModel>
+//#include <QMessageBox>
 #include "IUs/ui_MngFormConfig.h"
-#include "Util/ConfigConn.h"
-#include "Util/DbConn.h"
+#include "src/ConfigConn.h"
+#include "src/DbConn.h"
 
 using namespace std;
 using std::string;
@@ -28,10 +36,10 @@ class ConfigConn;
 class DbConn;
 class QTimer;
 
-class MngFormConfig : public QDialog, DbConn, private Ui_FormConfig {
+class MngFormConfig : public QDialog, private Ui_FormConfig {
     Q_OBJECT
 public:
-    explicit MngFormConfig(QWidget *parent = 0);
+    MngFormConfig();
     virtual ~MngFormConfig();
 
 protected:
@@ -46,9 +54,8 @@ private slots:
     void runClose();
 
 private:
-    ConfigConn * confconn;
-    DbConn * dbconn;
-
+    ConfigConn confconn;
+    DbConn dbconn;
     bool VlFillForm();
 };
 

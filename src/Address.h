@@ -9,15 +9,15 @@
 #define	ADDRESS_H
 #include <QtSql/qtsqlglobal.h>
 #include <QAbstractItemModel>
-#include <QSqlQueryModel>
-#include <QSqlQuery>
-#include <QSqlRecord>
+#include <QtSql/QSqlQueryModel>
+#include <QtSql/QSqlQuery>
+#include <QtSql/QSqlRecord>
 #include <QString>
 #include <QByteArray>
 #include <QVector>
-#include "Util/dbgdirfile.h"
-#include "Util/DbConn.h"
-#include "Util/ShowMsg.h"
+#include "DirFile.h"
+#include "DbConn.h"
+#include "ShowMsg.h"
 #include "common/Util.h"
 
 class Address {
@@ -192,7 +192,7 @@ private:
     Address * addrsupp;
     Address * addrmain;
     ShowMsg * msg;
-    DbgDirFile * dir;
+    DirFile * dir;
     DbConn * dbconn;
     //
     

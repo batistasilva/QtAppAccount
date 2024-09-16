@@ -7,12 +7,7 @@
 
 #include "WareHouse.h"
 
-WareHouse::WareHouse(QObject *parent): QOject(parent),
-    m_dir(new DbgDirFile(this)),
-    m_msg(new ShowMsg(this)),
-    dbconn(new DbConn(this))
-{
-
+WareHouse::WareHouse() {
 }
 
 WareHouse::~WareHouse() {
@@ -70,7 +65,7 @@ QVector<WareHouse*> WareHouse::getAllWarehouseForCBox(){
     //
 
     //
-    m_msg->ShowMessage("Lendo todas as Filiais do banco de dados PostgreSql!!", COLOR_BLUE, COLOR_GREEN);
+    msg->ShowMessage("Lendo todas as Filiais do banco de dados PostgreSql!!", COLOR_BLUE, COLOR_GREEN);
     //
 
     query.exec(vquery);
@@ -88,7 +83,7 @@ QVector<WareHouse*> WareHouse::getAllWarehouseForCBox(){
         //WAREHOUSE_DESCRIP
         wh->setWarehouseDescrib(query.value(2).toString()); // 2=coluna
 
-//        m_msg->ShowMessage("Add Harehouse: " + wh->getWarehouse_code(), COLOR_BLUE, COLOR_PINK);
+//        msg->ShowMessage("Add Harehouse: " + wh->getWarehouse_code(), COLOR_BLUE, COLOR_PINK);
         //
         vec_all_wh.push_back(wh);
         //
@@ -102,33 +97,13 @@ QVector<WareHouse*> WareHouse::getAllWarehouseForCBox(){
         QString erro_query = "Warehouse not found for query: " + vquery +
                 "\nQuery Error: " + str_erro;
         //
-        m_dir->setFolder_write("./Logs/Warehouse/");
+        dir->setFolder_write("./Logs/Warehouse/");
         //   
-        m_dir->CreateLogFile("WAREHOUSE-NOT-FOUND", erro_query);
+        dir->CreateLogFile("WAREHOUSE-NOT-FOUND", erro_query);
     }
 
     //
     return vec_all_wh;    
-}
-
-DbgDirFile *WareHouse::dir() const
-{
-    return m_dir;
-}
-
-void WareHouse::setDir(DbgDirFile *newDir)
-{
-    m_dir = newDir;
-}
-
-DbConn *WareHouse::getDbconn() const
-{
-    return dbconn;
-}
-
-void WareHouse::setDbconn(DbConn *newDbconn)
-{
-    dbconn = newDbconn;
 }
 
 

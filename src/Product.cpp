@@ -8,7 +8,7 @@
 #include "Product.h"
 
 Product::Product() {
-    dir = new DirFile*();
+    dir = new DirFile();
 }
 
 Product::~Product() {

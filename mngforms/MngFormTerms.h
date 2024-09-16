@@ -34,11 +34,11 @@
 #include <QtWidgets/QWidget>
 #include <QtCore/QTimer>
 #include <QtWidgets/QDialog>
-#include "Util/DbConn.h"
-#include "Util/ShowMsg.h"
+#include "src/DbConn.h"
+#include "src/ShowMsg.h"
 #include "IUs/ui_MngFormTerms.h"
 #include "src/Terms.h"
-#include "Util/TimeUtil.h"
+#include "src/TimeUtil.h"
 
 class DbConn;
 class Terms;

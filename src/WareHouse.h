@@ -7,25 +7,35 @@
 
 #ifndef WAREHOUSE_H
 #define	WAREHOUSE_H
-#include <QObject>
 #include <QString>
 #include <QByteArray>
 #include <QVector>
 #include <QtSql/QtSql>
-#include "Util/dbgdirfile.h"
-#include "Util/DbConn.h"
-#include "Util/ShowMsg.h"
+#include "DirFile.h"
+#include "DbConn.h"
+#include "ShowMsg.h"
 
-class DbgDirFile;
-class ShowMsg;
-class WareHouse:  public QObject {
-    Q_OBJECT
+class WareHouse {
 public:
-    explicit WareHouse(QObject *parent = nullptr);
+    WareHouse();
     virtual ~WareHouse();
     //
 
+    DbConn* getDbconn() const {
+        return dbconn;
+    }
 
+    void setDbconn(DbConn* dbconn) {
+        this->dbconn = dbconn;
+    }
+
+    DirFile* getDir() const {
+        return dir;
+    }
+
+    void setDir(DirFile* dir) {
+        this->dir = dir;
+    }
 
      
     /**
@@ -133,15 +143,10 @@ public:
 
     //
 //
-    DbgDirFile *dir() const;
-    void setDir(DbgDirFile *newDir);
-    DbConn *getDbconn() const;
-    void setDbconn(DbConn *newDbconn);
-
 private:
     WareHouse   * wh;
-    ShowMsg     * m_msg;
-    DbgDirFile  * m_dir;
+    ShowMsg     * msg;
+    DirFile     * dir;
     DbConn      * dbconn;
     //
 
