@@ -4,6 +4,8 @@ build/
 settings/
 logs/
 ConfigXml.xml
+Run/QtAppAccount
+Run/Run/QtAppAccount
 Run/
 *~
 *.autosave
