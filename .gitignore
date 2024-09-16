@@ -1,6 +1,10 @@
 # This file is used to ignore files which are generated
 # ----------------------------------------------------------------------------
-
+build/
+settings/
+logs/
+ConfigXml.xml
+Run/
 *~
 *.autosave
 *.a
@@ -15,7 +19,6 @@
 *_pch.h.cpp
 *_resource.rc
 *.qm
-*.qmake.stash
 .#*
 *.*#
 core
@@ -24,7 +27,7 @@ tags
 .DS_Store
 .directory
 *.debug
-
+Makefile*
 *.prl
 *.app
 moc_*.cpp
@@ -33,11 +36,9 @@ qrc_*.cpp
 Thumbs.db
 *.res
 *.rc
-*.qmake.cache
-*.qmake.stash
-*.qtc_clangd
- Run*
- Run/
+/.qmake.cache
+/.qmake.stash
+
 # qtcreator generated files
 *.pro.user*
 CMakeLists.txt.user*
@@ -74,5 +75,4 @@ CMakeLists.txt.user*
 # --------
 *.dll
 *.exe
-build
 
